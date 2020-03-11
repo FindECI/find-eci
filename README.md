@@ -23,4 +23,4 @@ Para realizar el modelo inicial de la interfaz gráfica de nuestro proyecto usam
 * https://wireframepro.mockflow.com/view/M5ba6b261fd09d3616ff208cc7ec17c1a1582298444241
 
 ## Link a nuestra aplicación 
-* https://findereci.herokuapp.com/
+* https://find-eci.herokuapp.com/
