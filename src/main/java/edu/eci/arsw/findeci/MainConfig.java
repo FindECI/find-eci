@@ -1,4 +1,4 @@
-package edu.eci.arsw.findeci;
+/**package edu.eci.arsw.findeci;
 
 import com.zaxxer.hikari.*;
 import java.net.URISyntaxException;
@@ -31,3 +31,4 @@ public class MainConfig {
         return null;
     }
 }
+**/
