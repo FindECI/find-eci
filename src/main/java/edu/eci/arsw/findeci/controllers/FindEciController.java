@@ -20,4 +20,12 @@ public class FindEciController {
         model.addAttribute("saludo", "Aplicación en desarrollo");
         return "hello";
     }
+    @RequestMapping("/login")
+    public String login(Model model){
+        return "login";
+    }
+    @RequestMapping("/pr")
+    public String pr(Model model){
+        return "pr";
+    }
 }
