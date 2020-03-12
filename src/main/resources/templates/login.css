@@ -1,0 +1,42 @@
+#textoTitulos{
+    font: bold 25px Tahoma;
+    width: 100%;
+}
+
+#textBien{
+    font: bold 40px Tahoma;
+    width: 100%;
+
+}
+
+#texto{
+
+     font: bold 18px Tahoma;
+     width: 100%;
+}
+
+#centro{
+
+    margin: 10%;
+
+}
+
+#down{
+    margin: 8%
+}
+
+#downBox{
+    margin: 5%
+}
+
+#lado{
+
+    display: inline-block;
+}
+
+
+div#marco2 {
+  margin-left: 380px;
+  border: solid 2px #ccc;
+  width: 50%;
+}
