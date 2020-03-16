@@ -28,4 +28,14 @@ public class FindEciController {
     public String pr(Model model){
         return "pr";
     }
+    
+    @RequestMapping("/")
+    public String index(){
+        return "index";
+    }
+    
+    @RequestMapping("/userForm")
+    public String userForm(){
+        return "user-form";
+    }
 }
