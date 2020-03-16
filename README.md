@@ -40,5 +40,6 @@ Para realizar el modelo inicial de la interfaz gráfica de nuestro proyecto usam
 ##  Diagrama de clases
 ![Captura2](https://user-images.githubusercontent.com/48091585/76806427-5f0f5700-67af-11ea-927d-52e30347d101.PNG)
 ##  Diagrama de Bases de Datos
-![Captura3](https://user-images.githubusercontent.com/48091585/76806435-6171b100-67af-11ea-9a08-91dc1e0b0ae5.PNG![Captura3](https://user-images.githubusercontent.com/48091585/76808987-5ae73780-67b7-11ea-9843-43d56ce2689e.PNG)
+![Captura3](https://user-images.githubusercontent.com/48091585/76808987-5ae73780-67b7-11ea-9843-43d56ce2689e.PNG)
+
 
