@@ -24,9 +24,9 @@ public class FindEciController {
     public String login(Model model){
         return "login";
     }
-    @RequestMapping("/pr")
+    @RequestMapping("/RegistroU")
     public String pr(Model model){
-        return "pr";
+        return "RegistroUsuario";
     }
     
     @RequestMapping("/")

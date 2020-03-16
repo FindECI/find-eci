@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\model\Genero.java
 D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\services\FindEciServices.java
 D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\model\Fetiches.java
@@ -15,3 +16,22 @@ D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\finde
 D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\model\GustosMusica.java
 D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\services\FindEciServicesFactory.java
 D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\model\GustosComida.java
+=======
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\services\FindEciServicesFactory.java
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\model\Genero.java
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\model\Gustos.java
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\model\GustosMusica.java
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\model\TipoRelacion.java
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\model\Usuarios.java
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\model\Fetiches.java
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\persistence\FindEciPersistence.java
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\model\GustosPeliculas.java
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\ServletInitializer.java
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\FindEciApplication.java
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\model\Carrera.java
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\services\FindEciServices.java
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\controllers\FindEciController.java
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\model\GustosComida.java
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\model\Intereses.java
+C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\persistence\FindEciException.java
+>>>>>>> 5612219c50c94ca6f8d5cdf3d6fe787681ac1359
