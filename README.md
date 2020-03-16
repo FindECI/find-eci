@@ -35,3 +35,9 @@ Para realizar el modelo inicial de la interfaz gráfica de nuestro proyecto usam
 
 ## Diagrama de componentes
 ![Components](https://user-images.githubusercontent.com/47215172/76792730-a981db00-6791-11ea-853a-ade23b1034a3.PNG)
+## Casos de uso
+![Captura1](https://user-images.githubusercontent.com/48091585/76806424-5ae33980-67af-11ea-8ee8-8126c11fb56f.PNG)
+##  Diagrama de clases
+![Captura2](https://user-images.githubusercontent.com/48091585/76806427-5f0f5700-67af-11ea-927d-52e30347d101.PNG)
+##  Entidad Relacion
+![Captura3](https://user-images.githubusercontent.com/48091585/76806435-6171b100-67af-11ea-9a08-91dc1e0b0ae5.PNG)
