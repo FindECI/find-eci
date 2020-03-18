@@ -61,4 +61,11 @@ public class Carrera implements Serializable {
     public void setAnoIngreso(Integer anoIngreso) {
         this.anoIngreso = anoIngreso;
     }
+
+    @Override
+    public String toString() {
+        return "Carrera{" + "usuario=" + usuario + ", nombre=" + nombre + ", semestre=" + semestre + ", anoIngreso=" + anoIngreso + '}';
+    }
+    
+    
 }
