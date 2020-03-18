@@ -1,53 +1,64 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.eci.arsw.findeci.model;
-
 import java.io.Serializable;
 
-public class Carrera implements Serializable{
+import javax.persistence.*;
 
-    private String nombreCarrera;
-    private int Semestre;
-    private int anoIngreso;
+@Entity
+public class Carrera implements Serializable {
 
-    /**
-     *
-     * @param nombreCarrera
-     * @param Semestre
-     * @param a
-     */
-    public Carrera(String nombreCarrera, int Semestre, int anoIngreso) {
-        this.nombreCarrera = nombreCarrera;
-        this.Semestre = Semestre;
+    @Id
+    @ManyToOne
+    @JoinColumn(name="correo", nullable = false)
+    private Usuario usuario;
+
+    @Column
+    private String nombre;
+
+    @Column
+    private Integer semestre;
+
+    @Column
+    private Integer anoIngreso;
+
+    public Carrera() {
+    }
+
+    public Carrera(Usuario usuario, String nombre, Integer semestre, Integer anoIngreso) {
+        this.usuario = usuario;
+        this.nombre = nombre;
+        this.semestre = semestre;
         this.anoIngreso = anoIngreso;
     }
 
-    public String getNombreCarrera() {
-        return nombreCarrera;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setNombreCarrera(String nombreCarrera) {
-        this.nombreCarrera = nombreCarrera;
+    public void setUusario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public int getSemestre() {
-        return Semestre;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setSemestre(int Semestre) {
-        this.Semestre = Semestre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public int getAnoIngreso() {
+    public Integer getSemestre() {
+        return semestre;
+    }
+
+    public void setSemestre(Integer semestre) {
+        this.semestre = semestre;
+    }
+
+    public Integer getAnoIngreso() {
         return anoIngreso;
     }
 
-    public void setAnoIngreso(int anoIngreso) {
+    public void setAnoIngreso(Integer anoIngreso) {
         this.anoIngreso = anoIngreso;
     }
-    
-    
 }

@@ -6,12 +6,15 @@
 package edu.eci.arsw.findeci.model;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -22,19 +25,10 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Andrés Quintero
  */
 @Entity
-@Table(name = "usuarios")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Usuarios.findAll", query = "SELECT u FROM Usuarios u"),
-    @NamedQuery(name = "Usuarios.findByNombre", query = "SELECT u FROM Usuarios u WHERE u.nombre = :nombre"),
-    @NamedQuery(name = "Usuarios.findByCorreo", query = "SELECT u FROM Usuarios u WHERE u.correo = :correo"),
-    @NamedQuery(name = "Usuarios.findByContrase\u00f1a", query = "SELECT u FROM Usuarios u WHERE u.contrase\u00f1a = :contrase\u00f1a"),
-    @NamedQuery(name = "Usuarios.findByEdad", query = "SELECT u FROM Usuarios u WHERE u.edad = :edad"),
-    @NamedQuery(name = "Usuarios.findBySexo", query = "SELECT u FROM Usuarios u WHERE u.sexo = :sexo"),
-    @NamedQuery(name = "Usuarios.findByAltura", query = "SELECT u FROM Usuarios u WHERE u.altura = :altura"),
-    @NamedQuery(name = "Usuarios.findByCelular", query = "SELECT u FROM Usuarios u WHERE u.celular = :celular"),
-    @NamedQuery(name = "Usuarios.findByCuentaig", query = "SELECT u FROM Usuarios u WHERE u.cuentaig = :cuentaig")})
-public class Usuarios implements Serializable {
+@Table(name = "usuario")
+
+    
+public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Basic(optional = false)
@@ -51,12 +45,12 @@ public class Usuarios implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
-    @Column(name = "contrase\u00f1a")
+    @Column(name = "contraseña")
     private String contraseña;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "edad")
-    private short edad;
+    @Column(name = "fechaNacimiento")
+    private Date fechaNacimiento;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
@@ -75,19 +69,22 @@ public class Usuarios implements Serializable {
     @Size(min = 1, max = 100)
     @Column(name = "cuentaig")
     private String cuentaig;
+    
+    @OneToMany(mappedBy = "usuario")
+    private List<Carrera> carrera;
 
-    public Usuarios() {
+    public Usuario() {
     }
 
-    public Usuarios(String correo) {
+    public Usuario(String correo) {
         this.correo = correo;
     }
 
-    public Usuarios(String correo, String nombre, String contraseña, short edad, String sexo, short altura, long celular, String cuentaig) {
+    public Usuario(String correo, String nombre, String contraseña, Date fechaNacimiento, String sexo, short altura, long celular, String cuentaig) {
         this.correo = correo;
         this.nombre = nombre;
         this.contraseña = contraseña;
-        this.edad = edad;
+        this.fechaNacimiento = fechaNacimiento;
         this.sexo = sexo;
         this.altura = altura;
         this.celular = celular;
@@ -118,12 +115,12 @@ public class Usuarios implements Serializable {
         this.contraseña = contraseña;
     }
 
-    public short getEdad() {
-        return edad;
+    public Date getEdad() {
+        return fechaNacimiento;
     }
 
-    public void setEdad(short edad) {
-        this.edad = edad;
+    public void setEdad(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public String getSexo() {
@@ -156,26 +153,6 @@ public class Usuarios implements Serializable {
 
     public void setCuentaig(String cuentaig) {
         this.cuentaig = cuentaig;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (correo != null ? correo.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Usuarios)) {
-            return false;
-        }
-        Usuarios other = (Usuarios) object;
-        if ((this.correo == null && other.correo != null) || (this.correo != null && !this.correo.equals(other.correo))) {
-            return false;
-        }
-        return true;
     }
 
     @Override
