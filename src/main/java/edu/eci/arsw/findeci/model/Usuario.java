@@ -12,13 +12,10 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -36,34 +33,41 @@ public class Usuario implements Serializable {
     @Size(min = 1, max = 100)
     @Column(name = "nombre")
     private String nombre;
+    
     @Id
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
     @Column(name = "correo")
     private String correo;
+    
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
     @Column(name = "contraseña")
     private String contraseña;
+    
     @Basic(optional = false)
     @NotNull
     @Column(name = "fechaNacimiento")
     private Date fechaNacimiento;
+    
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
     @Column(name = "sexo")
     private String sexo;
+    
     @Basic(optional = false)
     @NotNull
     @Column(name = "altura")
     private short altura;
+    
     @Basic(optional = false)
     @NotNull
     @Column(name = "celular")
     private long celular;
+    
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
@@ -72,6 +76,24 @@ public class Usuario implements Serializable {
     
     @OneToMany(mappedBy = "usuario")
     private List<Carrera> carrera;
+    
+    @OneToMany(mappedBy = "usuario")
+    private List<Fetiches> fetiches;
+    
+    @OneToMany(mappedBy = "usuario")
+    private List<GustosComida> gustosComida;
+    
+    @OneToMany(mappedBy = "usuario")
+    private List<GustosPeliculas> gustosPeliculas;
+    
+    @OneToMany(mappedBy = "usuario")
+    private List<GustosMusica> gustosMusica;
+    
+    @OneToMany(mappedBy = "usuario")
+    private List<Intereses> intereses;
+    
+    @OneToMany(mappedBy = "usuario")
+    private List<Match> matches;
 
     public Usuario() {
     }
@@ -115,11 +137,11 @@ public class Usuario implements Serializable {
         this.contraseña = contraseña;
     }
 
-    public Date getEdad() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setEdad(Date fechaNacimiento) {
+    public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -155,9 +177,62 @@ public class Usuario implements Serializable {
         this.cuentaig = cuentaig;
     }
 
-    @Override
-    public String toString() {
-        return "edu.eci.arsw.findeci.Usuarios[ correo=" + correo + " ]";
+    public List<Carrera> getCarrera() {
+        return carrera;
     }
+
+    public void setCarrera(List<Carrera> carrera) {
+        this.carrera = carrera;
+    }
+
+    public List<Fetiches> getFetiches() {
+        return fetiches;
+    }
+
+    public void setFetiches(List<Fetiches> fetiches) {
+        this.fetiches = fetiches;
+    }
+
+    public List<GustosComida> getGustosComida() {
+        return gustosComida;
+    }
+
+    public void setGustosComida(List<GustosComida> gustosComida) {
+        this.gustosComida = gustosComida;
+    }
+
+    public List<GustosPeliculas> getGustosPeliculas() {
+        return gustosPeliculas;
+    }
+
+    public void setGustosPeliculas(List<GustosPeliculas> gustosPeliculas) {
+        this.gustosPeliculas = gustosPeliculas;
+    }
+
+    public List<GustosMusica> getGustosMusica() {
+        return gustosMusica;
+    }
+
+    public void setGustosMusica(List<GustosMusica> gustosMusica) {
+        this.gustosMusica = gustosMusica;
+    }
+
+    public List<Intereses> getIntereses() {
+        return intereses;
+    }
+
+    public void setIntereses(List<Intereses> intereses) {
+        this.intereses = intereses;
+    }
+
+    public List<Match> getMatches() {
+        return matches;
+    }
+
+    public void setMatches(List<Match> matches) {
+        this.matches = matches;
+    }
+
     
+   
 }

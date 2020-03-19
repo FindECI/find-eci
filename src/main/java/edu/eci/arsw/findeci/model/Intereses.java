@@ -5,13 +5,51 @@
  */
 package edu.eci.arsw.findeci.model;
 
-import java.util.ArrayList;
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
-public class Intereses {
-
+/**
+ *
+ * @author andres.quintero-d
+ */
+@Entity
+public class Intereses implements Serializable {
+    
+    @Id
+    @ManyToOne
+    @JoinColumn(name="correo", nullable = false)
+    private Usuario usuario;
+    
+    @Column 
     private Genero sexoInteres;
-    private TipoRelacion tipoR;
-    private ArrayList<String> aspectosImportantes;
+    
+    @Column
+    private TipoRelacion tipoRel;
+    
+    @Column 
+    private String apectosImportantes;
+
+    public Intereses() {
+    }
+
+    public Intereses(Usuario usuario, Genero sexoInteres, TipoRelacion tipoRel, String apectosImportantes) {
+        this.usuario = usuario;
+        this.sexoInteres = sexoInteres;
+        this.tipoRel = tipoRel;
+        this.apectosImportantes = apectosImportantes;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 
     public Genero getSexoInteres() {
         return sexoInteres;
@@ -21,21 +59,25 @@ public class Intereses {
         this.sexoInteres = sexoInteres;
     }
 
-    public TipoRelacion getTipoR() {
-        return tipoR;
+    public TipoRelacion getTipoRel() {
+        return tipoRel;
     }
 
-    public void setTipoR(TipoRelacion tipoR) {
-        this.tipoR = tipoR;
+    public void setTipoRel(TipoRelacion tipoRel) {
+        this.tipoRel = tipoRel;
     }
 
-    public ArrayList<String> getAspectosImportantes() {
-        return aspectosImportantes;
+    public String getApectosImportantes() {
+        return apectosImportantes;
     }
 
-    public void setAspectosImportantes(ArrayList<String> aspectosImportantes) {
-        this.aspectosImportantes = aspectosImportantes;
+    public void setApectosImportantes(String apectosImportantes) {
+        this.apectosImportantes = apectosImportantes;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Intereses{" + "usuario=" + usuario + ", sexoInteres=" + sexoInteres + ", tipoRel=" + tipoRel + ", apectosImportantes=" + apectosImportantes + '}';
+    }
     
 }

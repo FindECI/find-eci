@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\model\Genero.java
 C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\model\Gustos.java
 C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\model\GustosMusica.java
@@ -15,3 +16,23 @@ C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\control
 C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\model\GustosComida.java
 C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\model\Intereses.java
 C:\Users\user\Desktop\U\ARSW\find-eci\src\main\java\edu\eci\arsw\findeci\persistence\FindEciException.java
+=======
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\model\Genero.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\model\Fetiches.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\model\Gustos.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\model\TipoRelacion.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\model\Usuario.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\controllers\FindEciController.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\model\Intereses.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\model\GustosPeliculas.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\persistence\FindEciException.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\services\impl\UsuarioServicesImpl.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\FindEciApplication.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\ServletInitializer.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\persistence\UsuarioRepository.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\model\Match.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\model\Carrera.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\model\GustosMusica.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\model\GustosComida.java
+D:\backup\Documentos\ECI\ARSW\proyecto\find-eci\src\main\java\edu\eci\arsw\findeci\services\UsuarioServices.java
+>>>>>>> 8cbe7a4694bc4a2078c2cd228ef196e0e1b9882c

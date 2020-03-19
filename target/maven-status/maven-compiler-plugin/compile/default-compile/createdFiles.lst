@@ -7,6 +7,7 @@ edu\eci\arsw\findeci\model\GustosPeliculas.class
 edu\eci\arsw\findeci\model\Intereses.class
 edu\eci\arsw\findeci\FindEciApplication.class
 edu\eci\arsw\findeci\model\Genero.class
+edu\eci\arsw\findeci\model\Match.class
 edu\eci\arsw\findeci\model\Gustos.class
 edu\eci\arsw\findeci\model\TipoRelacion.class
 edu\eci\arsw\findeci\controllers\FindEciController.class
