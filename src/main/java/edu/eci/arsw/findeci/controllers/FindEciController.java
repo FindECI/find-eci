@@ -38,4 +38,26 @@ public class FindEciController {
     public String userForm(){
         return "user-form";
     }
+    
+    @RequestMapping("/Intereses")
+    public String gustos(){
+        return "Intereses";
+    }
+    @RequestMapping("/gustosMusicales")
+    public String gustosMusicales(){
+        return "gustosMusicales";
+    }
+    @RequestMapping("/gustosComida")
+    public String gustosComida(){
+        return "GustosComida";
+    }
+    @RequestMapping("/GustosPeliculas")
+    public String GustosPeliculas(){
+        return "GustosPeliculas";
+    }
+    @RequestMapping("/Fetiches")
+    public String Fetiches(){
+        return "Fetiches";
+    }
+    
 }
