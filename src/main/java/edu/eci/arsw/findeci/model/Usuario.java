@@ -34,6 +34,12 @@ public class Usuario implements Serializable {
     @Column(name = "nombre")
     private String nombre;
     
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(name ="apellido")
+    private String apellido;
+    
     @Id
     @Basic(optional = false)
     @NotNull
@@ -102,9 +108,10 @@ public class Usuario implements Serializable {
         this.correo = correo;
     }
 
-    public Usuario(String correo, String nombre, String contraseña, Date fechaNacimiento, String sexo, short altura, long celular, String cuentaig) {
+    public Usuario(String correo, String nombre,String apellido, String contraseña, Date fechaNacimiento, String sexo, short altura, long celular, String cuentaig) {
         this.correo = correo;
         this.nombre = nombre;
+        this.apellido = apellido;
         this.contraseña = contraseña;
         this.fechaNacimiento = fechaNacimiento;
         this.sexo = sexo;
