@@ -2,7 +2,7 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- 
+ */
 package edu.eci.arsw.findeci.services.impl;
 
 import edu.eci.arsw.findeci.model.Usuario;
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 /**
  *
  * @author Andrés Quintero
- 
+ */
 @Service
 public class UsuarioServicesImpl implements UsuarioServices {
     @Autowired
@@ -24,7 +24,7 @@ public class UsuarioServicesImpl implements UsuarioServices {
 
     @Override
     public void saveUser(Usuario usuario) throws FindEciException {
-        Optional<Usuario> optionalUser = usuarioRepository.findByEmail(usuario.getCorreo());
+        Optional<Usuario> optionalUser = usuarioRepository.findByCorreo(usuario.getCorreo());
         if (optionalUser.isPresent()) {
             throw new FindEciException(FindEciException.USER_ALREDY_EXISTS);
         } else {
@@ -33,8 +33,8 @@ public class UsuarioServicesImpl implements UsuarioServices {
     }
 
     @Override
-    public Usuario findUserByEmail(String correo) throws FindEciException {
-        Optional<Usuario> optinalUser = usuarioRepository.findByEmail(correo);
+    public Usuario findUserByCorreo(String correo) throws FindEciException {
+        Optional<Usuario> optinalUser = usuarioRepository.findByCorreo(correo);
         boolean present = optinalUser.isPresent();
         System.out.println(present);
         if (!present)
@@ -43,4 +43,3 @@ public class UsuarioServicesImpl implements UsuarioServices {
     }
     
 }
-*/

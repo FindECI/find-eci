@@ -5,11 +5,14 @@ edu\eci\arsw\findeci\model\Usuario.class
 edu\eci\arsw\findeci\model\GustosComida.class
 edu\eci\arsw\findeci\model\GustosPeliculas.class
 edu\eci\arsw\findeci\model\Intereses.class
+edu\eci\arsw\findeci\persistence\UsuarioRepository.class
 edu\eci\arsw\findeci\FindEciApplication.class
+edu\eci\arsw\findeci\services\UsuarioServices.class
 edu\eci\arsw\findeci\model\Genero.class
 edu\eci\arsw\findeci\model\Match.class
 edu\eci\arsw\findeci\model\Gustos.class
 edu\eci\arsw\findeci\model\TipoRelacion.class
 edu\eci\arsw\findeci\controllers\FindEciController.class
 edu\eci\arsw\findeci\persistence\FindEciException.class
+edu\eci\arsw\findeci\services\impl\UsuarioServicesImpl.class
 edu\eci\arsw\findeci\ServletInitializer.class

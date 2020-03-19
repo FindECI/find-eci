@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/***
 package edu.eci.arsw.findeci.persistence;
 
 import edu.eci.arsw.findeci.model.Usuario;
@@ -19,6 +18,5 @@ public interface UsuarioRepository extends JpaRepository<Usuario, String >{
     @Override
     Usuario save(Usuario usuario);
 
-    Optional<Usuario> findByEmail(String correo);
+    Optional<Usuario> findByCorreo(String correo);
 }
-*/
