@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: find-eci
-Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: jimmy97
-Implementation-Vendor-Id: edu.eci.arsw
-Build-Jdk: 1.8.0_144
-Created-By: Maven Integration for Eclipse
-

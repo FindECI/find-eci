@@ -41,7 +41,5 @@ public class UsuarioServicesImpl implements UsuarioServices {
             throw new FindEciException(FindEciException.USER_NOT_FOUND);
         return optinalUser.get();
     }
-
-
     
 }

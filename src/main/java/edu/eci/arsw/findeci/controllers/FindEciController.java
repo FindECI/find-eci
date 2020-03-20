@@ -9,22 +9,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import edu.eci.arsw.findeci.services.impl.UsuarioServicesImpl;
-
 /**
  *
  * @author Andrés Quintero
  */
 @Controller
-public class FindEciController {	
-	
-	
-     
+public class FindEciController {
+     @RequestMapping("/hello")
+    public String showHello(Model model){
+        model.addAttribute("saludo", "Aplicación en desarrollo");
+        return "hello";
+    }
     @RequestMapping("/login")
     public String login(Model model){
         return "login";
     }
-    
     @RequestMapping("/RegistroU")
     public String pr(Model model){
         return "RegistroUsuario";
