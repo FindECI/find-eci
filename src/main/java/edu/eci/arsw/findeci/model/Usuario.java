@@ -33,7 +33,7 @@ public class Usuario implements Serializable {
     @Size(min = 1, max = 100)
     @Column(name = "nombre")
     private String nombre;
-    
+   
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
@@ -134,7 +134,7 @@ public class Usuario implements Serializable {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     } 
-    
+
     public String getCorreo() {
         return correo;
     }
