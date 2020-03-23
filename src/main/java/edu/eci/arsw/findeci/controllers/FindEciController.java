@@ -45,7 +45,7 @@ public class FindEciController {
     }
     @RequestMapping("/gustosMusicales")
     public String gustosMusicales(){
-        return "gustosMusicales";
+        return "GustosMusicales";
     }
     @RequestMapping("/gustosComida")
     public String gustosComida(){
@@ -58,6 +58,11 @@ public class FindEciController {
     @RequestMapping("/Fetiches")
     public String Fetiches(){
         return "Fetiches";
+    }
+    
+    @RequestMapping("/perfil")
+    public String Perfil(){
+        return "perfil";
     }
     
 }

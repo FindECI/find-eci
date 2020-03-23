@@ -6,11 +6,12 @@ import javax.persistence.*;
 @Entity
 public class Carrera implements Serializable {
 
-    @Id
+    
     @ManyToOne
     @JoinColumn(name="correo", nullable = false)
     private Usuario usuario;
-
+    
+    @Id
     @Column
     private String nombre;
 
