@@ -7,6 +7,7 @@ package edu.eci.arsw.findeci.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -15,37 +16,48 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class FindEciController {
+	
+	
+	///ESTA CLASE NO ES NECESARIA /////
+	
+	
+	/*
      @RequestMapping("/hello")
     public String showHello(Model model){
         model.addAttribute("saludo", "Aplicación en desarrollo");
         return "hello";
-    }
+    }*/
+	
+	/*
     @RequestMapping("/login")
     public String login(Model model){
         return "login";
     }
+    /*
     @RequestMapping("/RegistroU")
     public String pr(Model model){
         return "RegistroUsuario";
-    }
-    
-    @RequestMapping("/")
+    }*/
+    /*
+    @GetMapping(value="/")
     public String index(){
         return "index";
     }
     
-    @RequestMapping("/userForm")
+    @GetMapping(value="/userForm")
     public String userForm(){
         return "user-form";
     }
+    */
     
+    /*
     @RequestMapping("/Intereses")
     public String gustos(){
         return "Intereses";
     }
     @RequestMapping("/gustosMusicales")
     public String gustosMusicales(){
-        return "GustosMusicales";
+        return "gustosMusicales";
     }
     @RequestMapping("/gustosComida")
     public String gustosComida(){
@@ -58,11 +70,6 @@ public class FindEciController {
     @RequestMapping("/Fetiches")
     public String Fetiches(){
         return "Fetiches";
-    }
-    
-    @RequestMapping("/perfil")
-    public String Perfil(){
-        return "perfil";
-    }
+    }*/
     
 }

@@ -14,32 +14,70 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- *
- * @author Andrés Quintero
-*/ 
+ * 
+ * @author Jimmy Chirivi
+ * 
+ */
+
 @Service
 public class UsuarioServicesImpl implements UsuarioServices {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
     @Override
-    public void saveUser(Usuario usuario) throws FindEciException {
-        Optional<Usuario> optionalUser = usuarioRepository.findByCorreo(usuario.getCorreo());
-        if (optionalUser.isPresent()) {
-            throw new FindEciException(FindEciException.USER_ALREDY_EXISTS);
-        } else {
-            usuarioRepository.save(usuario);
-        }
-    }
+    public Usuario saveUser(Usuario usuario) throws FindEciException {
+    	System.out.println("Entro a guardar datossssss");
+       if(usuario.equals(findUserByCorreo(usuario.getCorreo())))
+    	   {
+    		   throw new FindEciException("Este usuario ya existe");   
+    	   }
+       else {
+    	   System.out.println("Entro a guardaaaaaaa el dato");
+    	   return usuarioRepository.save(usuario);  
+       }  
+       
+    }       
+    
 
     @Override
     public Usuario findUserByCorreo(String correo) throws FindEciException {
-        Optional<Usuario> optinalUser = usuarioRepository.findByCorreo(correo);
-        boolean present = optinalUser.isPresent();
-        System.out.println(present);
-        if (!present)
-            throw new FindEciException(FindEciException.USER_NOT_FOUND);
-        return optinalUser.get();
+    	try {
+    		System.out.println("Consulta usuariossss");
+    		Optional<Usuario> user = usuarioRepository.findById(correo);
+    		if (user.isPresent()) {
+    			System.out.println("retorna usuario usuariossss");
+    			return user.get();
+    		}
+    		else {
+    			return null;
+    		}    		
+            
+    	}
+        catch(java.util.NoSuchElementException ex){
+        	throw new FindEciException("Este usuario no existe existe");
+        }
     }
+
+
+	@Override
+	public Usuario findUserByLogin(String correo, String password) throws FindEciException {
+		
+		try {
+			Usuario user = findUserByCorreo(correo);
+			if(user.getContrasena().equals(password)) {
+				System.out.println("usuario encontradoooossss");
+				return user;
+			}
+			else {
+				return null;
+			}
+		}
+		catch(java.util.NoSuchElementException ex){
+			
+			throw new FindEciException("Error: Usuario no existe o clave incorrecta");
+			
+		}
+					
+	}
     
 }

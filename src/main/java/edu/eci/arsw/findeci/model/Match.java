@@ -18,9 +18,11 @@ import javax.persistence.Temporal;
  *
  * @author Andrés Quintero
  */
+
+
 @Entity
 public class Match implements Serializable{
-    
+   
     @Id
     @ManyToOne
     @JoinColumn(name="correo", nullable = false)

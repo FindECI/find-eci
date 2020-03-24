@@ -20,7 +20,7 @@ import javax.persistence.ManyToOne;
  */
 @Entity
 public class GustosComida implements Serializable {
-    
+  
     @ManyToOne
     @JoinColumn(name="correo", nullable = false)
     private Usuario usuario;

@@ -20,7 +20,7 @@ import javax.persistence.ManyToOne;
  */
 @Entity
 public class Fetiches implements Serializable {
-    
+
     @ManyToOne
     @JoinColumn(name="correo", nullable = false)
     private Usuario usuario;
@@ -82,5 +82,5 @@ public class Fetiches implements Serializable {
         return "Fetiches{" + "usuario=" + usuario + ", idFetiche=" + idFetiche + ", nombre=" + nombre + ", descripcion=" + descripcion + '}';
     }
     
-    
+
 }

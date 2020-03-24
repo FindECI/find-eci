@@ -9,13 +9,16 @@ import edu.eci.arsw.findeci.model.Usuario;
 import edu.eci.arsw.findeci.persistence.FindEciException;
 
 /**
- *
- * @author Andrés Quintero
+ * 
+ * @author Jimmy Chirivi
+ * 
  */
 public interface UsuarioServices {
     
-    void saveUser(Usuario usuario) throws FindEciException;
+   Usuario saveUser(Usuario usuario) throws FindEciException;
 
-    Usuario findUserByCorreo(String correo) throws FindEciException;
+   Usuario findUserByCorreo(String correo) throws FindEciException;
+   
+   Usuario findUserByLogin(String correo,String password) throws FindEciException;
     
 }

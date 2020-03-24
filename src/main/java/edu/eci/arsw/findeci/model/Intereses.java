@@ -18,7 +18,7 @@ import javax.persistence.ManyToOne;
  */
 @Entity
 public class Intereses implements Serializable {
-    
+
     @Id
     @ManyToOne
     @JoinColumn(name="correo", nullable = false)
@@ -79,5 +79,5 @@ public class Intereses implements Serializable {
     public String toString() {
         return "Intereses{" + "usuario=" + usuario + ", sexoInteres=" + sexoInteres + ", tipoRel=" + tipoRel + ", apectosImportantes=" + apectosImportantes + '}';
     }
-    
+   
 }

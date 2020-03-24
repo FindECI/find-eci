@@ -8,9 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class FindEciApplication {
 
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(FindEciApplication.class);
-        app.setBannerMode(Banner.Mode.OFF);
-        app.run(args);
+        //SpringApplication app = new SpringApplication(FindEciApplication.class);
+        //app.setBannerMode(Banner.Mode.OFF);
+        //app.run(args);
+    	SpringApplication.run(FindEciApplication.class, args);
     }
 
 }
