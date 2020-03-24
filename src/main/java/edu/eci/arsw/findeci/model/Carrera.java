@@ -6,12 +6,18 @@ import javax.persistence.*;
 @Entity
 public class Carrera implements Serializable {
 
-    
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
+
+	@Id
     @ManyToOne
     @JoinColumn(name="correo", nullable = false)
     private Usuario usuario;
-    
-    @Id
+
     @Column
     private String nombre;
 
@@ -67,6 +73,6 @@ public class Carrera implements Serializable {
     public String toString() {
         return "Carrera{" + "usuario=" + usuario + ", nombre=" + nombre + ", semestre=" + semestre + ", anoIngreso=" + anoIngreso + '}';
     }
-    
+ 
     
 }

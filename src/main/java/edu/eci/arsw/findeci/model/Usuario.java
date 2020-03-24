@@ -23,11 +23,10 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "usuario")
-
-    
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
@@ -48,14 +47,13 @@ public class Usuario implements Serializable {
     private String correo;
     
     @Basic(optional = false)
-    @NotNull
     @Size(min = 1, max = 100)
-    @Column(name = "contraseña")
-    private String contraseña;
+    @Column(name = "contrasena")
+    private String contrasena;
     
     @Basic(optional = false)
     @NotNull
-    @Column(name = "fechaNacimiento")
+    @Column(name = "fecha_nacimiento")
     private Date fechaNacimiento;
     
     @Basic(optional = false)
@@ -111,7 +109,7 @@ public class Usuario implements Serializable {
     public Usuario(String correo, String nombre, String contraseña, Date fechaNacimiento, String sexo, short altura, long celular, String cuentaig) {
         this.correo = correo;
         this.nombre = nombre;
-        this.contraseña = contraseña;
+        this.contrasena = contraseña;
         this.fechaNacimiento = fechaNacimiento;
         this.sexo = sexo;
         this.altura = altura;
@@ -143,12 +141,12 @@ public class Usuario implements Serializable {
         this.correo = correo;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public Date getFechaNacimiento() {
