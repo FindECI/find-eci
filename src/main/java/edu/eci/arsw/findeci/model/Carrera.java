@@ -2,8 +2,10 @@ package edu.eci.arsw.findeci.model;
 import java.io.Serializable;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
+@Table(name="carrera")
 public class Carrera implements Serializable {
 
     /**
@@ -12,19 +14,25 @@ public class Carrera implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 
-
 	@Id
-    @ManyToOne
-    @JoinColumn(name="correo", nullable = false)
+	@Column(name="id", nullable = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Size(min = 1, max = 1000)
+	private int id;
+	
+	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Usuario usuario;
 
-    @Column
+    @Column(name="nombre", nullable = false)
+    @Size(min = 1, max = 100)
     private String nombre;
 
-    @Column
+    @Column(name="semestre", nullable = false)
+    @Size(min = 1, max = 100)
     private Integer semestre;
 
-    @Column
+    @Column(name="Ingreso", nullable = false)
+    @Size(min = 1, max = 100)
     private Integer anoIngreso;
 
     public Carrera() {
@@ -68,6 +76,14 @@ public class Carrera implements Serializable {
     public void setAnoIngreso(Integer anoIngreso) {
         this.anoIngreso = anoIngreso;
     }
+    
+    public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
     @Override
     public String toString() {

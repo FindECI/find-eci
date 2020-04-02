@@ -6,14 +6,13 @@ var usuario = (function () {
         var contr = document.getElementById("contrasena2").value;
 
         if (cont === contr) {
-            alert("entro a registrar un usuario");
             var usuario = {"correo": document.getElementById("email").value, "altura": document.getElementById("altura").value,
                 "apellido": document.getElementById("apellido").value, "celular": document.getElementById("celular").value,
                 "contrasena": contr, "cuentaig": document.getElementById("cntig").value, "fechaNacimiento": document.getElementById("fechana").value,
                 "nombre": document.getElementById("nombre").value, "sexo": document.getElementById("sexo").value};
-
-            alert("contraseña :" + contr);
+           
             apiUser.addUser(usuario);
+            apiUser.addImgUser(usuario,document.getElementById("imagen1").value);
         } else {
             alert("las contraseñas no son iguales");
         }

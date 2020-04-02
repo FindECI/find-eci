@@ -5,7 +5,7 @@
  */
 package edu.eci.arsw.findeci.services;
 
-import edu.eci.arsw.findeci.model.GustosPeliculas;
+
 import edu.eci.arsw.findeci.persistence.FindEciException;
 
 /**
@@ -13,8 +13,9 @@ import edu.eci.arsw.findeci.persistence.FindEciException;
  * @author Andrés Quintero
  */
 public interface GustosPeliculasServices {
-    
+    /*
    GustosPeliculas saveUserGPeliculas(GustosPeliculas GPeliculas) throws FindEciException;
 
    GustosPeliculas findUserGPeliculasByCorreo(String correo) throws FindEciException;
+*/
 }

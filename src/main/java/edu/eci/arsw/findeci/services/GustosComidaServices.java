@@ -5,7 +5,6 @@
  */
 package edu.eci.arsw.findeci.services;
 
-import edu.eci.arsw.findeci.model.GustosComida;
 import edu.eci.arsw.findeci.persistence.FindEciException;
 
 /**
@@ -13,9 +12,11 @@ import edu.eci.arsw.findeci.persistence.FindEciException;
  * @author Andrés Quintero
  */
 public interface GustosComidaServices {
+	
+	/*
     
    GustosComida saveUserGComida(GustosComida GComida) throws FindEciException;
 
    GustosComida findUserGComidaByCorreo(String correo) throws FindEciException;
-    
+ */   
 }

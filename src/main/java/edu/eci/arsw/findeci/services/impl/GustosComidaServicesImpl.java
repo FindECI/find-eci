@@ -5,7 +5,7 @@
  */
 package edu.eci.arsw.findeci.services.impl;
 
-import edu.eci.arsw.findeci.model.GustosComida;
+
 import edu.eci.arsw.findeci.persistence.FindEciException;
 import edu.eci.arsw.findeci.services.GustosComidaServices;
 
@@ -14,7 +14,7 @@ import edu.eci.arsw.findeci.services.GustosComidaServices;
  * @author Andrés Quintero
  */
 public class GustosComidaServicesImpl implements GustosComidaServices {
-
+/*
     @Override
     public GustosComida saveUserGComida(GustosComida GComida) throws FindEciException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -24,5 +24,5 @@ public class GustosComidaServicesImpl implements GustosComidaServices {
     public GustosComida findUserGComidaByCorreo(String correo) throws FindEciException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+  */  
 }

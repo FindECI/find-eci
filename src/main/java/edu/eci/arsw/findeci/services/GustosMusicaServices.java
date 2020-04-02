@@ -5,7 +5,7 @@
  */
 package edu.eci.arsw.findeci.services;
 
-import edu.eci.arsw.findeci.model.GustosMusica;
+
 import edu.eci.arsw.findeci.persistence.FindEciException;
 
 /**
@@ -14,7 +14,11 @@ import edu.eci.arsw.findeci.persistence.FindEciException;
  */
 public interface GustosMusicaServices {
     
-   GustosMusica saveUserGMusica(GustosMusica GMusica) throws FindEciException;
+   
+	/*
+	GustosMusica saveUserGMusica(GustosMusica GMusica) throws FindEciException;
 
    GustosMusica findUserGMusicaByCorreo(String correo) throws FindEciException;
+	*/
 }
+

@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class GustosMusicaController {
     
 private String correo;
-
+	/*
     public String getCorreo() {
         return correo;
     }
@@ -54,5 +54,5 @@ private String correo;
         } catch (FindEciException e) {
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
-    }
+    }*/
 }

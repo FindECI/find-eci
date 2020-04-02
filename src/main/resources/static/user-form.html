@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>User Information and Form</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <!--JQUERY-->
 <script
@@ -56,8 +58,7 @@
 					<h2 id="textoTitulos">Ingresa la informacion personal para
 						crear tu usuario</h2>
 				</center>
-				<form class="form" role="form" autocomplete="off"
-					action='javascript:usuario.crearcuenta()'>
+				<form class="form" role="form" autocomplete="off" action='javascript:usuario.crearcuenta()'>
 					<div class="form-group row">
 						<label class="col-lg-3 col-form-label form-control-label">Nombre</label>
 						<div class="col-lg-9">
@@ -171,7 +172,7 @@
 							</select>
 						</div>
 					</div>
-					<!-- Nuestro 
+					
 					<div class="form-group row">
 						<label class="col-lg-3 col-form-label form-control-label">Imagen
 							Principal</label>
@@ -180,6 +181,7 @@
 								id="imagen1" alt="Imagen Principal">
 						</div>
 					</div>
+					<!-- Nuestro 
 					<div class="form-group row">
 						<label class="col-lg-3 col-form-label form-control-label">Segunda
 							Imagen</label>
@@ -200,7 +202,7 @@
 					<div class="form-group row">
 						<div class="col-lg-12 text-center">
 							<input type="reset" class="btn btn-secondary" value="Limpiar">
-							<input type="submit" class="btn btn-primary" value="Continuar" formaction="/Intereses">
+							<input type="submit" class="btn btn-primary" value="Continuar">
 						</div>
 					</div>
 				</form>

@@ -10,11 +10,27 @@ apiUser = (function(){
 				contentType: "application/json",
 				success: function(){
 					alert("El usuario ha sido creado correctamente.");
-					location.href = "/index.html";
+					location.href = "/Intereses.html";
 				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     alert("El Usuario ya esta registrado, intente nuevamente"); 
                 }
 			});
+		},
+		
+		addImgUser: function(usuario,imagen){
+			alert("entroooooooooooo imagennnnn");
+			jQuery.ajax({
+				url: "/imagen/"+imagen,
+				type: "POST",
+				data: JSON.stringify(usuario),
+				contentType: "application/json",
+				success: function(){
+					alert("se ha agreda correctamente su imagen.");
+				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    alert("No se pudo agregar la imagen"); 
+                }
+			});
+			
 		},
 	
 		loginUser: function(correo,password){

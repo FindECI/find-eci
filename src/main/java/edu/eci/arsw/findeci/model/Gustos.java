@@ -1,42 +1,69 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.eci.arsw.findeci.model;
 
-/**
- *
- * @author andres.quintero-d
- */
-public abstract class Gustos {
-    private int identificador;
-    private String nombre;
-    private String descripcion;
+import java.io.Serializable;
 
-    public int getIdentificador() {
-        return identificador;
-    }
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
-    public void setIdentificador(int identificador) {
-        this.identificador = identificador;
-    }
+@Entity
+@Table(name="gustos")
+public class gustos implements Serializable {
 
-    public String getNombre() {
-        return nombre;
-    }
+	
+	@Column(name="descripciongusto", nullable = false)
+	@Size(min = 1, max = 1000)
+	private String descripciongusto;
+	
+	@Id
+	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Usuario usuario;
+	
+	@Id
+	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private tipoGusto tipgusto;
+	
+	
+	public gustos(String descripciongusto) {
+		this.descripciongusto = descripciongusto;
+	}
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
+	public String getDescripciongusto() {
+		return descripciongusto;
+	}
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-    
-    
+
+	public void setDescripciongusto(String descripciongusto) {
+		this.descripciongusto = descripciongusto;
+	}
+
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+
+	public tipoGusto getTipgusto() {
+		return tipgusto;
+	}
+
+
+	public void setTipgusto(tipoGusto tipgusto) {
+		this.tipgusto = tipgusto;
+	}
+	
+	
+	
 }

@@ -26,7 +26,6 @@ public class UsuarioServicesImpl implements UsuarioServices {
 
     @Override
     public Usuario saveUser(Usuario usuario) throws FindEciException {
-        System.out.println("Entro a guardar datossssss");
         if (usuario.equals(findUserByCorreo(usuario.getCorreo()))) {
             throw new FindEciException("Este usuario ya existe");
         } else {
@@ -39,10 +38,8 @@ public class UsuarioServicesImpl implements UsuarioServices {
     @Override
     public Usuario findUserByCorreo(String correo) throws FindEciException {
         try {
-            System.out.println("Consulta usuariossss");
             Optional<Usuario> user = usuarioRepository.findById(correo);
             if (user.isPresent()) {
-                System.out.println("retorna usuario usuariossss");
                 return user.get();
             } else {
                 return null;
@@ -59,7 +56,6 @@ public class UsuarioServicesImpl implements UsuarioServices {
         try {
             Usuario user = findUserByCorreo(correo);
             if (user.getContrasena().equals(password)) {
-                System.out.println("usuario encontradoooossss");
                 return user;
             } else {
                 return null;

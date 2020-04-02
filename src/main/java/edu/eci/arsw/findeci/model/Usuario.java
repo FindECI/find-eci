@@ -22,7 +22,7 @@ import javax.validation.constraints.Size;
  * @author Andrés Quintero
  */
 @Entity
-@Table(name = "usuario")
+@Table(name = "usuarios")
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -78,12 +78,8 @@ public class Usuario implements Serializable {
     @Column(name = "cuentaig")
     private String cuentaig;
     
-    @OneToMany(mappedBy = "usuario")
-    private List<Carrera> carrera;
     
-    @OneToMany(mappedBy = "usuario")
-    private List<Fetiches> fetiches;
-    
+    /*
     @OneToMany(mappedBy = "usuario")
     private List<GustosComida> gustosComida;
     
@@ -93,13 +89,17 @@ public class Usuario implements Serializable {
     @OneToMany(mappedBy = "usuario")
     private List<GustosMusica> gustosMusica;
     
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuarios")
     private List<Intereses> intereses;
     
-    @OneToMany(mappedBy = "usuario")
-    private List<Match> matches;
-
-    public Usuario() {
+    @OneToMany(mappedBy = "usuarios")
+    private List<Matches> matches;
+    
+    @OneToMany(mappedBy = "usuarios")
+    private List<Imagenes> imagenes;
+	*/
+    
+	public Usuario() {
     }
 
     public Usuario(String correo) {
@@ -188,7 +188,7 @@ public class Usuario implements Serializable {
     public void setCuentaig(String cuentaig) {
         this.cuentaig = cuentaig;
     }
-
+/*
     public List<Carrera> getCarrera() {
         return carrera;
     }
@@ -204,7 +204,7 @@ public class Usuario implements Serializable {
     public void setFetiches(List<Fetiches> fetiches) {
         this.fetiches = fetiches;
     }
-
+    /*
     public List<GustosComida> getGustosComida() {
         return gustosComida;
     }
@@ -228,7 +228,7 @@ public class Usuario implements Serializable {
     public void setGustosMusica(List<GustosMusica> gustosMusica) {
         this.gustosMusica = gustosMusica;
     }
-
+   
     public List<Intereses> getIntereses() {
         return intereses;
     }
@@ -237,13 +237,22 @@ public class Usuario implements Serializable {
         this.intereses = intereses;
     }
 
-    public List<Match> getMatches() {
+    public List<Matches> getMatches() {
         return matches;
     }
 
-    public void setMatches(List<Match> matches) {
+    public void setMatches(List<Matches> matches) {
         this.matches = matches;
     }
+    
+    public List<Imagenes> getImagenes() {
+		return imagenes;
+	}
+
+	public void setImagenes(List<Imagenes> imagenes) {
+		this.imagenes = imagenes;
+	}*/
+
 
     
    

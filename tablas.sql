@@ -73,3 +73,12 @@ fecha date not null
 alter table matches add constraint fk_matches1 foreign key (usuario) references usuarios(correo);
 alter table matches add constraint fk_matches2 foreign key (pareja) references usuarios(correo);
 
+create table imagenes(
+imagen bytea not null,
+usuario varchar(100) not null
+);
+
+alter table imagenes add constraint fk_imagenes1 foreign key (usuario) references usuarios(correo);
+
+
+
