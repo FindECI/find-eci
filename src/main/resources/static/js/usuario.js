@@ -12,7 +12,9 @@ var usuario = (function () {
                 "nombre": document.getElementById("nombre").value, "sexo": document.getElementById("sexo").value};
            
             apiUser.addUser(usuario);
-            apiUser.addImgUser(usuario,document.getElementById("imagen1").value);
+            //apiUser.addImgUser(usuario,document.getElementById("imagen1").value);
+            sessionStorage.setItem('User',document.getElementById("email").value);
+            
         } else {
             alert("las contraseñas no son iguales");
         }

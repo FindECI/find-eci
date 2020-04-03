@@ -1,4 +1,4 @@
-/**
+
 package edu.eci.arsw.findeci.controllers;
 
 import org.springframework.stereotype.Controller;
@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import edu.eci.arsw.findeci.model.Intereses;
 import edu.eci.arsw.findeci.model.Usuario;
 import edu.eci.arsw.findeci.persistence.FindEciException;
 import edu.eci.arsw.findeci.services.InteresesServices;
@@ -25,38 +26,30 @@ import org.springframework.http.ResponseEntity;
 @RequestMapping(value = "/Intereses")
 public class InteresesController {
     
-    private String correo;
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
- 
+     
     @Autowired
-    private InteresesServices userserv;
+    private InteresesServices intserv;
 
+    
     @RequestMapping(method = RequestMethod.GET, path = "/{correo}")
-    public ResponseEntity<Usuario> getUser(@PathVariable(name = "correo") String correo) {
-        try {
-            Usuario usuario = userserv.findUserByCorreo(correo);
-            return ResponseEntity.ok(usuario);
+    public ResponseEntity<Intereses> getUser(@PathVariable(name = "correo") Integer correo) {
+    	try {
+            Intereses interes = intserv.findInteresByCorreo(correo);
+            return ResponseEntity.ok(interes);
         } catch (FindEciException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Usuario> addUser(@RequestBody Usuario usuario) {
-        try {
-
-            userserv.saveUser(usuario);
+    public ResponseEntity<Intereses> addUser(@RequestBody Intereses interes) {
+        System.out.println("oleeeee mire:"+ interes.getId() + interes.getSexoInteres() + interes.getTipoRel() + interes.getApectosImportantes());
+        System.out.println("usuuuuariooo: "+ interes.getUsuario());        
+    	try {
+            intserv.saveInteres(interes);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (FindEciException e) {
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
     }
 }
-**/

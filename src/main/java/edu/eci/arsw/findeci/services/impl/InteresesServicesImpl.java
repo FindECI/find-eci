@@ -5,24 +5,52 @@
  */
 package edu.eci.arsw.findeci.services.impl;
 
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import edu.eci.arsw.findeci.model.Intereses;
+import edu.eci.arsw.findeci.model.Usuario;
 import edu.eci.arsw.findeci.persistence.FindEciException;
+import edu.eci.arsw.findeci.persistence.InteresesRepository;
 import edu.eci.arsw.findeci.services.InteresesServices;
 
 /**
  *
  * @author Andrés Quintero
  */
+
+@Service
 public class InteresesServicesImpl implements InteresesServices{
+	
+	
+	@Autowired
+	InteresesRepository interesesRepo;
 
     @Override
-    public Intereses saveUserInteres(Intereses interes) throws FindEciException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Intereses saveInteres(Intereses interes) throws FindEciException {
+    	
+            System.out.println("Entro a guardaaaaaaa el dato");
+            return interesesRepo.save(interes);  
+            
+          
     }
 
     @Override
-    public Intereses findInteresByCorreo(String correo) throws FindEciException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Intereses findInteresByCorreo(Integer correo) throws FindEciException {
+		  	
+    	try {
+            Optional<Intereses> intereses = interesesRepo.findById(correo);
+            if (intereses.isPresent()) {
+                return intereses.get();
+            } else {
+                return null;
+            }
+
+        } catch (java.util.NoSuchElementException ex) {
+            throw new FindEciException("Este usuario no existe existe");
+        }
     }
     
 }

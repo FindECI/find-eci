@@ -10,7 +10,7 @@ apiUser = (function(){
 				contentType: "application/json",
 				success: function(){
 					alert("El usuario ha sido creado correctamente.");
-					location.href = "/Intereses.html";
+					location.href = "/Intereses.html"
 				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     alert("El Usuario ya esta registrado, intente nuevamente"); 
                 }

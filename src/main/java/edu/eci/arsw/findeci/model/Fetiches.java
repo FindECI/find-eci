@@ -27,12 +27,13 @@ import javax.validation.constraints.Size;
 @Table(name="fetiches")
 public class Fetiches implements Serializable {
 
-	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Usuario usuario;
+	@Column(name="usuario", nullable = false)
+    @Size(min = 1, max = 100)
+    private String usuario;
     
     @Id
     @Column(name="idFetiche", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Size(min = 1, max = 100)
     private Integer idFetiche;
     
@@ -47,18 +48,18 @@ public class Fetiches implements Serializable {
     public Fetiches() {
     }
 
-    public Fetiches(Usuario usuario, Integer idFetiche, String nombre, String descripcion) {
+    public Fetiches(String usuario, Integer idFetiche, String nombre, String descripcion) {
         this.usuario = usuario;
         this.idFetiche = idFetiche;
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
 
-    public Usuario getUsuario() {
+    public String getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
 

@@ -18,16 +18,18 @@ public class interacciones {
 
 	@Id
 	@Column(name="id",nullable = false)
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Size(min = 1, max = 1000)
 	private int id;
 	
 	
-	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Usuario usuario;
+	@Column(name="usuario", nullable = false)
+    @Size(min = 1, max = 100)
+    private String usuario;
 	
-	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private Usuario pareja;
+	@Column(name="pareja", nullable = false)
+    @Size(min = 1, max = 100)
+    private String pareja;
 	
 	@Column(name="likes",nullable = false)
 	@Size(min = 1, max = 1)
@@ -51,22 +53,22 @@ public class interacciones {
 	}
 
 
-	public Usuario getUsuario() {
+	public String getUsuario() {
 		return usuario;
 	}
 
 
-	public void setUsuario(Usuario usuario) {
+	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
 
 
-	public Usuario getPareja() {
+	public String getPareja() {
 		return pareja;
 	}
 
 
-	public void setPareja(Usuario pareja) {
+	public void setPareja(String pareja) {
 		this.pareja = pareja;
 	}
 

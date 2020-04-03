@@ -20,7 +20,7 @@ public class Imagenes  implements Serializable{
 	
 	@Id
 	@Column(name="id",nullable = false)
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Size(min = 1, max = 1000)
 	private int id;
 	
@@ -29,11 +29,12 @@ public class Imagenes  implements Serializable{
 	@Size(min = 1, max = 1000)
 	private String imagen;
 	
-	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Usuario usuario;
+	@Column(name="usuario", nullable = false)
+    @Size(min = 1, max = 100)
+    private String usuario;
 	
 	
-	public Imagenes (String imagen, Usuario usuario) {
+	public Imagenes (String imagen, String usuario) {
 		
 		this.imagen = imagen;
 		this.usuario = usuario;
@@ -47,11 +48,11 @@ public class Imagenes  implements Serializable{
 		this.imagen = imagen;
 	}
 
-	public Usuario getUsuario() {
+	public String getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(Usuario usuario) {
+	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
 

@@ -36,42 +36,43 @@ public class Matches implements Serializable{
 	
 	@Id
 	@Column(name="id",nullable = false)
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Size(min = 1, max = 1000)
 	private int id;
 	    
 
-	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Usuario usuario;
-    
-    
-	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Usuario pareja;
+	@Column(name="usuario", nullable = false)
+    @Size(min = 1, max = 100)
+    private String usuario;
+	
+	@Column(name="pareja", nullable = false)
+    @Size(min = 1, max = 100)
+    private String pareja;
     
     @Column(name="fecha",nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date fechaMatch;
 
-    public Matches(Usuario usuario, Usuario pareja, Date fechaMatch) {
+    public Matches(String usuario, String pareja, Date fechaMatch) {
         this.usuario = usuario;
         this.pareja = pareja;
         this.fechaMatch = fechaMatch;
     }
 
     
-    public Usuario getUsuario() {
+    public String getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
 
-    public Usuario getPareja() {
+    public String getPareja() {
         return pareja;
     }
 
-    public void setPareja(Usuario pareja) {
+    public void setPareja(String pareja) {
         this.pareja = pareja;
     }
 

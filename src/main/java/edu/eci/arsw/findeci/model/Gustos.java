@@ -22,12 +22,14 @@ public class gustos implements Serializable {
 	private String descripciongusto;
 	
 	@Id
-	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Usuario usuario;
+	@Column(name="usuario", nullable = false)
+    @Size(min = 1, max = 100)
+    private String usuario;
 	
 	@Id
-	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private tipoGusto tipgusto;
+	@Column(name="tipgusto", nullable = false)
+    @Size(min = 1, max = 100)
+    private int tipgusto;
 	
 	
 	public gustos(String descripciongusto) {
@@ -45,22 +47,22 @@ public class gustos implements Serializable {
 	}
 
 
-	public Usuario getUsuario() {
+	public String getUsuario() {
 		return usuario;
 	}
 
 
-	public void setUsuario(Usuario usuario) {
+	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
 
 
-	public tipoGusto getTipgusto() {
+	public int getTipgusto() {
 		return tipgusto;
 	}
 
 
-	public void setTipgusto(tipoGusto tipgusto) {
+	public void setTipgusto(int tipgusto) {
 		this.tipgusto = tipgusto;
 	}
 	

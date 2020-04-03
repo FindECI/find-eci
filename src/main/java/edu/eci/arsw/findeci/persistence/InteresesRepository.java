@@ -5,10 +5,15 @@
  */
 package edu.eci.arsw.findeci.persistence;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import edu.eci.arsw.findeci.model.Intereses;
+import edu.eci.arsw.findeci.model.Usuario;
+
 /**
  *
  * @author Andrés Quintero
  */
-public interface InteresesRepository {
+public interface InteresesRepository extends JpaRepository<Intereses,Integer >{
     
 }

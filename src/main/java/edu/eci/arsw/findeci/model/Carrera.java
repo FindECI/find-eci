@@ -16,12 +16,13 @@ public class Carrera implements Serializable {
 
 	@Id
 	@Column(name="id", nullable = false)
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Size(min = 1, max = 1000)
 	private int id;
 	
-	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Usuario usuario;
+	@Column(name="usuario", nullable = false)
+    @Size(min = 1, max = 100)
+    private String usuario;
 
     @Column(name="nombre", nullable = false)
     @Size(min = 1, max = 100)
@@ -38,18 +39,18 @@ public class Carrera implements Serializable {
     public Carrera() {
     }
 
-    public Carrera(Usuario usuario, String nombre, Integer semestre, Integer anoIngreso) {
+    public Carrera(String usuario, String nombre, Integer semestre, Integer anoIngreso) {
         this.usuario = usuario;
         this.nombre = nombre;
         this.semestre = semestre;
         this.anoIngreso = anoIngreso;
     }
 
-    public Usuario getUsuario() {
+    public String getUsuario() {
         return usuario;
     }
 
-    public void setUusario(Usuario usuario) {
+    public void setUusario(String usuario) {
         this.usuario = usuario;
     }
 

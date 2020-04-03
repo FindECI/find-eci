@@ -27,22 +27,23 @@ import javax.validation.constraints.Size;
 @Table(name="intereses")
 public class Intereses implements Serializable {
 
-	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Usuario usuario;
+	@Column(name="usuario", nullable = false)
+    @Size(min = 1, max = 100)
+    private String usuario;
     
     @Id
 	@Column(name="id",nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Size(min = 1, max = 1000)
 	private int id;	
       
 	@Column(name="sexoInteres",nullable = false)
 	@Size(min = 1, max = 100)
-    private Genero sexoInteres;
+    private String sexoInteres;
     
 	@Column(name="tipoRelacion",nullable = false)
 	@Size(min = 1, max = 100)
-    private TipoRelacion tipoRel;
+    private String tipoRel;
     
 	@Column(name="aspectosImportantes",nullable = false)
 	@Size(min = 1, max = 100)
@@ -51,34 +52,34 @@ public class Intereses implements Serializable {
     public Intereses() {
     }
 
-    public Intereses(Usuario usuario, Genero sexoInteres, TipoRelacion tipoRel, String apectosImportantes) {
+    public Intereses(String usuario, String sexoInteres, String tipoRel, String apectosImportantes) {
         this.usuario = usuario;
         this.sexoInteres = sexoInteres;
         this.tipoRel = tipoRel;
         this.apectosImportantes = apectosImportantes;
     }
 
-    public Usuario getUsuario() {
+    public String getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
 
-    public Genero getSexoInteres() {
+    public String getSexoInteres() {
         return sexoInteres;
     }
 
-    public void setSexoInteres(Genero sexoInteres) {
+    public void setSexoInteres(String sexoInteres) {
         this.sexoInteres = sexoInteres;
     }
 
-    public TipoRelacion getTipoRel() {
+    public String getTipoRel() {
         return tipoRel;
     }
 
-    public void setTipoRel(TipoRelacion tipoRel) {
+    public void setTipoRel(String tipoRel) {
         this.tipoRel = tipoRel;
     }
 

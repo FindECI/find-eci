@@ -14,7 +14,7 @@ import edu.eci.arsw.findeci.persistence.FindEciException;
  */
 public interface InteresesServices {
     
-   Intereses saveUserInteres(Intereses interes) throws FindEciException;
+   Intereses saveInteres(Intereses interes) throws FindEciException;
 
-   Intereses findInteresByCorreo(String correo) throws FindEciException;
+   Intereses findInteresByCorreo(Integer correo) throws FindEciException;
 }
