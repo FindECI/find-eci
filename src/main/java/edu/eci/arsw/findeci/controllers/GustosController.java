@@ -5,8 +5,11 @@
  */
 package edu.eci.arsw.findeci.controllers;
 
+import edu.eci.arsw.findeci.model.Intereses;
 import edu.eci.arsw.findeci.model.Usuario;
+import edu.eci.arsw.findeci.model.gustos;
 import edu.eci.arsw.findeci.persistence.FindEciException;
+import edu.eci.arsw.findeci.services.GustosServices;
 import edu.eci.arsw.findeci.services.UsuarioServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,14 +18,35 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
  * @author Andrés Quintero
  */
-public class GustosComidaController {
+
+@RestController
+@RequestMapping(value = "/Gustos")
+public class GustosController {
     
 private String correo;
+	
+	@Autowired
+	GustosServices gustoservice;
+	
+	
+	@RequestMapping(method = RequestMethod.POST)
+    public ResponseEntity<Intereses> addUser(@RequestBody gustos gusto) {
+               
+    	try {
+            gustoservice.saveUserGusto(gusto);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        } catch (FindEciException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
+    }
+
+
 	/*
     public String getCorreo() {
         return correo;

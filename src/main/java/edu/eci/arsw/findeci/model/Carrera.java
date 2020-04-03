@@ -2,6 +2,7 @@ package edu.eci.arsw.findeci.model;
 import java.io.Serializable;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -15,9 +16,9 @@ public class Carrera implements Serializable {
 
 
 	@Id
-	@Column(name="id", nullable = false)
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Size(min = 1, max = 1000)
+	@Column(name="id")
+    @NotNull
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
 	@Column(name="usuario", nullable = false)
@@ -29,11 +30,11 @@ public class Carrera implements Serializable {
     private String nombre;
 
     @Column(name="semestre", nullable = false)
-    @Size(min = 1, max = 100)
+    @NotNull
     private Integer semestre;
 
     @Column(name="Ingreso", nullable = false)
-    @Size(min = 1, max = 100)
+    @NotNull
     private Integer anoIngreso;
 
     public Carrera() {

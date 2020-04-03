@@ -29,6 +29,7 @@ var usuario = (function () {
         var user = document.getElementById("username").value;
         var password = document.getElementById("password").value;
         apiUser.loginUser(user, password);
+        
     };
 
     return {

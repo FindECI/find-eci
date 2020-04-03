@@ -17,6 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
@@ -31,10 +32,10 @@ public class Fetiches implements Serializable {
     @Size(min = 1, max = 100)
     private String usuario;
     
-    @Id
-    @Column(name="idFetiche", nullable = false)
+	@Id
+	@Column(name="id")
+    @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Size(min = 1, max = 100)
     private Integer idFetiche;
     
     @Column(name="nombre", nullable = false)

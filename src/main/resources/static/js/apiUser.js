@@ -40,6 +40,7 @@ apiUser = (function(){
 				success: function(){
 					alert("Ingreso exito.");
 					location.href = "/perfil.html";
+					sessionStorage.setItem('UserLogin',correo);
 				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     alert("El Usuario o Contraseña no es correcto"); 
                 }

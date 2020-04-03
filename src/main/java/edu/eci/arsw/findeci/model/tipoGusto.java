@@ -20,11 +20,11 @@ public class tipoGusto {
 	
 	
 	@Column(name="tipogusto")
-	private TipoGustos tipogusto;
+	private String tipogusto;
 	
 	
     
-    public tipoGusto(int id,TipoGustos tipogusto) {
+    public tipoGusto(int id,String tipogusto) {
     	
     	this.id_tipoGusto = id;
     	this.tipogusto = tipogusto;
@@ -38,11 +38,11 @@ public class tipoGusto {
 		this.id_tipoGusto = id_tipoGusto;
 	}
 
-	public TipoGustos getTipogusto() {
+	public String getTipogusto() {
 		return tipogusto;
 	}
 
-	public void setTipogusto(TipoGustos tipogusto) {
+	public void setTipogusto(String tipogusto) {
 		this.tipogusto = tipogusto;
 	}
 
