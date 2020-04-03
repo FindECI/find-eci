@@ -11,7 +11,7 @@ var apiIntereses = (function(){
 				contentType: "application/json",
 				success: function(){
 					alert("se ha agregado sus intereses correctamente.");
-					location.href = "/GustoPeliculas.html";
+					location.href = "/GustosPeliculas.html"
 				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     alert("intente nuevamente"); 
                 }

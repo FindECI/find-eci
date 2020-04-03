@@ -12,8 +12,9 @@ var interes = (function(){
 	var insertInteres = function(){
 		user = sessionStorage.getItem('User');		
 		var adicional = check();
+				
 		var intereses = {"sexoInteres": document.getElementById("genInteres").value,
-				"aspectosImportantes": adicional,"tipoRel": document.getElementById("Tiprelacion").value,
+				"apectosImportantes": check(),"tipoRel": document.getElementById("Tiprelacion").value,
 				"usuario": user};
 		apiIntereses.addInteres(intereses);
 	}
@@ -38,6 +39,8 @@ var interes = (function(){
 		if (checkedvideoj){adicional = adicional + "," + "videojuegos";}
 		if (checkedArte){adicional = adicional + "," + "arte";}
 		if (checkedFiestas){adicional = adicional + "," + "fiestas";}
+		
+		alert("adicional:  " + adicional);
 		
 		return adicional;
 	}	
