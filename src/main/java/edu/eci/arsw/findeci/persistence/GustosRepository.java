@@ -8,12 +8,12 @@ package edu.eci.arsw.findeci.persistence;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import edu.eci.arsw.findeci.model.Imagenes;
-import edu.eci.arsw.findeci.model.gustos;
+import edu.eci.arsw.findeci.model.Gustos;
 
 /**
  *
  * @author Andrés Quintero
  */
-public interface GustosRepository extends JpaRepository<gustos, Integer >  {
+public interface GustosRepository extends JpaRepository<Gustos, Integer >  {
     
 }

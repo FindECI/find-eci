@@ -7,7 +7,7 @@ package edu.eci.arsw.findeci.controllers;
 
 import edu.eci.arsw.findeci.model.Intereses;
 import edu.eci.arsw.findeci.model.Usuario;
-import edu.eci.arsw.findeci.model.gustos;
+import edu.eci.arsw.findeci.model.Gustos;
 import edu.eci.arsw.findeci.persistence.FindEciException;
 import edu.eci.arsw.findeci.services.GustosServices;
 import edu.eci.arsw.findeci.services.UsuarioServices;
@@ -36,7 +36,7 @@ private String correo;
 	
 	
 	@RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Intereses> addUser(@RequestBody gustos gusto) {
+    public ResponseEntity<Intereses> addUser(@RequestBody Gustos gusto) {
                
     	try {
             gustoservice.saveUserGusto(gusto);

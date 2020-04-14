@@ -6,7 +6,7 @@
 package edu.eci.arsw.findeci.services;
 
 
-import edu.eci.arsw.findeci.model.gustos;
+import edu.eci.arsw.findeci.model.Gustos;
 import edu.eci.arsw.findeci.persistence.FindEciException;
 
 /**
@@ -15,11 +15,11 @@ import edu.eci.arsw.findeci.persistence.FindEciException;
  */
 public interface GustosServices {
     
-   gustos saveUserGusto(gustos gusto) throws FindEciException;
+   Gustos saveUserGusto(Gustos gusto) throws FindEciException;
 
-   gustos findUserGPeliculasByCorreoId(String correo,int id) throws FindEciException;
+   Gustos findUserGPeliculasByCorreoId(String correo,int id) throws FindEciException;
 
-   gustos findUserGComidaByCorreoId(String correo,int id) throws FindEciException;
+   Gustos findUserGComidaByCorreoId(String correo,int id) throws FindEciException;
    
-   gustos findUserGMusicaByCorreoId(String correo,int id) throws FindEciException;
+   Gustos findUserGMusicaByCorreoId(String correo,int id) throws FindEciException;
 }
