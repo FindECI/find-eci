@@ -11,7 +11,7 @@ var comidas = (function(){
 		apiComida.addComidas(gusto);
 	}
 	var check = function(){
-		var adicional= "";
+		var adicional="*";
 		var checkedHamb = document.getElementById("Hamburguesa").checked;
 		var checkedEnsal = document.getElementById("Ensalada").checked;
 		var checkedPizza = document.getElementById("Pizza").checked;
@@ -33,7 +33,7 @@ var comidas = (function(){
 		if (checkedhot){adicional = adicional + "," + "HotDog";}
 		if (checkedTacos){adicional = adicional + "," + "Tacos";}
 		if (checkedTorTL){adicional = adicional + "," + "Tortatresleches";}
-		if (checkedMilhoja){adicional = adicional + "," + "Rap";}
+		if (checkedMilhoja){adicional = adicional + "," + "Milhoja";}
 		if (checkedBrazo){adicional = adicional + "," + "BrazodeReina";}
 		if (checkedCho){adicional = adicional + "," + "Chocolate";}
 		if (checkedChee){adicional = adicional + "," + "Cheesecake";}

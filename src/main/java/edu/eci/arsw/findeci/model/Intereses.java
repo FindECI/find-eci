@@ -103,7 +103,7 @@ public class Intereses implements Serializable {
 
     @Override
     public String toString() {
-        return "Intereses{" + "usuario=" + usuario + ", sexoInteres=" + sexoInteres + ", tipoRel=" + tipoRel + ", apectosImportantes=" + apectosImportantes + '}';
+        return "Intereses{" + "id=" + id + "usuario=" + usuario + ", sexoInteres=" + sexoInteres + ", tipoRel=" + tipoRel + ", apectosImportantes=" + apectosImportantes + '}';
     }
     
     

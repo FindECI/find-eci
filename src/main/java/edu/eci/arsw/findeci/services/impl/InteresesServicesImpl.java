@@ -5,6 +5,7 @@
  */
 package edu.eci.arsw.findeci.services.impl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,19 +38,38 @@ public class InteresesServicesImpl implements InteresesServices{
     }
 
     @Override
-    public Intereses findInteresByCorreo(Integer correo) throws FindEciException {
-		  	
-    	try {
-            Optional<Intereses> intereses = interesesRepo.findById(correo);
-            if (intereses.isPresent()) {
-                return intereses.get();
-            } else {
-                return null;
-            }
+	public Intereses findInteresByCorreo(String correo) throws FindEciException {
+		List<Intereses> userInt;
+		try {
+			userInt = interesesRepo.interesesbyuser(correo);
+			return userInt.get(0);
+		}
+		catch(java.util.NoSuchElementException ex){
+			throw new FindEciException("Este usuario no existe");
+		}
+	}
 
-        } catch (java.util.NoSuchElementException ex) {
-            throw new FindEciException("Este usuario no existe existe");
-        }
-    }
+	@Override
+	public List<Intereses> findAllIntereses(String correo) throws FindEciException {
+		List<Intereses> allInt;
+		Intereses interesado = findInteresByCorreo(correo);
+		String Gustogenero ;
+		if(interesado.getSexoInteres().equals("Masculino")) {
+			Gustogenero = "Femenino";
+		}
+		else if(interesado.getSexoInteres().equals("Femenino")) {
+			Gustogenero = "Masculino";
+		} 
+		else {
+			Gustogenero = "Otro";
+		}
+		try {
+			allInt = interesesRepo.interesesOtherUser(interesado.getUsuario(),Gustogenero);
+			return allInt;
+		}
+		catch(java.util.NoSuchElementException ex){
+			throw new FindEciException("Este usuario no existe");
+		}
+	}
     
 }

@@ -33,18 +33,15 @@ public class Carrera implements Serializable {
     @NotNull
     private Integer semestre;
 
-    @Column(name="Ingreso", nullable = false)
-    @NotNull
-    private Integer anoIngreso;
+    
 
     public Carrera() {
     }
 
-    public Carrera(String usuario, String nombre, Integer semestre, Integer anoIngreso) {
+    public Carrera(String usuario, String nombre, Integer semestre) {
         this.usuario = usuario;
         this.nombre = nombre;
         this.semestre = semestre;
-        this.anoIngreso = anoIngreso;
     }
 
     public String getUsuario() {
@@ -71,14 +68,7 @@ public class Carrera implements Serializable {
         this.semestre = semestre;
     }
 
-    public Integer getAnoIngreso() {
-        return anoIngreso;
-    }
-
-    public void setAnoIngreso(Integer anoIngreso) {
-        this.anoIngreso = anoIngreso;
-    }
-    
+        
     public int getId() {
 		return id;
 	}
@@ -89,7 +79,7 @@ public class Carrera implements Serializable {
 
     @Override
     public String toString() {
-        return "Carrera{" + "usuario=" + usuario + ", nombre=" + nombre + ", semestre=" + semestre + ", anoIngreso=" + anoIngreso + '}';
+        return "Carrera{" + "usuario=" + usuario + ", nombre=" + nombre + ", semestre=" + semestre +  '}';
     }
  
     

@@ -1,25 +1,25 @@
-var apiMusical = (function(){
+apiCarrera = (function(){
 	
 	return{
 		
-		addMusicales : function(gusto){
-			
+		addCarrera: function (carrera){
 			jQuery.ajax({
-				url: "/Gustos/",
+				url: "/Carrera/",
 				type: "POST",
-				data: JSON.stringify(gusto),
+				data: JSON.stringify(carrera),
 				contentType: "application/json",
 				success: function(){
-					alert("se ha agregado sus gustos musicales correctamente.");
-					location.href = "/GustosComida.html"
+					alert("Se ha agregado la carrera correctamente.");
+					location.href = "/Intereses.html"
 				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
-                    alert("intente nuevamente"); 
+                    alert("El Usuario ya esta registrado, intente nuevamente"); 
                 }
-			});			
+			});
 		},
-		getgustosUser: function(callback,correo){
+		
+		getCarrera: function(callback,correo){
 			jQuery.ajax({
-				url: "/Gustos/"+ correo,
+				url: "/Carrera/"+ correo,
 				type: "GET",
 				success: function(datos){
 					callback(datos);
@@ -29,7 +29,7 @@ var apiMusical = (function(){
 				
 			});
 		}
+		
 	}
-	
-	
-})(); 
+		
+})();

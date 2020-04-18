@@ -8,10 +8,12 @@ package edu.eci.arsw.findeci.services.impl;
 
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.eci.arsw.findeci.model.Gustos;
+import edu.eci.arsw.findeci.model.gustos;
 import edu.eci.arsw.findeci.persistence.FindEciException;
 import edu.eci.arsw.findeci.persistence.GustosRepository;
 import edu.eci.arsw.findeci.services.GustosServices;
@@ -29,27 +31,22 @@ public class GustosServicesImp implements GustosServices {
 	GustosRepository gustosRepo;
 	
 	@Override
-	public Gustos saveUserGusto(Gustos gusto) throws FindEciException {
+	public gustos saveUserGusto(gustos gusto) throws FindEciException {
 		
 		return gustosRepo.save(gusto);
 	}
 
 	@Override
-	public Gustos findUserGPeliculasByCorreoId(String correo, int id) throws FindEciException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<gustos> gustosByuser(String correo) throws FindEciException {
+		try {
+			List<gustos> gusto = gustosRepo.gustosbyuser(correo);
+			return gusto;
+		}
+		catch(java.util.NoSuchElementException ex){
+			throw new FindEciException("Este usuario no existe");
+		}
 	}
 
-	@Override
-	public Gustos findUserGComidaByCorreoId(String correo, int id) throws FindEciException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Gustos findUserGMusicaByCorreoId(String correo, int id) throws FindEciException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

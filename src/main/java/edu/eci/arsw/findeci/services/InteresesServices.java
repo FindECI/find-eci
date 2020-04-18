@@ -5,16 +5,18 @@
  */
 package edu.eci.arsw.findeci.services;
 
+import java.util.List;
+
 import edu.eci.arsw.findeci.model.Intereses;
 import edu.eci.arsw.findeci.persistence.FindEciException;
 
-/**
- *
- * @author Andrés Quintero
- */
 public interface InteresesServices {
     
    Intereses saveInteres(Intereses interes) throws FindEciException;
 
-   Intereses findInteresByCorreo(Integer correo) throws FindEciException;
+   Intereses findInteresByCorreo(String correo) throws FindEciException;
+   
+   List<Intereses> findAllIntereses(String correo) throws FindEciException;
+
+
 }

@@ -11,7 +11,7 @@ var musicales = (function(){
 		apiMusical.addMusicales(gusto);
 	}
 	var check = function(){
-		var adicional= "";
+		var adicional="*";
 		var checkedRock = document.getElementById("Rock").checked;
 		var checkedMetal = document.getElementById("Metal").checked;
 		var checkedBlues = document.getElementById("Blues").checked;

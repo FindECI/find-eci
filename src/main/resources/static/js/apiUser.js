@@ -10,13 +10,15 @@ apiUser = (function(){
 				contentType: "application/json",
 				success: function(){
 					alert("El usuario ha sido creado correctamente.");
-					location.href = "/Intereses.html"
+					
+					location.href = "/carrera.html"
 				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     alert("El Usuario ya esta registrado, intente nuevamente"); 
                 }
 			});
+			
 		},
-		
+			
 		addImgUser: function(usuario,imagen){
 			alert("entroooooooooooo imagennnnn");
 			jQuery.ajax({
@@ -32,6 +34,20 @@ apiUser = (function(){
 			});
 			
 		},
+		
+		
+		getUser: function(callback,correo){
+			jQuery.ajax({
+				url: "/userForm/"+ correo,
+				type: "GET",
+				success: function(datos){
+					callback(datos);
+				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    alert("El Usuario no existe"); 
+                }
+				
+			});
+		},
 	
 		loginUser: function(correo,password){
 			jQuery.ajax({
@@ -40,13 +56,26 @@ apiUser = (function(){
 				success: function(){
 					alert("Ingreso exito.");
 					location.href = "/perfil.html";
-					sessionStorage.setItem('UserLogin',correo);
 				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     alert("El Usuario o Contraseña no es correcto"); 
                 }
 				
 			});
-		}
+		},
+		
+		irPerfil : function () {
+	        location.href = "/perfil.html";
+	    },
+	    
+	    irMatch : function () {
+	        location.href = "/match.html";
+	    },
+	    
+	    irLogin : function () {
+	        location.href = "/index.html";
+	        sessionStorage.setItem('UserLogin',"");
+	    }
+	    
 		
 	}
 		

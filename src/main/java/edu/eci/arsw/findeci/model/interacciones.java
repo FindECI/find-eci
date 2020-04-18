@@ -20,7 +20,7 @@ public class interacciones {
 	@Id
 	@Column(name="id",nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Size(min = 1, max = 1000)
+	@NotNull
 	private int id;
 	
 	
@@ -33,14 +33,17 @@ public class interacciones {
     private String pareja;
 	
 	@Column(name="likes",nullable = false)
-	@NotNull
 	private int likes;
 	
-	
-	public interacciones(int id,int likes) {
+	public interacciones() {
 		
-		this.id=id;
+	}
+	
+	public interacciones(int likes,String pareja,String usuario) {
+		
+		this.pareja=pareja;
 		this.likes=likes;
+		this.usuario = usuario;
 	}
 
 

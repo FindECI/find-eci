@@ -15,6 +15,8 @@ import edu.eci.arsw.findeci.persistence.FindEciException;
 import edu.eci.arsw.findeci.services.InteresesServices;
 import edu.eci.arsw.findeci.services.UsuarioServices;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
@@ -32,7 +34,7 @@ public class InteresesController {
 
     
     @RequestMapping(method = RequestMethod.GET, path = "/{correo}")
-    public ResponseEntity<Intereses> getUser(@PathVariable(name = "correo") Integer correo) {
+    public ResponseEntity<Intereses> getUserInt(@PathVariable(name = "correo") String correo) {
     	try {
             Intereses interes = intserv.findInteresByCorreo(correo);
             return ResponseEntity.ok(interes);
@@ -42,14 +44,23 @@ public class InteresesController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Intereses> addUser(@RequestBody Intereses interes) {
-        System.out.println("oleeeee mire:"+ interes.getId() + interes.getSexoInteres() + interes.getTipoRel() + interes.getApectosImportantes());
-        System.out.println("usuuuuariooo: "+ interes.getUsuario());        
-    	try {
+    public ResponseEntity<Intereses> addUserInt(@RequestBody Intereses interes) {
+        try {
             intserv.saveInteres(interes);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (FindEciException e) {
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
+    }
+    
+    
+    @RequestMapping(method = RequestMethod.GET, path = "/allusers/{correo}")
+    public ResponseEntity<List<Intereses>> getAllUsers(@PathVariable(name = "correo") String correo) {
+    	try {
+            List<Intereses> interes = intserv.findAllIntereses(correo);
+            return ResponseEntity.ok(interes);
+        } catch (FindEciException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 }

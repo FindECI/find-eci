@@ -2,7 +2,7 @@
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Perfil</title>
+<title>Match</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
@@ -31,6 +31,9 @@
 <script src="js/apiIntereses.js"></script>
 <script src="js/apiInteracciones.js"></script>
 <script src="js/apiGustoMusical.js"></script>
+<script src="js/apiMatch.js"></script>
+<script src="js/match.js"></script>
+
 
 <style >
 
@@ -40,13 +43,12 @@ h4 {
 
 </style>
 
-
 </head>
 
-<body onload="home.ejecutarNotificaciones()">
+<body onload="match.ver()">
 
 	<nav class="navbar navbar-dark bg-dark">
-		<a class="navbar-brand" href='apiUser.irPerfil()'><img src="img/logo.png"
+		<a class="navbar-brand" href="apiUser.irPerfil()"><img src="img/logo.png"
 			width="50" height="50"></a>
 
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irPerfil()'>Inicio</button>
@@ -62,16 +64,17 @@ h4 {
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irMatch()'>Match</button>
 		<button class="btn btn-outline-danger" type="button">Conversaciones</button>
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irLogin()'>Cerrar sesión</button>
+		
 
 	</nav>
 
 
 	<center>
-		<h1 id="textBien" color="white">¡Busca tu pareja ideal!</h1>
+		<h1 id="textBien" color="white">¡Estas son las personas interesadas en conocerte!</h1>
 	</center>
 	<br></br>
 	<form id="usuariosTotales"
-		action='javascript:home.agregarinteraccion()'>
+		action='javascript:match.agregarMatch()'>
 		<center>
 			<div class="card text-white bg-secondary mb-3" style="width: 30rem;">
 				<h4 class="card-title">INFORMACION BASICA</h4>
@@ -89,42 +92,42 @@ h4 {
 						<label class="col-lg-3 col-form-label form-control-label"><font
 							color="black" id="nom"><b>Nombre: </b></font></label> <label
 							class="col-lg-3 col-form-label form-control-label"><font
-							color="black" id="nombre"></label>
+							color="black" id="nomb"></label>
 					</div>
 					<div class="form-group" id="user-edad">
 						<label class="col-lg-3 col-form-label form-control-label"><font
-							color="black" id="ed"><b>Edad: </b></font></label><label
+							color="black" id="eda"><b>Edad: </b></font></label><label
 							class="col-lg-3 col-form-label form-control-label"><font
-							color="black" id="edad"></label>
+							color="black" id="ed"></label>
 					</div>
 					<div class="form-group" id="user-carrera">
 						<label class="col-lg-3 col-form-label form-control-label"><font
 							color="black" id="carr"><b>Carrera: </b></font></label><label
 							class="col-lg-3 col-form-label form-control-label"><font
-							color="black" id="carrera"></label>
+							color="black" id="carrer"></label>
 					</div>
 					<div class="form-group" id="user-semestre">
 						<label class="col-lg-3 col-form-label form-control-label"><font
 							color="black" id="sem"><b>Semestre: </b></font></label><label
 							class="col-lg-3 col-form-label form-control-label"><font
-							color="black" id="semestre"></label>
+							color="black" id="semest"></label>
 					</div>
 					<div class="form-group" id="user-altura">
 						<label class="col-lg-3 col-form-label form-control-label"><font
 							color="black" id="alt"><b>Altura: </b></font></label><label
 							class="col-lg-3 col-form-label form-control-label"><font
-							color="black" id="altura"></label>
+							color="black" id="altu"></label>
 					</div>
 					<div class="form-group" id="user-tiprel">
 						<label class="col-lg-3 col-form-label form-control-label"><font
-							color="black" id="tiprel"><b>Tipo de Relación: </b></font></label> <label
+							color="black" id="tiprela"><b>Tipo de Relación: </b></font></label> <label
 							class="col-lg-3 col-form-label form-control-label" id="tprel"><font
 							color="black"></label>
 					</div>
 					<button type="submit" class="btn btn-primary" id="gusta">Me
 						gusta</button>
 					<button type="button" class="btn btn-danger"
-						onclick='home.agregarNointeraccion()' id="nogusta">No
+						onclick='match.noAgregarMatch()' id="nogusta">No
 						gracias</button>
 				</div>
 			</div>
@@ -137,7 +140,7 @@ h4 {
 								height="150" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Gusto de Pelicula</h5>
-								<p class="card-text" id="peliculas"></p>
+								<p class="card-text" id="pelicul"></p>
 							</div>
 						</div>
 						<div class="card" style="width: 30rem;">
@@ -145,7 +148,7 @@ h4 {
 								height="150" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Gusto Musicales</h5>
-								<p class="card-text" id="musica"></label>
+								<p class="card-text" id="music"></label>
 							</div>
 						</div>
 						<div class="card" style="width: 30rem;">
@@ -153,14 +156,14 @@ h4 {
 								height="150" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Gusto de Comidas</h5>
-								<p class="card-text" id="comidas"></label>
+								<p class="card-text" id="comid"></label>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="card" style="width: 20rem;">
-						<h5 class="card-title">GALERIA</h5>
+						<h3 class="card-title">GALERIA</h3>
 						<img class="card-img-top" src="img/finduser.png" width="300"
 							height="300" alt="Card image cap">
 						<div class="card-body">

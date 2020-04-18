@@ -16,15 +16,31 @@ var apiIntereses = (function(){
                     alert("intente nuevamente"); 
                 }
 			});			
+		},
+	
+		allUsersInteres : function(callback,correo){
+			jQuery.ajax({
+				url: "/Intereses/allusers/" + correo,
+				success: function(alluser){
+					callback(alluser);
+				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    alert("No hay informacion suficiente"); 
+                }			
+				
+			});
+		},
+		
+		getUserInteres : function(callback,correo){
+			jQuery.ajax({
+				url: "/Intereses/" + correo,
+				success: function(alluser){
+					callback(alluser);
+				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    alert("No hay informacion suficiente"); 
+                }			
+				
+			});
 		}
-		
-		
-		
-		
 	}
-	
-	
-	
-	
 	
 })(); 

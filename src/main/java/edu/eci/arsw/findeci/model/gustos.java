@@ -17,7 +17,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="gustos")
-public class Gustos implements Serializable {
+public class gustos implements Serializable {
 
 	
 	@Id
@@ -41,17 +41,15 @@ public class Gustos implements Serializable {
     private int tipgusto;
 	
 	
-	public Gustos(String descripciongusto, String usuario,int tipgusto ) {
+	public gustos() {
+	}
+	
+	
+	public gustos(String descripciongusto, String usuario,int tipgusto ) {
 		this.descripciongusto = descripciongusto;
 		this.tipgusto = tipgusto;
 		this.usuario = usuario;
 	}
-	
-	
-	public Gustos(String descripciongusto) {
-		this.descripciongusto = descripciongusto;
-	}
-
 
 	public String getDescripciongusto() {
 		return descripciongusto;

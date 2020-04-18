@@ -16,7 +16,7 @@ var peliculas = (function(){
 		apiPeliculas.addPeliculas(gusto);
 	}
 	var check = function(){
-		var adicional= "";
+		var adicional="*";
 		var checkedAccion = document.getElementById("Accion").checked;
 		var checkedAventura = document.getElementById("Aventura").checked;
 		var checkedComedia = document.getElementById("Comedia").checked;

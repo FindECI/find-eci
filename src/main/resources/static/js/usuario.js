@@ -10,8 +10,9 @@ var usuario = (function () {
                 "apellido": document.getElementById("apellido").value, "celular": document.getElementById("celular").value,
                 "contrasena": contr, "cuentaig": document.getElementById("cntig").value, "fechaNacimiento": document.getElementById("fechana").value,
                 "nombre": document.getElementById("nombre").value, "sexo": document.getElementById("sexo").value};
-           
+            
             apiUser.addUser(usuario);
+            
             //apiUser.addImgUser(usuario,document.getElementById("imagen1").value);
             sessionStorage.setItem('User',document.getElementById("email").value);
             
@@ -20,6 +21,12 @@ var usuario = (function () {
         }
 
     };
+    
+    var registraCarrera = function(){
+    	
+    	var carrera = {"nombre": document.getElementById("carrera").value,"semestre": document.getElementById("semestre").value,"usuario":sessionStorage.getItem('User')};
+    	apiCarrera.addCarrera(carrera);
+    }
 
     var irRegistrar = function () {
         location.href = "/user-form.html";
@@ -29,14 +36,16 @@ var usuario = (function () {
         var user = document.getElementById("username").value;
         var password = document.getElementById("password").value;
         apiUser.loginUser(user, password);
-        
+        sessionStorage.setItem('UserLogin',document.getElementById("username").value);
     };
-
+        
+    
     return {
 
         crearcuenta: crearcuentas,
         pageRegistrar: irRegistrar,
-        ingresoApp: login
+        ingresoApp: login,
+        crearCarrera : registraCarrera
 
     };
 })();
