@@ -1,5 +1,6 @@
 package edu.eci.arsw.findeci.services.impl;
 
+/**
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,27 +17,31 @@ import edu.eci.arsw.findeci.persistence.FindEciException;
 import edu.eci.arsw.findeci.persistence.ImagenesRepository;
 import edu.eci.arsw.findeci.services.ImagenesServices;
 import edu.eci.arsw.findeci.services.InteresesServices;
+import java.util.List;
+import org.springframework.data.domain.Pageable;
 
 @Service
 public class ImagenesServicesImpl implements ImagenesServices {
-	
-	
-	@Autowired
-	ImagenesRepository imagenRepository;
 
-	@Override
-	public Imagenes saveImage(Imagenes imagen) throws FindEciException {
-		   
-		return imagenRepository.save(imagen);
-   	}
+    @Autowired
+    ImagenesRepository imagenRepository;
 
-	@Override
-	public Imagenes findImageByCorreo(String correo) throws FindEciException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
-	
+    @Override
+    public Imagenes saveImage(Imagenes imagen) throws FindEciException {
+
+        return imagenRepository.save(imagen);
+    }
+
+    @Override
+    public Imagenes findImageByCorreo(String correo) throws FindEciException {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public List<Imagenes> find(Pageable page) throws FindEciException {
+        return imagenRepository.findAll(page).getContent();
+    }
 
 }
+**/
