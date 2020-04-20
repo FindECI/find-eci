@@ -1,5 +1,5 @@
 package edu.eci.arsw.findeci.controllers;
-
+/**
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,24 +13,37 @@ import edu.eci.arsw.findeci.model.Imagenes;
 import edu.eci.arsw.findeci.model.Usuario;
 import edu.eci.arsw.findeci.persistence.FindEciException;
 import edu.eci.arsw.findeci.services.ImagenesServices;
+import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 @RequestMapping(value = "/imagen")
 public class ImagenesController {
-	
-	
-	@Autowired
-	ImagenesServices imagServices;
-	
-	@RequestMapping(method = RequestMethod.POST)
+
+    @Autowired
+    ImagenesServices imagServices;
+    
+    @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Imagenes> addUser(@RequestBody Imagenes imagen) {
         try {
-        	System.out.println("Entro a las imagenes....");
+            System.out.println("Entro a las imagenes....");
             imagServices.saveImage(imagen);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (FindEciException e) {
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
     }
+    
+    @GetMapping("/all")
+    public ModelAndView find(Pageable page) throws FindEciException {
+
+        ModelAndView md = new ModelAndView("fotos");
+        md.addObject("imgs", imagServices.find(page));
+        return md;
+
+    }
+    
 
 }
+**/
