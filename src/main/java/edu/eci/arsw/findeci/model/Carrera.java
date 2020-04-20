@@ -32,7 +32,8 @@ public class Carrera implements Serializable {
     @Column(name="semestre", nullable = false)
     @NotNull
     private Integer semestre;
-
+    	
+    
     
 
     public Carrera() {
