@@ -2,7 +2,7 @@
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Perfil</title>
+<title>Mi Perfil</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
@@ -43,14 +43,14 @@ h4 {
 
 </head>
 
-<body onload="home.ejecutarNotificaciones()">
+<body>
 
 	<nav class="navbar navbar-dark bg-dark">
 		<a class="navbar-brand" href='apiUser.irPerfil()'><img src="img/logo.png"
 			width="50" height="50"></a>
 
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irPerfil()'>Inicio</button>
-		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irPerfilUsuario()'>Mi perfil</button>
+                <button class="btn btn-outline-danger" type="button" onclick='apiUser.irPerfilUsuario()'>Mi perfil</button>
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irMatch()'>Match</button>
 		<button class="btn btn-outline-danger" type="button">Conversaciones</button>
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irLogin()'>Cerrar sesión</button>
@@ -59,11 +59,10 @@ h4 {
 
 
 	<center>
-		<h1 id="textBien" color="white">¡Busca tu pareja ideal!</h1>
+		<h1 id="textBien" color="white">Perfil actual</h1>
 	</center>
 	<br></br>
-	<form id="usuariosTotales"
-		action='javascript:home.agregarinteraccion()'>
+	<form id="miPerfil">
 		<center>
 			<div class="card text-white bg-secondary mb-3" style="width: 30rem;">
 				<h4 class="card-title">INFORMACION BASICA</h4>
@@ -77,11 +76,24 @@ h4 {
 						<h3 id="informacion"></h3>
 						</centro>
 					</div>
+                                        <div class="form-group" id="user-email">
+						<label class="col-lg-3 col-form-label form-control-label"><font
+							color="black" id="em"><b>Email: </b></font></label> <label
+							class="col-lg-3 col-form-label form-control-label"><font
+							color="black" id="email"></label>
+					</div>
+                                        
 					<div class="form-group" id="user-name">
 						<label class="col-lg-3 col-form-label form-control-label"><font
 							color="black" id="nom"><b>Nombre: </b></font></label> <label
 							class="col-lg-3 col-form-label form-control-label"><font
 							color="black" id="nombre"></label>
+					</div>
+					<div class="form-group" id="user-genero">
+						<label class="col-lg-3 col-form-label form-control-label"><font
+							color="black" id="gen"><b>Genero: </b></font></label> <label
+							class="col-lg-3 col-form-label form-control-label" id="gene"><font
+							color="black"></label>
 					</div>
 					<div class="form-group" id="user-edad">
 						<label class="col-lg-3 col-form-label form-control-label"><font
@@ -113,13 +125,31 @@ h4 {
 							class="col-lg-3 col-form-label form-control-label" id="tprel"><font
 							color="black"></label>
 					</div>
-					<button type="submit" class="btn btn-primary" id="gusta">Me
-						gusta</button>
-					<button type="button" class="btn btn-danger"
-						onclick='home.agregarNointeraccion()' id="nogusta">No
-						gracias</button>
-				</div>
-			</div>
+					<div class="form-group" id="user-celular">
+						<label class="col-lg-3 col-form-label form-control-label"><font
+							color="black" id="cel"><b>Celular: </b></font></label> <label
+							class="col-lg-3 col-form-label form-control-label" id="celu"><font
+							color="black"></label>
+                                        </div>
+					<div class="form-group" id="user-IG">
+						<label class="col-lg-3 col-form-label form-control-label"><font
+							color="black" id="insta"><b>Cuenta de instagram: </b></font></label> <label
+							class="col-lg-3 col-form-label form-control-label" id="Igram"><font
+							color="black"></label>
+                                        </div>
+					<div class="form-group" id="user-altura">
+						<label class="col-lg-3 col-form-label form-control-label"><font
+							color="black" id="alt"><b>Altura: </b></font></label> <label
+							class="col-lg-3 col-form-label form-control-label" id="altu"><font
+							color="black"></label>
+					</div>
+                                        <div class="col-lg-12 text-center">
+                                            <button type="button" class="btn btn-primary" onclick='apiUser.irACBasica()'>Actualizar informacion basica</button>
+                                            <button type="button" class="btn btn-primary" onclick='apiUser.irACCarrera()'>Actualizar carrera</button>
+                                            <button type="button" class="btn btn-primary" onclick='apiUser.irACIntereses()'>Actualizar intereses</button>
+                                        </div>    
+                            </div>
+                        </div>        
 			<br></br>
 			<div class="row">
 				<div class="col-sm-6" style="width: 25rem;">
@@ -130,6 +160,7 @@ h4 {
 							<div class="card-body">
 								<h5 class="card-title">Gusto de Pelicula</h5>
 								<p class="card-text" id="peliculas"></p>
+                                                                <button type="button" class="btn btn-primary" onclick='apiUser.irACGPeliculas()'>Actualizar</button>
 							</div>
 						</div>
 						<div class="card" style="width: 30rem;">
@@ -138,6 +169,7 @@ h4 {
 							<div class="card-body">
 								<h5 class="card-title">Gusto Musicales</h5>
 								<p class="card-text" id="musica"></label>
+                                                                <button type="button" class="btn btn-primary" onclick='apiUser.irACGMusica()'>Actualizar</button>
 							</div>
 						</div>
 						<div class="card" style="width: 30rem;">
@@ -146,7 +178,17 @@ h4 {
 							<div class="card-body">
 								<h5 class="card-title">Gusto de Comidas</h5>
 								<p class="card-text" id="comidas"></label>
-							</div>
+                                                                <button type="button" class="btn btn-primary" onclick='apiUser.irACGComida()'>Actualizar</button>
+                                                        </div>
+						</div>
+                                                <div class="card" style="width: 30rem;">
+							<img class="card-img-top" src="img/comida.jpg" width="150"
+								height="150" alt="Card image cap">
+							<div class="card-body">
+								<h5 class="card-title">Fetiches</h5>
+								<p class="card-text" id="fetiches"></label>
+                                                                <button type="button" class="btn btn-primary" onclick='apiUser.irACFetiches()'>Actualizar</button>
+                                                        </div>
 						</div>
 					</div>
 				</div>
@@ -161,7 +203,10 @@ h4 {
 									<button type="button" class="btn btn-danger">Anterior</button>
 									<button type="button" class="btn btn-danger">Siguiente</button>
 								</div>
-							</div>
+                                                                <div class="col-lg-12 text-center">
+									<button type="button" class="btn btn-primary" onclick='apiUser.irACIntereses()'>Actualizar</button>
+								</div>
+                                                        </div>
 						</div>
 					</div>
 				</div>

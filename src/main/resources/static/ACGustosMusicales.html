@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Actualizar Gustos Musicales</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!--JQUERY-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+<!-- Los iconos tipo Solid de Fontawesome-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" />
+<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+<!-- Nuestro css-->
+<link rel="stylesheet" type="text/css" href="/css/gustosPeliculas.css" />
+<!-- DATA TABLE -->
+<script
+	src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script
+	src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" />
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />
+<script src="js/gustoMusical.js"></script>
+<script src="js/apiGustoMusical.js"></script>
+
+</head>
+<body>
+
+	<ul class="nav nav-tabs justify-content-end">
+
+
+	</ul>
+	<center>
+		<div class="card" style="width: 40rem;">
+			<div class="card-header">
+				<center>
+					<h2 id="textBien">¡Actualiza tus gustos musicales!</h2>
+				</center>
+			</div>
+
+			<div class="card-body">
+				<form class="form" role="form" autocomplete="off"
+					action='javascript:musicales.insertarGusMusica()'>
+					<center>
+						<h3 id="textBien">¡Escoge tus generos de musica favoritos!</h3>
+					</center>
+					<br></br>
+					<center>
+						<div class="form-group row">
+							<label for="Rock"
+								class="col-lg-3 col-form-label form-control-label">Rock</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Rock"
+									name="Rock" value="Rock"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Metal"
+								class="col-lg-3 col-form-label form-control-label">Metal</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Metal"
+									name="Metal" value="Metal"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Blues"
+								class="col-lg-3 col-form-label form-control-label">Blues</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Blues"
+									name="Blues" value="Blues"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Jazz"
+								class="col-lg-3 col-form-label form-control-label">Jazz</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Jazz"
+									name="Jazz" value="Jazz"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Electronica"
+								class="col-lg-3 col-form-label form-control-label">Electronica</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Electronica"
+									name="Electronica" value="Electronica"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Dup-step"
+								class="col-lg-3 col-form-label form-control-label">
+								Dup-step</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Dup-step"
+									name="Dup-step" value="Dup-step"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Punk"
+								class="col-lg-3 col-form-label form-control-label">Punk</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Punk"
+									name="Punk" value="Punk"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Rap"
+								class="col-lg-3 col-form-label form-control-label">Rap</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Rap" name="Rap"
+									value="Rap"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Clasica"
+								class="col-lg-3 col-form-label form-control-label">Clasica</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Clasica"
+									name="Clasica" value="Clasica"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Reggaeton"
+								class="col-lg-3 col-form-label form-control-label">Reggaeton</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Reggaeton"
+									name="Reggaeton" value="Reggaeton"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Trap"
+								class="col-lg-3 col-form-label form-control-label">Trap</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Trap"
+									name="Trap" value="Trap"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Salsa"
+								class="col-lg-3 col-form-label form-control-label">Salsa</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Salsa"
+									name="Salsa" value="Salsa"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Meregue"
+								class="col-lg-3 col-form-label form-control-label">Merengue</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Merengue"
+									name="Meregue" value="Meregue"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Bachata"
+								class="col-lg-3 col-form-label form-control-label">Bachata</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Bachata"
+									name="Bachata" value="Bachata"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Pop"
+								class="col-lg-3 col-form-label form-control-label">Pop</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Pop" name="Pop"
+									value="Pop"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Vallenato"
+								class="col-lg-3 col-form-label form-control-label">Vallenato</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Vallenato"
+									name="Vallenato" value="Vallenato"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Dancehall"
+								class="col-lg-3 col-form-label form-control-label">Dancehall</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Dancehall"
+									name="Dancehall" value="Dancehall"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="House"
+								class="col-lg-3 col-form-label form-control-label">House</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="House"
+									name="House" value="House"></input>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="Otro"
+								class="col-lg-3 col-form-label form-control-label">Otro</label>
+							<div class="col-lg-9">
+								<input class="form-control" type="checkbox" id="Otro"
+									name="Otro" value="Otro"></input>
+							</div>
+						</div>
+					</center>
+					<div class="form-group row">
+						<div class="col-lg-12 text-center">
+							<input type="submit" class="btn btn-primary" value="Actualizar"></input>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</center>
+</body>
+</html>

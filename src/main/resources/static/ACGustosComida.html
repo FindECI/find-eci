@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Actualizar Gustos en comida</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--JQUERY-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+<!-- Los iconos tipo Solid de Fontawesome-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" />
+<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+<!-- Nuestro css-->
+<link rel="stylesheet" type="text/css" href="/css/gustosPeliculas.css" />
+<!-- DATA TABLE -->
+<script
+	src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script
+	src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" />
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />
+<script src="js/gustosComida.js"></script>
+<script src="js/apiGustoComidas.js"></script>
+
+</head>
+<body>
+
+	<ul class="nav nav-tabs justify-content-end">
+
+
+	</ul>
+	<center>
+		<div class="card" style="width: 70rem;">
+			<div class="card-header">
+				<center>
+					<h2 id="textBien">Actualiza tu comida favorita</h2>
+				</center>
+			</div>
+			<div class="card-body">
+				<center>
+					<h3 id="textBien">¡Escoge tus comidas favoritas!</h3>
+				</center>
+				<form class="form" role="form" autocomplete="off" action='javascript:comidas.insertarGusComida()'>
+
+					<div style="float: left; width: 50%">
+						<center>
+							<div class="form-group row">
+								<label for="Hamburguesa"
+									class="col-lg-3 col-form-label form-control-label">Hamburguesa</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="checkbox" id="Hamburguesa"
+										name="Hamburguesa" value="Hamburguesa"></input>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="Metal"
+									class="col-lg-3 col-form-label form-control-label">Ensalada</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="checkbox" id="Ensalada"
+										name="Ensalada" value="Ensalada"></input>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="Pizza"
+									class="col-lg-3 col-form-label form-control-label">Pizza</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="checkbox" id="Pizza"
+										name="Pizza" value="Pizza"></input>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="Comidademar"
+									class="col-lg-3 col-form-label form-control-label">Comida
+									de mar</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="checkbox" id="Comidademar"
+										name="Comidademar" value="Comidademar"></input>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="HotDog"
+									class="col-lg-3 col-form-label form-control-label">HotDog</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="checkbox" id="HotDog"
+										name="HotDog" value="HotDog"></input>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="Tacos"
+									class="col-lg-3 col-form-label form-control-label">Tacos</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="checkbox" id="Tacos"
+										name="Tacos" value="Tacos"></input>
+								</div>
+							</div>
+						</center>
+					</div>
+					<div style="float: left; width: 50%">
+						<center>
+							<div class="form-group row">
+								<label for="Tortatresleches"
+									class="col-lg-3 col-form-label form-control-label">Torta
+									tres leches</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="checkbox"
+										id="Tortatresleches" name="Tortatresleches"
+										value="Tortatresleches"></input>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="Milhoja"
+									class="col-lg-3 col-form-label form-control-label">Milhoja</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="checkbox" id="Milhoja"
+										name="Milhoja" value="Milhoja"></input>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="BrazodeReina"
+									class="col-lg-3 col-form-label form-control-label">Brazo
+									de Reina</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="checkbox" id="BrazodeReina"
+										name="BrazodeReina" value="BrazodeReina"></input>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="Chocolate"
+									class="col-lg-3 col-form-label form-control-label">Chocolate</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="checkbox" id="Chocolate"
+										name="Chocolate" value="Chocolate"></input>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="Cheesecake"
+									class="col-lg-3 col-form-label form-control-label">Cheesecake</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="checkbox" id="Cheesecake"
+										name="Cheesecake" value="Cheesecake"></input>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="Merengon"
+									class="col-lg-3 col-form-label form-control-label">Merengon</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="checkbox" id="Merengon"
+										name="Merengon" value="Merengon"></input>
+								</div>
+							</div>
+						</center>
+					</div>
+					<div class="form-group row">
+						<div class="col-lg-12 text-center">
+							<input type="submit" class="btn btn-primary" value="Actualizar"></input>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</center>
+</body>
+</html>

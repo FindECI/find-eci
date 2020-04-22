@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Actualizar Carrera</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!--JQUERY-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+<!-- Los iconos tipo Solid de Fontawesome-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" />
+<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+<!-- Nuestro css-->
+<link rel="stylesheet" type="text/css" href="/css/user-form.css" />
+<!-- DATA TABLE -->
+<script
+	src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script
+	src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" />
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />
+<script src="js/usuario.js"></script>
+<script src="js/apiUser.js"></script>
+<script src="js/apiCarrera.js"></script>
+</head>
+<body>
+
+	<ul class="nav nav-tabs justify-content-end">
+
+
+	</ul>
+
+	<center>
+		<div class="card" style="width: 40rem;">
+			<div class="card-header">
+				<center>
+					<h2 id="textBien">Actualiza tu carrera</h2>
+				</center>
+			</div>
+			<div class="card-body">
+				<center>
+					<h3 id="textoTitulos">¡¿Qué programa estas estudiando en la Escuela?!
+					</h3>
+				</center>
+				<br></br>
+				<form class="form" role="form" autocomplete="off" action='javascript:usuario.crearCarrera()'>
+				
+					<div class="form-group row">
+						<label class="col-lg-3 col-form-label form-control-label">Carrera</label>
+						<div class="col-lg-9">
+							<select class="form-control" id="carrera">
+								<option>Ingenieria Civil</option>
+								<option>Ingenieria Electronica</option>
+								<option>Ingenieria Mecanica</option>
+								<option>Ingenieria Electrica</option>
+								<option>Ingenieria Sistemas</option>
+								<option>Ingenieria Civil</option>
+								<option>Ingenieria Industrial</option>
+								<option>Ingenieria Ambiental</option>
+								<option>Ingenieria Biomedica</option>
+								<option>Economia</option>
+								<option>Administrador de Empresas</option>
+								<option>Matematicas</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-lg-3 col-form-label form-control-label">Semestre</label>
+						<div class="col-lg-9">
+							<select class="form-control" id="semestre">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-lg-12 text-center">
+							<input type="submit" class="btn btn-primary" value="Actualizar">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</center>
+</body>
+</html>

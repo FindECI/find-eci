@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Actualizar Intereses</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!--JQUERY-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+<!-- Los iconos tipo Solid de Fontawesome-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" />
+<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+<!-- Nuestro css-->
+<link rel="stylesheet" type="text/css" href="/css/intereses.css" />
+<!-- DATA TABLE -->
+<script
+	src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script
+	src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" />
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />
+<script src="js/intereses.js"></script>
+<script src="js/apiIntereses.js"></script>
+</head>
+<body>
+
+	<ul class="nav nav-tabs justify-content-end">
+	</ul>
+	<center>
+		<div class="card" style="width: 40rem;">
+			<div class="card-header">
+				<center>
+					<h4>Intereses</h4>
+				</center>
+			</div>
+			<div class="card-body">
+
+				<center>
+					<h2 id="textoTitulos">¡Actualiza tus intereses!</h2>
+				</center>
+				<br></br>
+				<form class="form" role="form" autocomplete="off" action='javascript:interes.insertarInteres()'>
+					<div class="form-group row">
+						<label class="col-lg-3 col-form-label form-control-label">Genero
+							de interes</label>
+						<div class="col-lg-9">
+							<select class="form-control" id="genInteres">
+								<option>Masculino</option>
+								<option>Femenino</option>
+								<option>Otro</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-lg-3 col-form-label form-control-label">Tipo
+							de Relacion</label>
+						<div class="col-lg-9">
+							<select class="form-control" id="Tiprelacion">
+								<option>Selecciona</option>
+								<option>Noviazgo</option>
+								<option>Relacion Abierta</option>
+								<option>Amigos</option>
+							</select>
+						</div>
+					</div>
+					<center><h2 id="textoTitulos">¿Qué te gustaria tener en común?</h2></center>
+					<div class="form-group row">
+						
+						<br></br>
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th  scope="col"><center>Intereses</center></th>
+									<th scope="col"><center>Selecciona</center></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="col"><center>
+											Deportes</center></th>
+									<th scope="col"><input class="form-control"
+										type="checkbox" id="Deporte" name="Deporte" value="Deporte"></input>
+									</th>
+								</tr>
+								<tr>
+									<th scope="col"><center><label for="Lectura"
+										class="col-lg-3 col-form-label form-control-label">
+											Lectura</label></center></th>
+									<th scope="col"><input class="form-control"
+										type="checkbox" id="lectura"></input>
+									</th>
+								</tr>
+								<tr>
+									<th scope="col"><center><label for="Baile"
+										class="col-lg-3 col-form-label form-control-label">
+											Baile</label></center></th>
+									<th scope="col"><input class="form-control"
+										type="checkbox" id="baile"></input>
+									</th>
+								</tr>
+								<tr>
+									<th scope="col"><center>
+											Mascotas</center></th>
+									<th scope="col"><input class="form-control"
+										type="checkbox" id="mascotas"></input>
+									</th>
+								</tr>
+								<tr>
+									<th scope="col"><center><label for="cine"
+										class="col-lg-3 col-form-label form-control-label">
+											Cine</label></center></th>
+									<th scope="col"><input class="form-control"
+										type="checkbox" id="cine"></input>
+									</th>
+								</tr>
+								<tr>
+									<th scope="col"><center><label for="teatro"
+										class="col-lg-3 col-form-label form-control-label">
+											Teatro</label></center></th>
+									<th scope="col"><input class="form-control"
+										type="checkbox" id="Teatro"></input>
+									</th>
+								</tr>
+								<tr>
+									<th scope="col"><center>VideoJuegos</center></th>
+									<th scope="col"><input class="form-control"
+										type="checkbox" id="videojuegos"></input>
+									</th>
+								</tr>
+								<tr>
+									<th scope="col"><center><label for="arte"
+										class="col-lg-3 col-form-label form-control-label">
+											Arte</label></center></th>
+									<th scope="col"><input class="form-control"
+										type="checkbox" id="arte"></input>
+									</th>
+								</tr>
+								<tr>
+									<th scope="col"><center><label for="Fiestas"
+										class="col-lg-3 col-form-label form-control-label">
+											Salir de Fiesta</label></center></th>
+									<th scope="col"><input class="form-control"
+										type="checkbox" id="fiestas"></input>
+									</th>
+								</tr>																								
+							</tbody>
+
+						</table>
+					</div>
+					<div class="form-group row">
+						<div class="col-lg-12 text-center">
+							<input type="submit" class="btn btn-primary" value="Actualizar"></input>
+						</div>
+					</div>
+				</form>
+				<label id="oculto" type="hidden"></label>
+			</div>
+		</div>
+	</center>
+</body>
+
+</html>
