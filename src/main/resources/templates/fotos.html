@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"/>
+    
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+    
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+   
+   <form action="">
+       
+       <h3>Seleccionar Imagen</h3>
+       <input id="titulo" type="text" placeholder="Ponle un titulo a tu foto" class="title-image">
+       <img th:src="@{/img/img2.jpg}" class="image-select">
+       <input type="button" value="Selecciona tu imágen" class="load-image">
+       <input id="arch" type="file" class="seleted">
+       <input type="button" value="Subir" class="upload">
+       
+   </form>
+   
+   <div class="shape"></div>
+   
+    <div class="container-gallery">
+       <h2>Tus fotos</h2>
+        <div class="gallery">
+            <figure th:each="img : ${imgs}">
+                <h1 th:text="${img.getTitulo()}"></h1>
+                <img th:src="${img.getRuta()}">
+            </figure>
+            
+        </div>
+    </div>
+    
+    <i class="fas fa-plus btn-show"></i>
+    
+    <script th:src="@{/js/jquery.js}"></script>
+    <script th:src="@{/js/script.js}"></script>
+</body>
+</html>

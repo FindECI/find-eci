@@ -8,9 +8,9 @@ $('.btn-show').on('click', function(){
     
     $('body').css({
         overflow: 'hidden'
-    })
+    });
     
-})
+});
 
 $('.shape').on('click', function(){
     
@@ -22,15 +22,15 @@ $('.shape').on('click', function(){
     
     $('body').css({
         overflowY: 'scroll'
-    })
+    });
     
-})
+});
 
 $('.load-image').on('click', function(){
     
     $('.seleted').click();
     
-})
+});
 
 
 /*VISOR DE FOTOS*/
@@ -57,6 +57,37 @@ $(function() {
       $('.image-select').attr("src",result);
      }
     });
+    
+    $(".upload").click(function(e){
+        var inputFileImage = document.getElementById("arch");
+        var file = inputFileImage.files[0];
+        var data = new FormData();
+        data.append("img",file);
+
+        $.ajax({
+            url: "/image/upload",
+            type: "post",
+            data: data,
+            cache: false,
+            contentType: false,
+            processData: false
+        }).done(function(res){
+            var titulo = $("#titulo").val();
+            var ruta = res;
+
+            $.ajax({
+               url: "/image/register",
+               type: "post",
+               data: {
+                "titulo":titulo,
+                "ruta":ruta
+               }
+            }).done(function(data){
+                location.href = data;
+            });
+        });
+   });
+
 
 
 

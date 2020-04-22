@@ -1,5 +1,5 @@
 package edu.eci.arsw.findeci.controllers;
-/**
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,17 +14,22 @@ import edu.eci.arsw.findeci.model.Usuario;
 import edu.eci.arsw.findeci.persistence.FindEciException;
 import edu.eci.arsw.findeci.services.ImagenesServices;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-@RestController
-@RequestMapping(value = "/imagen")
+@Controller
+@RequestMapping(value = "/image")
 public class ImagenesController {
 
     @Autowired
     ImagenesServices imagServices;
     
-    @RequestMapping(method = RequestMethod.POST)
+    /**@RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Imagenes> addUser(@RequestBody Imagenes imagen) {
         try {
             System.out.println("Entro a las imagenes....");
@@ -34,6 +39,7 @@ public class ImagenesController {
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
     }
+    **/
     
     @GetMapping("/all")
     public ModelAndView find(Pageable page) throws FindEciException {
@@ -44,6 +50,18 @@ public class ImagenesController {
 
     }
     
+    @PostMapping("/upload")
+    @ResponseBody
+    public String ruta_subida(@RequestParam("img") MultipartFile file) throws FindEciException{
+         return imagServices.saveImage(file);
+    }
+    
+    @PostMapping("/register")
+    @ResponseBody
+    public String insert (@RequestParam("titulo") String titulo, @RequestParam("ruta") String ruta) throws FindEciException{
+        imagServices.guardarImg(titulo, ruta);
+        return "/image/all";
+    } 
+    
 
 }
-**/
