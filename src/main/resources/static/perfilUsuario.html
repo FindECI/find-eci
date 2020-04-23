@@ -31,6 +31,7 @@
 <script src="js/apiIntereses.js"></script>
 <script src="js/apiInteracciones.js"></script>
 <script src="js/apiGustoMusical.js"></script>
+<script src="js/usuario.js"></script>
 
 <style >
 
@@ -43,7 +44,7 @@ h4 {
 
 </head>
 
-<body>
+    <body onload="usuario.cargue()">
 
 	<nav class="navbar navbar-dark bg-dark">
 		<a class="navbar-brand" href='apiUser.irPerfil()'><img src="img/logo.png"
@@ -64,7 +65,7 @@ h4 {
 	<br></br>
 	<form id="miPerfil">
 		<center>
-			<div class="card text-white bg-secondary mb-3" style="width: 30rem;">
+			<div class="card text-white bg-secondary mb-3" style="width: 50rem;">
 				<h4 class="card-title">INFORMACION BASICA</h4>
 				<div class="form-group" id="user-name">
 					<img src="img/finduser.png" width="150" height="150"
@@ -77,72 +78,66 @@ h4 {
 						</centro>
 					</div>
                                         <div class="form-group" id="user-email">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="em"><b>Email: </b></font></label> <label
-							class="col-lg-3 col-form-label form-control-label"><font
+							class="col-lg-6 col-form-label form-control-label"><font
 							color="black" id="email"></label>
 					</div>
                                         
 					<div class="form-group" id="user-name">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="nom"><b>Nombre: </b></font></label> <label
-							class="col-lg-3 col-form-label form-control-label"><font
+							class="col-lg-6 col-form-label form-control-label"><font
 							color="black" id="nombre"></label>
 					</div>
 					<div class="form-group" id="user-genero">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="gen"><b>Genero: </b></font></label> <label
-							class="col-lg-3 col-form-label form-control-label" id="gene"><font
+							class="col-lg-6 col-form-label form-control-label" id="gene"><font
 							color="black"></label>
 					</div>
 					<div class="form-group" id="user-edad">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="ed"><b>Edad: </b></font></label><label
-							class="col-lg-3 col-form-label form-control-label"><font
+							class="col-lg-6 col-form-label form-control-label"><font
 							color="black" id="edad"></label>
 					</div>
 					<div class="form-group" id="user-carrera">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="carr"><b>Carrera: </b></font></label><label
-							class="col-lg-3 col-form-label form-control-label"><font
+							class="col-lg-6 col-form-label form-control-label"><font
 							color="black" id="carrera"></label>
 					</div>
 					<div class="form-group" id="user-semestre">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="sem"><b>Semestre: </b></font></label><label
-							class="col-lg-3 col-form-label form-control-label"><font
+							class="col-lg-6 col-form-label form-control-label"><font
 							color="black" id="semestre"></label>
 					</div>
 					<div class="form-group" id="user-altura">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="alt"><b>Altura: </b></font></label><label
-							class="col-lg-3 col-form-label form-control-label"><font
+							class="col-lg-6 col-form-label form-control-label"><font
 							color="black" id="altura"></label>
 					</div>
 					<div class="form-group" id="user-tiprel">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="tiprel"><b>Tipo de Relación: </b></font></label> <label
-							class="col-lg-3 col-form-label form-control-label" id="tprel"><font
+							class="col-lg-6 col-form-label form-control-label" id="tprel"><font
 							color="black"></label>
 					</div>
 					<div class="form-group" id="user-celular">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="cel"><b>Celular: </b></font></label> <label
-							class="col-lg-3 col-form-label form-control-label" id="celu"><font
+							class="col-lg-6 col-form-label form-control-label" id="celu"><font
 							color="black"></label>
                                         </div>
 					<div class="form-group" id="user-IG">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="insta"><b>Cuenta de instagram: </b></font></label> <label
-							class="col-lg-3 col-form-label form-control-label" id="Igram"><font
+							class="col-lg-6 col-form-label form-control-label" id="Igram"><font
 							color="black"></label>
                                         </div>
-					<div class="form-group" id="user-altura">
-						<label class="col-lg-3 col-form-label form-control-label"><font
-							color="black" id="alt"><b>Altura: </b></font></label> <label
-							class="col-lg-3 col-form-label form-control-label" id="altu"><font
-							color="black"></label>
-					</div>
                                         <div class="col-lg-12 text-center">
                                             <button type="button" class="btn btn-primary" onclick='apiUser.irACBasica()'>Actualizar informacion basica</button>
                                             <button type="button" class="btn btn-primary" onclick='apiUser.irACCarrera()'>Actualizar carrera</button>

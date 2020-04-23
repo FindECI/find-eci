@@ -37,15 +37,46 @@ var usuario = (function () {
         var password = document.getElementById("password").value;
         apiUser.loginUser(user, password);
         sessionStorage.setItem('UserLogin',document.getElementById("username").value);
+        apiUser.getUser(infoUser, user);
     };
-        
+    
+    var infoUser = function(datos){
+	 var nombre = datos.nombre;
+         var apellido = datos.apellido;
+         var genero = datos.sexo;
+         var altura = datos.altura;
+         var celular = datos.celular;
+         var instagram = datos.cuentaig;
+         sessionStorage.setItem('Nombre',nombre + " " +apellido);
+         sessionStorage.setItem('Genero',genero);
+         sessionStorage.setItem('Altura',altura);
+         sessionStorage.setItem('Celular',celular);
+         sessionStorage.setItem('Instagram',instagram);
+    };
+    
+    var cargueInfo = function(){
+	var correo = sessionStorage.getItem('UserLogin');
+        var nombre = sessionStorage.getItem('Nombre');
+        var genero = sessionStorage.getItem('Genero');
+        var altura = sessionStorage.getItem('Altura');
+        var celular = sessionStorage.getItem('Celular');
+        var instagram = sessionStorage.getItem('Instagram');
+        document.getElementById('email').innerHTML = correo;
+        document.getElementById('nombre').innerHTML = nombre;
+        document.getElementById('gene').innerHTML = genero;
+        document.getElementById('altura').innerHTML = altura;
+        document.getElementById('celu').innerHTML = celular;
+        document.getElementById('Igram').innerHTML = instagram;
+    };
     
     return {
 
         crearcuenta: crearcuentas,
         pageRegistrar: irRegistrar,
         ingresoApp: login,
-        crearCarrera : registraCarrera
+        crearCarrera : registraCarrera,
+        info: infoUser,
+        cargue: cargueInfo
 
     };
 })();
