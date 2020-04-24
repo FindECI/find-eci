@@ -4,6 +4,7 @@ var match = (function(){
 	var correoUser ;
 	var usuarios = [];
 	var matchs = [];
+	var matchsPar = [];
 	var personas = [];
 	var indice = 0;
 	
@@ -14,16 +15,30 @@ var match = (function(){
 	};
 	
 	var interacciones = function (datos){
+		if(datos.length > 0 ){
+			for(var i=0; i < datos.length; i++){
+				var dato = JSON.stringify(datos[i]);
+				var dat = JSON.parse(dato);
+				usuarios.push(dat);
+			}
+		}		
 		apiMatch.getMatch(matches,usuario);
-		for(var i=0; i < datos.length; i++){
-			var dato = JSON.stringify(datos[i]);
-			var dat = JSON.parse(dato);
-			usuarios.push(dat);
-		}
 		
 	};
 	
+	var matchesPareja = function(datos){
+		if(datos.length > 0){
+			for(var i=0; i < datos.length; i++){
+				var dato = JSON.stringify(datos[i]);
+				var dat = JSON.parse(dato);
+				matchsPar.push(dat);
+			}
+		}
+		mostrar();
+	}
+	
 	var matches = function(datos){
+		
 		if(datos.length > 0){
 			for(var i=0; i < datos.length; i++){
 				var dato = JSON.stringify(datos[i]);
@@ -31,8 +46,8 @@ var match = (function(){
 				matchs.push(dat);
 			}
 		}
+		apiMatch.getMatchPareja(matchesPareja,usuario);
 		
-		mostrar();
 	};
 	
 	var verInfoUsuario = function(){
@@ -82,22 +97,61 @@ var match = (function(){
 	
 	var mostrar = function(){
 		
-		if (matchs.length == 0){
+		if (matchs.length == 0 && matchsPar.length == 0){
 			verInfoUsuario();
 		}
 		else{
-			var temp = [];
-			for(var i=0; i < matchs.length; i++){
-				temp.push(matchs[i].pareja);
-			}
-			
-			for(var i=0; i < usuarios.length; i++){
-				var ind = temp.indexOf(usuarios[i].usuario);
-				if(ind == -1){
-					personas.push();
+			//cuando el usuario ha hecho match
+			if(matchs.length > 0 && matchsPar.length == 0){
+				var temp = [];
+				for(var i=0; i < matchs.length; i++){
+					temp.push(matchs[i].pareja);
 				}
+				
+				for(var i=0; i < usuarios.length; i++){
+					var ind = temp.indexOf(usuarios[i].usuario);
+					if(ind == -1){
+						personas.push(usuarios[i]);
+					}
+				}
+				InfoUsuario();
 			}
-			InfoUsuario();
+			//cuando al usuario le hicieron match
+			else if(matchs.length == 0 && matchsPar.length > 0){
+				var temp = [];
+				for(var i=0; i < matchsPar.length; i++){
+					temp.push(matchsPar[i].usuario);
+				}
+				
+				for(var i=0; i < usuarios.length; i++){
+					var ind = temp.indexOf(usuarios[i].usuario);
+					if(ind == -1){
+						personas.push(usuarios[i]);
+					}
+				}
+				InfoUsuario();
+			}
+			else{
+				// Cuando el usuario hace match y le han hecho match
+				var temp = [];
+				var tempM = [];
+				for(var i=0; i < matchsPar.length; i++){
+					tempM.push(matchsPar[i].usuario);
+				}
+				
+				for(var i=0; i < matchs.length; i++){
+					temp.push(matchs[i].pareja);
+				}
+				
+				for(var i=0; i < usuarios.length; i++){
+					var ind = temp.indexOf(usuarios[i].usuario);
+					var indi = tempM.indexOf(usuarios[i].usuario); 
+					if(ind == -1 && indi == -1 ){
+						personas.push(usuarios[i]);
+					}
+				}
+				InfoUsuario();
+			}
 		}
 		
 	};	
@@ -111,7 +165,7 @@ var match = (function(){
 	var intereses = function(datos){
 		datos = JSON.stringify(datos);
 		datos = JSON.parse(datos);
-		document.getElementById("tprela").innerHTML = datos.tipoRel;
+		document.getElementById("tprel").innerHTML = datos.tipoRel;
 	};
 	
 	///informacion basica del usuario
@@ -149,29 +203,36 @@ var match = (function(){
 
 		document.getElementById("informacion").innerHTML = "¡Actualmente no hay personas interesadas en ti. Pronto encontraras tu match ideal!";
 
-		document.getElementById("nomb").style.visibility = "hidden";
-		document.getElementById("ed").style.visibility = "hidden";
-		document.getElementById("altu").style.visibility = "hidden";
-		document.getElementById("carrer").style.visibility = "hidden";
-		document.getElementById("semest").style.visibility = "hidden";
+		document.getElementById("nomb").style.display  = "none";
+		document.getElementById("ed").style.display  = "none";
+		document.getElementById("altu").style.display  = "none";
+		document.getElementById("carrer").style.display  = "none";
+		document.getElementById("semest").style.display  = "none";
 
-		document.getElementById("nom").style.visibility = "hidden";
-		document.getElementById("eda").style.visibility = "hidden";
-		document.getElementById("alt").style.visibility = "hidden";
-		document.getElementById("carr").style.visibility = "hidden";
-		document.getElementById("sem").style.visibility = "hidden";
-		document.getElementById("tiprel").style.visibility = "hidden";
-		document.getElementById("tprela").style.visibility = "hidden";
+		document.getElementById("nom").style.display  = "none";
+		document.getElementById("eda").style.display  = "none";
+		document.getElementById("alt").style.display  = "none";
+		document.getElementById("carr").style.display  = "none";
+		document.getElementById("sem").style.display  = "none";
+		document.getElementById("tiprela").style.display  = "none";
+		document.getElementById("tprel").style.display  = "none";
 
 		
-		document.getElementById("gusta").style.visibility = "hidden";
-		document.getElementById("nogusta").style.visibility = "hidden";
-		document.getElementById("pelicul").style.visibility = "hidden";
-		document.getElementById("music").style.visibility = "hidden";
-		document.getElementById("comid").style.visibility = "hidden";
+		document.getElementById("gusta").style.display  = "none";
+		document.getElementById("nogusta").style.display  = "none";
+		document.getElementById("pelicul").style.display  = "none";
+		document.getElementById("music").style.display  = "none";
+		document.getElementById("comid").style.display  = "none";
 		
-		document.getElementById("gusta").style.visibility = "hidden";
-		document.getElementById("nogusta").style.visibility = "hidden";
+		document.getElementById("gusta").style.display  = "none";
+		document.getElementById("nogusta").style.display  = "none";
+		
+		document.getElementById("cardPeliculas").style.display  = "none";
+		document.getElementById("cardmusica").style.display  = "none";
+		document.getElementById("cardcomida").style.display  = "none";
+		
+		document.getElementById("imagenes").style.display  = "none";
+		
 	};
 	
 	
@@ -188,7 +249,13 @@ var match = (function(){
 			"pareja": correoUser,
 			"usuario": usuario
 		}
+		
+		var chat = {
+			"pareja": correoUser,
+			"usuario": usuario	
+		}
 		apiMatch.addMatch(match1);
+		apichat.addChats(chat);
 		apiInteracciones.addInteraccion(interacciones, 1);
 		getMatch();
 		indice += 1;

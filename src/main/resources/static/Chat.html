@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chat</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+
+
+<!--JQUERY-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+
+<script src="/webjars/jquery/jquery.min.js"></script>
+
+<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+
+<!-- Los iconos tipo Solid de Fontawesome-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" />
+<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+<!-- Nuestro css-->
+<link rel="stylesheet" type="text/css" href="/css/chat.css" />
+
+<script src="js/apiUser.js"></script>
+<script src="js/apiChat.js"></script>
+
+
+</head>
+<body onload="chat.conectar()" >
+
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" href="apiUser.irPerfil()"><img
+			src="img/logo.png" width="50" height="50"></a>
+
+		<button class="btn btn-outline-danger" type="button"
+			onclick='apiUser.irPerfil()'>Inicio</button>
+		<div class="btn-group" role="group">
+			<button class="btn btn-outline-danger dropdown-toggle" type="button"
+				id="perfil" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false">Mi Perfil</button>
+			<div class="dropdown-menu" aria-labelledby="perfil">
+				<button class="btn btn-outline-danger" type="button">Ver
+					Perfil</button>
+				<button class="btn btn-outline-danger" type="button">Actualizar
+					Perfil</button>
+			</div>
+		</div>
+		<button class="btn btn-outline-danger" type="button"
+			onclick='apiUser.irMatch()'>Match</button>
+		<button class="btn btn-outline-danger" type="button">Conversaciones</button>
+		<button class="btn btn-outline-danger" type="button"
+			onclick='apiUser.irLogin()'>Cerrar sesión</button>
+
+	</nav>
+	
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+
+	<div class="chat_window">
+		<div class="top_menu">
+			<div class="buttons">
+				<div class="button close"></div>
+				<div class="button minimize"></div>
+				<div class="button maximize"></div>
+			</div>
+			<div class="title">Chat</div>
+		</div>
+		<ul class="messages"></ul>
+		<div class="bottom_wrapper clearfix">
+			<div class="message_input_wrapper">
+				<input id="mensaje" class="message_input" placeholder="Type your message here..." />
+			</div>
+			<div class="send_message">
+				<button class="btn btn-outline-success" type="button"
+			onclick='chat.mensaje()'>Enviar</button>
+			</div>
+		</div>
+	</div>
+	<div id="message_template" class="message_template">
+		<li class="message"><div id="usuario" class="avatar"></div>
+			<div class="text_wrapper">
+				<div class="text"></div>
+			</div></li>
+	</div>
+</body>
+</html>

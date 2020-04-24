@@ -39,8 +39,6 @@ public class UsuarioServicesImpl implements UsuarioServices {
     public Usuario findUserByCorreo(String correo) throws FindEciException {
         try {
             Optional<Usuario> user = usuarioRepository.findById(correo);
-            System.out.println("aqui esta");
-            System.out.println(user.get());
             if (user.isPresent()) {
                 return user.get();
             } else {

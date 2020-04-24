@@ -2,8 +2,7 @@ var apiMusical = (function(){
 	
 	return{
 		
-		addMusicales : function(gusto){
-			
+		addMusicales : function(gusto){	
 			jQuery.ajax({
 				url: "/Gustos/",
 				type: "POST",
@@ -17,6 +16,9 @@ var apiMusical = (function(){
                 }
 			});			
 		},
+		
+		
+		
 		getgustosUser: function(callback,correo){
 			jQuery.ajax({
 				url: "/Gustos/"+ correo,

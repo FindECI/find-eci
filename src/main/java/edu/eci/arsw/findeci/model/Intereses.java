@@ -37,10 +37,6 @@ public class Intereses implements Serializable {
     @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;	
-      
-	@Column(name="sexoInteres",nullable = false)
-	@Size(min = 1, max = 100)
-    private String sexoInteres;
     
 	@Column(name="tipoRelacion",nullable = false)
 	@Size(min = 1, max = 100)
@@ -49,6 +45,10 @@ public class Intereses implements Serializable {
 	@Column(name="aspectosImportantes",nullable = false)
 	@Size(min = 1, max = 100)
     private String apectosImportantes;
+	
+	@Column(name="sexoInteres",nullable = false)
+	@Size(min = 1, max = 100)
+    private String sexoInteres;
 
     public Intereses() {
     }

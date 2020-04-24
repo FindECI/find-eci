@@ -26,7 +26,20 @@ apiMatch = (function(){
                 }			
 				
 			});
+		},
+		
+		getMatchPareja : function(callback,correo){
+			jQuery.ajax({
+				url: "/match/pareja/" + correo,
+				success: function(matches){
+					callback(matches);
+				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    alert("No hay informacion suficiente"); 
+                }			
+				
+			});
 		}
+		
 		
 	}
 		

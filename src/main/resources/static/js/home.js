@@ -120,28 +120,34 @@ var home = (function() {
 
 		document.getElementById("informacion").innerHTML = "¡Estas fueron todas tus posible parejas!. Actualiza tus intereses para conocer más personas";
 
-		document.getElementById("nombre").style.visibility = "hidden";
-		document.getElementById("edad").style.visibility = "hidden";
-		document.getElementById("altura").style.visibility = "hidden";
-		document.getElementById("carrera").style.visibility = "hidden";
-		document.getElementById("semestre").style.visibility = "hidden";
+		document.getElementById("nombre").style.display  = "none";
+		document.getElementById("edad").style.display  = "none";
+		document.getElementById("altura").style.display  = "none";
+		document.getElementById("carrera").style.display  = "none";
+		document.getElementById("semestre").style.display  = "none";
 
-		document.getElementById("nom").style.visibility = "hidden";
-		document.getElementById("ed").style.visibility = "hidden";
-		document.getElementById("alt").style.visibility = "hidden";
-		document.getElementById("carr").style.visibility = "hidden";
-		document.getElementById("sem").style.visibility = "hidden";
-		document.getElementById("tiprel").style.visibility = "hidden";
-		document.getElementById("tprel").style.visibility = "hidden";
+		document.getElementById("nom").style.display  = "none";
+		document.getElementById("ed").style.display  = "none";
+		document.getElementById("alt").style.display  = "none";
+		document.getElementById("carr").style.display  = "none";
+		document.getElementById("sem").style.display  = "none";
+		document.getElementById("tiprel").style.display  = "none";
+		document.getElementById("tprel").style.display  = "none";
 
-		document.getElementById("gusta").style.visibility = "hidden";
-		document.getElementById("nogusta").style.visibility = "hidden";
-		document.getElementById("peliculas").style.visibility = "hidden";
-		document.getElementById("musica").style.visibility = "hidden";
-		document.getElementById("comidas").style.visibility = "hidden";
+		document.getElementById("gusta").style.display  = "none";
+		document.getElementById("nogusta").style.display  = "none";
+		document.getElementById("peliculas").style.display  = "none";
+		document.getElementById("musica").style.display  = "none";
+		document.getElementById("comidas").style.display  = "none";
 
-		document.getElementById("gusta").style.visibility = "hidden";
-		document.getElementById("nogusta").style.visibility = "hidden";
+		document.getElementById("gusta").style.display  = "none";
+		document.getElementById("nogusta").style.display  = "none";
+		
+		document.getElementById("cardMusica").style.display  = "none";
+		document.getElementById("cardComidas").style.display  = "none";
+		document.getElementById("cardPeliculas").style.display  = "none";
+		
+		document.getElementById("galerias").style.display  = "none";
 
 	}
 

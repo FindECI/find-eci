@@ -11,7 +11,7 @@ var peliculas = (function(){
 		user = sessionStorage.getItem('User');		
 		var adicional = check();
 				
-		var gusto = {"descripciongusto": check(),"tipgusto":1,"usuario": user};
+		var gusto = {"descripciongusto": check(),"usuario": user,"tipgusto":1};
 		
 		apiPeliculas.addPeliculas(gusto);
 	}

@@ -33,40 +33,53 @@
 <script src="js/apiGustoMusical.js"></script>
 <script src="js/apiMatch.js"></script>
 <script src="js/match.js"></script>
+<script src="js/apiChat.js"></script>
 
 
-<style >
-
-h4 {
-	color: #FDFBFB 
-}
-
-</style>
 
 </head>
 
 <body onload="match.ver()">
 
 	<nav class="navbar navbar-dark bg-dark">
-		<a class="navbar-brand" href="apiUser.irPerfil()"><img src="img/logo.png"
-			width="50" height="50"></a>
+		<a class="navbar-brand" href="apiUser.irPerfil()"><img
+			src="img/logo.png" width="50" height="50"></a>
 
-		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irPerfil()'>Inicio</button>
-		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irPerfilUsuario()'>Mi perfil</button>
-		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irMatch()'>Match</button>
-		<button class="btn btn-outline-danger" type="button">Conversaciones</button>
-		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irLogin()'>Cerrar sesión</button>
-		
+		<button class="btn btn-outline-danger" type="button"
+			onclick='apiUser.irPerfil()'>Inicio</button>
+		<div class="btn-group" role="group">
+			<button class="btn btn-outline-danger dropdown-toggle" type="button"
+				id="perfil" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false">Mi Perfil</button>
+			<div class="dropdown-menu" aria-labelledby="perfil">
+				<button class="btn btn-outline-danger" type="button">Ver
+					Perfil</button>
+				<button class="btn btn-outline-danger" type="button">Actualizar
+					Perfil</button>
+			</div>
+		</div>
+		<button class="btn btn-outline-danger" type="button"
+			onclick='apiUser.irMatch()'>Match</button>
+		<button class="btn btn-outline-danger" type="button"
+			onclick='apiUser.irChat()'>Conversaciones</button>
+		<button class="btn btn-outline-danger" type="button"
+			onclick='apiUser.irLogin()'>Cerrar sesión</button>
+
 
 	</nav>
 
+	<div class="card-body" id="card">
+		<div class="form-group" id="user-name">
+			<center>
+				<h1 id="textBien" color="white">¡Estas son las personas
+					interesadas en conocerte!</h1>
+			</center>
+		</div>
 
-	<center>
-		<h1 id="textBien" color="white">¡Estas son las personas interesadas en conocerte!</h1>
-	</center>
+	</div>
+
 	<br></br>
-	<form id="usuariosTotales"
-		action='javascript:match.agregarMatch()'>
+	<form id="usuariosTotales" action='javascript:match.agregarMatch()'>
 		<center>
 			<div class="card text-white bg-secondary mb-3" style="width: 30rem;">
 				<h4 class="card-title">INFORMACION BASICA</h4>
@@ -116,18 +129,16 @@ h4 {
 							class="col-lg-3 col-form-label form-control-label" id="tprel"><font
 							color="black"></label>
 					</div>
-					<button type="submit" class="btn btn-primary" id="gusta">Me
-						gusta</button>
+					<button type="submit" class="btn btn-primary" id="gusta">Match</button>
 					<button type="button" class="btn btn-danger"
-						onclick='match.noAgregarMatch()' id="nogusta">No
-						gracias</button>
+						onclick='match.noAgregarMatch()' id="nogusta">No gracias</button>
 				</div>
 			</div>
 			<br></br>
 			<div class="row">
 				<div class="col-sm-6" style="width: 25rem;">
 					<div class="card-deck">
-						<div class="card" style="width: 30rem;">
+						<div class="card" style="width: 30rem;" id="cardPeliculas">
 							<img class="card-img-top" src="img/peliculas.jpg" width="150"
 								height="150" alt="Card image cap">
 							<div class="card-body">
@@ -135,26 +146,28 @@ h4 {
 								<p class="card-text" id="pelicul"></p>
 							</div>
 						</div>
-						<div class="card" style="width: 30rem;">
+						<div class="card" style="width: 30rem;" id="cardmusica">
 							<img class="card-img-top" src="img/musica.jpeg" width="150"
 								height="150" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Gusto Musicales</h5>
-								<p class="card-text" id="music"></label>
+								<p class="card-text" id="music">
+									</label>
 							</div>
 						</div>
-						<div class="card" style="width: 30rem;">
+						<div class="card" style="width: 30rem;" id="cardcomida">
 							<img class="card-img-top" src="img/comida.jpg" width="150"
 								height="150" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Gusto de Comidas</h5>
-								<p class="card-text" id="comid"></label>
+								<p class="card-text" id="comid">
+									</label>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-6">
-					<div class="card" style="width: 20rem;">
+					<div class="card" style="width: 20rem;" id="imagenes">
 						<h3 class="card-title">GALERIA</h3>
 						<img class="card-img-top" src="img/finduser.png" width="300"
 							height="300" alt="Card image cap">

@@ -19,7 +19,7 @@ import edu.eci.arsw.findeci.model.gustos;
  */
 public interface GustosRepository extends JpaRepository<gustos, Integer >  {
 	
-	@Query(value="select g.id as id,g.descripciongusto as descripciongusto ,g.tipgusto as tipgusto,g.usuario as usuario from gustos g where g.usuario= :correo",nativeQuery = true)
+	@Query(value="select g.id as id,g.descripciongusto as descripciongusto ,g.tipogusto as tipogusto,g.usuario as usuario from gustos g where g.usuario= :correo",nativeQuery = true)
 	List<gustos> gustosbyuser(String correo);
     
 }

@@ -6,9 +6,10 @@ var musicales = (function(){
 		user = sessionStorage.getItem('User');		
 		var adicional = check();
 				
-		var gusto = {"descripciongusto": check(),"tipgusto":2,"usuario": user};
+		var gusto = {"descripciongusto": check(),"tipgusto": 2,"usuario": user};
 		
 		apiMusical.addMusicales(gusto);
+	
 	}
 	var check = function(){
 		var adicional="*";

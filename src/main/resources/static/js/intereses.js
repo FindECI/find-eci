@@ -19,7 +19,7 @@ var interes = (function(){
 		apiIntereses.addInteres(intereses);
 	}
 	var check = function(){
-		var adicional;
+		var adicional="*";
 		var checkedDeportes = document.getElementById("Deporte").checked;
 		var checkedLectura = document.getElementById("lectura").checked;
 		var checkedBaile = document.getElementById("baile").checked;

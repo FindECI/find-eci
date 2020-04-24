@@ -43,4 +43,14 @@ public class MatchController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, path="/pareja/{correo}")
+	public ResponseEntity<List<Matches>> allPareja(@PathVariable(name="correo") String correo){
+		try {
+			List<Matches> match = matchServ.findMacthesByPareja(correo);
+			return ResponseEntity.ok(match);
+		} catch (FindEciException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+	}
 }

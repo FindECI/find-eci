@@ -36,18 +36,18 @@ public class gustos implements Serializable {
     private String usuario;
 	
 	
-	@Column(name="tipgusto", nullable = false)
+	@Column(name="tipogusto", nullable = false)
 	@NotNull
-    private int tipgusto;
+    private int tipogusto;
 	
 	
 	public gustos() {
 	}
 	
 	
-	public gustos(String descripciongusto, String usuario,int tipgusto ) {
+	public gustos(String descripciongusto, String usuario,int tipogusto ) {
 		this.descripciongusto = descripciongusto;
-		this.tipgusto = tipgusto;
+		this.tipogusto = tipogusto;
 		this.usuario = usuario;
 	}
 
@@ -72,12 +72,12 @@ public class gustos implements Serializable {
 
 
 	public int getTipgusto() {
-		return tipgusto;
+		return tipogusto;
 	}
 
 
-	public void setTipgusto(int tipgusto) {
-		this.tipgusto = tipgusto;
+	public void setTipgusto(int tipogusto) {
+		this.tipogusto = tipogusto;
 	}
 	
 	

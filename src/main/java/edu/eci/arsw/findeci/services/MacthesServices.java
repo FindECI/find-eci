@@ -11,5 +11,7 @@ public interface MacthesServices {
 	Matches saveMatch (Matches match) throws FindEciException; 
 	
 	List<Matches> findMacthesByUser(String usuario) throws FindEciException;
+	
+	List<Matches> findMacthesByPareja(String usuario) throws FindEciException;
 
 }

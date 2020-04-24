@@ -39,8 +39,7 @@ public class GustosController {
 	
 	@RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<gustos> addUser(@RequestBody gustos gusto) {
-               
-    	try {
+       try {
             gustoservice.saveUserGusto(gusto);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (FindEciException e) {

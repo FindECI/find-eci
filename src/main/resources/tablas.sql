@@ -67,7 +67,7 @@ alter table imagenes add constraint fk_imagenes foreign key (usuario) references
 
 
 alter table gustos add constraint fk_gustos1 foreign key (usuario) references usuarios(correo);
-alter table gustos add constraint fk_gustos2 foreign key (tipgusto) references tipo_gusto(id_tipo_gusto);
+alter table gustos add constraint fk_gustos2 foreign key (tipogusto) references tipo_gusto(id_tipo_gusto);
 
 
 alter table interacciones add constraint fk_interacciones foreign key (usuario) references usuarios(correo);
@@ -84,6 +84,10 @@ alter table carrera add constraint fk_carrera foreign key (usuario) references u
 alter table matches add constraint fk_maches foreign key (usuario) references usuarios(correo);
 
 
-
 alter table matches add constraint fk_maches1 foreign key (pareja) references usuarios(correo);
+
+alter table chats add constraint fk_chat foreign key (usuario) references usuarios(correo);
+alter table chats add constraint fk_chat1 foreign key (pareja) references usuarios(correo);
+
+alter table mensajes add constraint fk_mensaje foreign key (chat) references chats(id);
 

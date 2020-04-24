@@ -12,5 +12,8 @@ public interface MatchRepository extends JpaRepository<Matches,Integer>{
 	
 	@Query(value = "select m.id as id,m.fecha as fecha,m.pareja as pareja,m.usuario as usuario from matches m where m.usuario= :correo",nativeQuery = true)
 	List<Matches> allMatchesByUser(String correo);
+	
+	@Query(value = "select m.id as id,m.fecha as fecha,m.pareja as pareja,m.usuario as usuario from matches m where m.pareja= :pareja",nativeQuery = true)
+	List<Matches> allMatchesByPareja(String pareja);
 
 }
