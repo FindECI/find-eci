@@ -32,51 +32,40 @@
 <script src="js/apiInteracciones.js"></script>
 <script src="js/apiGustoMusical.js"></script>
 
+<style >
+
+h4 {
+	color: #FDFBFB 
+}
+
+</style>
+
+
 </head>
 
 <body onload="home.ejecutarNotificaciones()">
 
 	<nav class="navbar navbar-dark bg-dark">
-		<a class="navbar-brand" href='apiUser.irPerfil()'><img
-			src="img/logo.png" width="50" height="50"></a>
+		<a class="navbar-brand" href='apiUser.irPerfil()'><img src="img/logo.png"
+			width="50" height="50"></a>
 
-		<button class="btn btn-outline-danger" type="button"
-			onclick='apiUser.irPerfil()'>Inicio</button>
-		<div class="btn-group" role="group">
-			<button class="btn btn-outline-danger dropdown-toggle" type="button"
-				id="perfil" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false">Mi Perfil</button>
-			<div class="dropdown-menu" aria-labelledby="perfil">
-				<button class="btn btn-outline-danger" type="button">Ver
-					Perfil</button>
-				<button class="btn btn-outline-danger" type="button">Actualizar
-					Perfil</button>
-			</div>
-		</div>
-		<button class="btn btn-outline-danger" type="button"
-			onclick='apiUser.irMatch()'>Match</button>
-		<button class="btn btn-outline-danger" type="button"
-			onclick='apiUser.irChat()'>Conversaciones</button>
-		<button class="btn btn-outline-danger" type="button"
-			onclick='apiUser.irLogin()'>Cerrar sesión</button>
+		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irPerfil()'>Inicio</button>
+		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irPerfilUsuario()'>Mi perfil</button>
+		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irMatch()'>Match</button>
+		<button class="btn btn-outline-danger" type="button">Conversaciones</button>
+		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irLogin()'>Cerrar sesión</button>
 
 	</nav>
 
-	<div class="card-body" id="card">
-		<div class="form-group" id="user-name">
-			<center>
-				<h1 id="textBien">¡Busca tu pareja ideal!</h1>
-			</center>
-		</div>
 
-	</div>
-
-
+	<center>
+		<h1 id="textBien" color="white">¡Busca tu pareja ideal!</h1>
+	</center>
 	<br></br>
 	<form id="usuariosTotales"
 		action='javascript:home.agregarinteraccion()'>
 		<center>
-			<div class="card text-white bg-secondary mb-3" style="width: 30rem;">
+			<div class="card text-white bg-secondary mb-3" style="width: 50rem;">
 				<h4 class="card-title">INFORMACION BASICA</h4>
 				<div class="form-group" id="user-name">
 					<img src="img/finduser.png" width="150" height="150"
@@ -89,39 +78,39 @@
 						</centro>
 					</div>
 					<div class="form-group" id="user-name">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="nom"><b>Nombre: </b></font></label> <label
-							class="col-lg-3 col-form-label form-control-label"><font
+							class="col-lg-6 col-form-label form-control-label"><font
 							color="black" id="nombre"></label>
 					</div>
 					<div class="form-group" id="user-edad">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="ed"><b>Edad: </b></font></label><label
-							class="col-lg-3 col-form-label form-control-label"><font
+							class="col-lg-6 col-form-label form-control-label"><font
 							color="black" id="edad"></label>
 					</div>
 					<div class="form-group" id="user-carrera">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="carr"><b>Carrera: </b></font></label><label
-							class="col-lg-3 col-form-label form-control-label"><font
+							class="col-lg-6 col-form-label form-control-label"><font
 							color="black" id="carrera"></label>
 					</div>
 					<div class="form-group" id="user-semestre">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="sem"><b>Semestre: </b></font></label><label
-							class="col-lg-3 col-form-label form-control-label"><font
+							class="col-lg-6 col-form-label form-control-label"><font
 							color="black" id="semestre"></label>
 					</div>
 					<div class="form-group" id="user-altura">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="alt"><b>Altura: </b></font></label><label
-							class="col-lg-3 col-form-label form-control-label"><font
+							class="col-lg-6 col-form-label form-control-label"><font
 							color="black" id="altura"></label>
 					</div>
 					<div class="form-group" id="user-tiprel">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="tiprel"><b>Tipo de Relación: </b></font></label> <label
-							class="col-lg-3 col-form-label form-control-label" id="tprel"><font
+							class="col-lg-6 col-form-label form-control-label" id="tprel"><font
 							color="black"></label>
 					</div>
 					<button type="submit" class="btn btn-primary" id="gusta">Me
@@ -133,7 +122,7 @@
 			</div>
 			<br></br>
 			<div class="row">
-				<div class="col-sm-6" style="width: 25rem;" id="cardPeliculas">
+				<div class="col-sm-6" style="width: 25rem;">
 					<div class="card-deck">
 						<div class="card" style="width: 30rem;">
 							<img class="card-img-top" src="img/peliculas.jpg" width="150"
@@ -143,28 +132,26 @@
 								<p class="card-text" id="peliculas"></p>
 							</div>
 						</div>
-						<div class="card" style="width: 30rem;" id="cardMusica">
+						<div class="card" style="width: 30rem;">
 							<img class="card-img-top" src="img/musica.jpeg" width="150"
 								height="150" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Gusto Musicales</h5>
-								<p class="card-text" id="musica">
-									</label>
+								<p class="card-text" id="musica"></label>
 							</div>
 						</div>
-						<div class="card" style="width: 30rem;" id="cardComidas">
+						<div class="card" style="width: 30rem;">
 							<img class="card-img-top" src="img/comida.jpg" width="150"
 								height="150" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Gusto de Comidas</h5>
-								<p class="card-text" id="comidas">
-									</label>
+								<p class="card-text" id="comidas"></label>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-6">
-					<div class="card" style="width: 20rem;" id="galerias">
+					<div class="card" style="width: 20rem;">
 						<h5 class="card-title">GALERIA</h5>
 						<img class="card-img-top" src="img/finduser.png" width="300"
 							height="300" alt="Card image cap">
