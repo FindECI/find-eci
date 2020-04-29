@@ -97,6 +97,10 @@ apiUser = (function(){
 	    irLogin : function () {
 	        location.href = "/index.html";
 	        sessionStorage.setItem('UserLogin',"");
+	    },
+		irChat : function (){
+
+	        location.href = "/ListChat.html";
 	    }
 	    
 		
