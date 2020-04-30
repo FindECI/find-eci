@@ -37,10 +37,10 @@ var usuario = (function () {
         var password = document.getElementById("password").value;
         apiUser.loginUser(user, password);
         sessionStorage.setItem('UserLogin',document.getElementById("username").value);
-        recrgaue();
+        recargue(user);
     };
     
-    var recargue = function(){
+    var recargue = function(user){
         apiUser.getUser(infoUser, user);
         apiCarrera.getCarrera(infoCarrera, user);
         apiIntereses.getUserInteres(infoIntereses, user);
