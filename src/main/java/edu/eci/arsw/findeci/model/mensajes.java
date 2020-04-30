@@ -1,5 +1,7 @@
 package edu.eci.arsw.findeci.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +24,10 @@ public class mensajes {
 	@Column(name="usuario", nullable = false)
     @Size(min = 1, max = 100)
     private String usuario;
+	
+	@Column(name="pareja", nullable = false)
+    @Size(min = 1, max = 100)
+    private String pareja;
 
 	@Column(name="mensaje", nullable = false)
     @Size(min = 1, max = 1000)
@@ -31,18 +37,36 @@ public class mensajes {
     @Column(name = "chat")
     private int chat;
 	
-	
+	@Column(name="fecha",nullable = false)
+    private Date fecha;
 
 	public mensajes() {
 
 	}
 
-	public mensajes(String usuario,String mensaje,int chat) {
+	public mensajes(String usuario,String pareja,String mensaje,int chat) {
 		this.mensaje = mensaje;
 		this.usuario = usuario;
+		this.pareja = pareja;
 		this.chat = chat;
 	}
 	
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
+	public String getPareja() {
+		return pareja;
+	}
+
+	public void setPareja(String pareja) {
+		this.pareja = pareja;
+	}
+
 	public int getChat() {
 		return chat;
 	}

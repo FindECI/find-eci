@@ -44,11 +44,33 @@
 		<a class="navbar-brand" href="apiUser.irPerfil()"><img
 			src="img/logo.png" width="50" height="50"></a>
 
+<<<<<<< HEAD
+		<button class="btn btn-outline-danger" type="button"
+			onclick='apiUser.irPerfil()'>Inicio</button>
+		<div class="btn-group" role="group">
+			<button class="btn btn-outline-danger dropdown-toggle" type="button"
+				id="perfil" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false">Mi Perfil</button>
+			<div class="dropdown-menu" aria-labelledby="perfil">
+				<button class="btn btn-outline-danger" type="button">Ver
+					Perfil</button>
+				<button class="btn btn-outline-danger" type="button">Actualizar
+					Perfil</button>
+			</div>
+		</div>
+		<button class="btn btn-outline-danger" type="button"
+			onclick='apiUser.irMatch()'>Match</button>
+		<button class="btn btn-outline-danger" type="button"
+			onclick='apiUser.irChat()'>Conversaciones</button>
+		<button class="btn btn-outline-danger" type="button"
+			onclick='apiUser.irLogin()'>Cerrar sesión</button>
+=======
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irPerfil()'>Inicio</button>
                 <button class="btn btn-outline-danger" type="button" onclick='apiUser.irPerfilUsuario()'>Mi perfil</button>
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irMatch()'>Match</button>
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irChat()'>Conversaciones</button>
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irLogin()'>Cerrar sesión</button>
+>>>>>>> dbb0cdf76c40fd9795e2fe2bcd7a2f232095ef2d
 
 	</nav>
 	
@@ -57,19 +79,14 @@
 	<br></br>
 	<br></br>
 
-	<div class="chat_window">
+	<div class="chat_window" style="position:relative; margin: 100px 0 0 10px;">
 		<div class="top_menu">
-			<div class="buttons">
-				<div class="button close"></div>
-				<div class="button minimize"></div>
-				<div class="button maximize"></div>
-			</div>
 			<div class="title">Chat</div>
 		</div>
 		<ul class="messages"></ul>
 		<div class="bottom_wrapper clearfix">
 			<div class="message_input_wrapper">
-				<input id="mensaje" class="message_input" placeholder="Type your message here..." />
+				<input id="mensaje" class="message_input" placeholder="Escribe tu mensaje..." />
 			</div>
 			<div class="send_message">
 				<button class="btn btn-outline-success" type="button"
