@@ -28,16 +28,16 @@ var peliculas = (function(){
 		var checkedDoc = document.getElementById("Documentales").checked;
 		var checkedOtro = document.getElementById("Otros").checked;
 		
-		if (checkedAccion){adicional = adicional + "," + "Accion";}
-		if (checkedAventura){adicional = adicional + "," + "Aventura";}
-		if (checkedComedia){adicional = adicional + "," + "Comedia";}
-		if (checkedComRom){adicional = adicional + "," + "Comedia Romantica";}
-		if (checkedDrama){adicional = adicional + "," + "Drama";}
-		if (checkedMusicales){adicional = adicional + "," + "Musicales";}
-		if (checkedCienciaFiccion){adicional = adicional + "," + "Ciencia Ficcion";}
-		if (checkedInfantiles){adicional = adicional + "," + "Infantiles";}
-		if (checkedDoc){adicional = adicional + "," + "Documentales";}
-		if (checkedOtro){adicional = adicional + "," + "Otro";}
+		if (checkedAccion){adicional = adicional + "," + " Accion";}
+		if (checkedAventura){adicional = adicional + "," + " Aventura";}
+		if (checkedComedia){adicional = adicional + "," + " Comedia";}
+		if (checkedComRom){adicional = adicional + "," + " Comedia Romantica";}
+		if (checkedDrama){adicional = adicional + "," + " Drama";}
+		if (checkedMusicales){adicional = adicional + "," + " Musicales";}
+		if (checkedCienciaFiccion){adicional = adicional + "," + " Ciencia Ficcion";}
+		if (checkedInfantiles){adicional = adicional + "," + " Infantiles";}
+		if (checkedDoc){adicional = adicional + "," + " Documentales";}
+		if (checkedOtro){adicional = adicional + "," + " Otro";}
 		
 		return adicional;
 	}	

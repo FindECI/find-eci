@@ -37,9 +37,14 @@ var usuario = (function () {
         var password = document.getElementById("password").value;
         apiUser.loginUser(user, password);
         sessionStorage.setItem('UserLogin',document.getElementById("username").value);
+        recrgaue();
+    };
+    
+    var recargue = function(){
         apiUser.getUser(infoUser, user);
         apiCarrera.getCarrera(infoCarrera, user);
         apiIntereses.getUserInteres(infoIntereses, user);
+        apiMusical.getgustosUser(infoGustos, user);
     };
     
     var infoUser = function(datos){
@@ -57,17 +62,30 @@ var usuario = (function () {
          sessionStorage.setItem('Instagram',instagram);
          sessionStorage.setItem('Nacimiento',fechaNacimiento);
     };
+    
     var infoCarrera = function(datos){
 	 var carrera = datos.nombre;
          var semestre = datos.semestre;
          sessionStorage.setItem('Carrera',carrera);
          sessionStorage.setItem('Semestre',semestre);
     };
+    
     var infoIntereses = function(datos){
 	 var generoInt = datos.sexoInteres;
          var tipRel = datos.tipoRel;
+         var intereses = datos.apectosImportantes;
          sessionStorage.setItem('GeneroInt',generoInt);
          sessionStorage.setItem('TipRel',tipRel);
+         sessionStorage.setItem('Intereses', intereses);
+    };
+    
+    var infoGustos = function(datos){
+        var peliculas = datos[0].descripciongusto;
+        var musicales = datos[1].descripciongusto;
+        var comidas = datos[2].descripciongusto;
+        sessionStorage.setItem('GPeliculas',peliculas);
+        sessionStorage.setItem('GMusicales',musicales);
+        sessionStorage.setItem('GComidas', comidas);
     };
     
     var cargueInfo = function(){
@@ -88,6 +106,10 @@ var usuario = (function () {
         var edad = Math.floor(fecha / 32000000000);
         var generoInt = sessionStorage.getItem('GeneroInt');
         var tipRel = sessionStorage.getItem('TipRel');
+        var intereses = sessionStorage.getItem('Intereses');
+        var peliculas = sessionStorage.getItem('GPeliculas');
+        var musicales = sessionStorage.getItem('GMusicales');
+        var comidas = sessionStorage.getItem('GComidas');
         document.getElementById('email').innerHTML = correo;
         document.getElementById('nombre').innerHTML = nombre;
         document.getElementById('gene').innerHTML = genero;
@@ -99,6 +121,10 @@ var usuario = (function () {
         document.getElementById('semestre').innerHTML = semestre;
         document.getElementById('genInt').innerHTML = generoInt;
         document.getElementById('tprel').innerHTML = tipRel;
+        document.getElementById('intereses').innerHTML = intereses;
+        document.getElementById('peliculas').innerHTML = peliculas;
+        document.getElementById('musica').innerHTML = musicales;
+        document.getElementById('comidas').innerHTML = comidas;
     };
     
     return {

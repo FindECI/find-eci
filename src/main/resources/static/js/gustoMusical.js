@@ -33,25 +33,25 @@ var musicales = (function(){
 		var checkedHouse = document.getElementById("House").checked;
 		var checkedOtro = document.getElementById("Otro").checked;
 		
-		if (checkedRock){adicional = adicional + "," + "Rock";}
-		if (checkedMetal){adicional = adicional + "," + "Metal";}
-		if (checkedBlues){adicional = adicional + "," + "Blues";}
-		if (checkedJazz){adicional = adicional + "," + "Jazz";}
-		if (checkedElectro){adicional = adicional + "," + "Electronica";}
-		if (checkedDup){adicional = adicional + "," + "Dup-step";}
-		if (checkedPunk){adicional = adicional + "," + "Punk";}
-		if (checkedRap){adicional = adicional + "," + "Rap";}
-		if (checkedClasica){adicional = adicional + "," + "Clasica";}
-		if (checkedReg){adicional = adicional + "," + "Reggaeton";}
-		if (checkedTrap){adicional = adicional + "," + "Trap";}
-		if (checkedSalsa){adicional = adicional + "," + "Salsa";}
-		if (checkedMeren){adicional = adicional + "," + "Merengue";}
-		if (checkedBach){adicional = adicional + "," + "Bachata";}
-		if (checkedPop){adicional = adicional + "," + "Pop";}
-		if (checkedVall){adicional = adicional + "," + "Vallenato";}
-		if (checkedDance){adicional = adicional + "," + "Dancehall";}
-		if (checkedHouse){adicional = adicional + "," + "House";}
-		if (checkedOtro){adicional = adicional + "," + "Otro";}
+		if (checkedRock){adicional = adicional + "," + " Rock";}
+		if (checkedMetal){adicional = adicional + "," + " Metal";}
+		if (checkedBlues){adicional = adicional + "," + " Blues";}
+		if (checkedJazz){adicional = adicional + "," + " Jazz";}
+		if (checkedElectro){adicional = adicional + "," + " Electronica";}
+		if (checkedDup){adicional = adicional + "," + " Dup-step";}
+		if (checkedPunk){adicional = adicional + "," + " Punk";}
+		if (checkedRap){adicional = adicional + "," + " Rap";}
+		if (checkedClasica){adicional = adicional + "," + " Clasica";}
+		if (checkedReg){adicional = adicional + "," + " Reggaeton";}
+		if (checkedTrap){adicional = adicional + "," + " Trap";}
+		if (checkedSalsa){adicional = adicional + "," + " Salsa";}
+		if (checkedMeren){adicional = adicional + "," + " Merengue";}
+		if (checkedBach){adicional = adicional + "," + " Bachata";}
+		if (checkedPop){adicional = adicional + "," + " Pop";}
+		if (checkedVall){adicional = adicional + "," + " Vallenato";}
+		if (checkedDance){adicional = adicional + "," + " Dancehall";}
+		if (checkedHouse){adicional = adicional + "," + " House";}
+		if (checkedOtro){adicional = adicional + "," + " Otro";}
 		
 		return adicional;
 	}	

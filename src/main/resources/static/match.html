@@ -54,7 +54,7 @@ h4 {
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irPerfil()'>Inicio</button>
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irPerfilUsuario()'>Mi perfil</button>
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irMatch()'>Match</button>
-		<button class="btn btn-outline-danger" type="button">Conversaciones</button>
+		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irChat()'>Conversaciones</button>
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irLogin()'>Cerrar sesión</button>
 		
 
@@ -68,7 +68,7 @@ h4 {
 	<form id="usuariosTotales"
 		action='javascript:match.agregarMatch()'>
 		<center>
-			<div class="card text-white bg-secondary mb-3" style="width: 30rem;">
+			<div class="card text-white bg-secondary mb-3" style="width: 50rem;">
 				<h4 class="card-title">INFORMACION BASICA</h4>
 				<div class="form-group" id="user-name">
 					<img src="img/finduser.png" width="150" height="150"
@@ -81,39 +81,39 @@ h4 {
 						</centro>
 					</div>
 					<div class="form-group" id="user-name">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="nom"><b>Nombre: </b></font></label> <label
-							class="col-lg-3 col-form-label form-control-label"><font
+							class="col-lg-6 col-form-label form-control-label"><font
 							color="black" id="nomb"></label>
 					</div>
 					<div class="form-group" id="user-edad">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="eda"><b>Edad: </b></font></label><label
-							class="col-lg-3 col-form-label form-control-label"><font
+							class="col-lg-6 col-form-label form-control-label"><font
 							color="black" id="ed"></label>
 					</div>
 					<div class="form-group" id="user-carrera">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="carr"><b>Carrera: </b></font></label><label
-							class="col-lg-3 col-form-label form-control-label"><font
+							class="col-lg-6 col-form-label form-control-label"><font
 							color="black" id="carrer"></label>
 					</div>
 					<div class="form-group" id="user-semestre">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="sem"><b>Semestre: </b></font></label><label
-							class="col-lg-3 col-form-label form-control-label"><font
+							class="col-lg-6 col-form-label form-control-label"><font
 							color="black" id="semest"></label>
 					</div>
 					<div class="form-group" id="user-altura">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="alt"><b>Altura: </b></font></label><label
-							class="col-lg-3 col-form-label form-control-label"><font
+							class="col-lg-6 col-form-label form-control-label"><font
 							color="black" id="altu"></label>
 					</div>
 					<div class="form-group" id="user-tiprel">
-						<label class="col-lg-3 col-form-label form-control-label"><font
+						<label class="col-lg-4 col-form-label form-control-label"><font
 							color="black" id="tiprela"><b>Tipo de Relación: </b></font></label> <label
-							class="col-lg-3 col-form-label form-control-label" id="tprel"><font
+							class="col-lg-6 col-form-label form-control-label" id="tprel"><font
 							color="black"></label>
 					</div>
 					<button type="submit" class="btn btn-primary" id="gusta">Me

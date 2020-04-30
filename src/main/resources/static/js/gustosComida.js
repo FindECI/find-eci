@@ -26,18 +26,18 @@ var comidas = (function(){
 		var checkedMer = document.getElementById("Merengon").checked;
 		
 		
-		if (checkedHamb){adicional = adicional + "," + "Hambuerguesa";}
-		if (checkedEnsal){adicional = adicional + "," + "Ensalada";}
-		if (checkedPizza){adicional = adicional + "," + "Pizza";}
-		if (checkedCommar){adicional = adicional + "," + "Comidademar";}
-		if (checkedhot){adicional = adicional + "," + "HotDog";}
-		if (checkedTacos){adicional = adicional + "," + "Tacos";}
-		if (checkedTorTL){adicional = adicional + "," + "Tortatresleches";}
-		if (checkedMilhoja){adicional = adicional + "," + "Milhoja";}
-		if (checkedBrazo){adicional = adicional + "," + "BrazodeReina";}
-		if (checkedCho){adicional = adicional + "," + "Chocolate";}
-		if (checkedChee){adicional = adicional + "," + "Cheesecake";}
-		if (checkedMer){adicional = adicional + "," + "Merengon";}
+		if (checkedHamb){adicional = adicional + "," + " Hambuerguesa";}
+		if (checkedEnsal){adicional = adicional + "," + " Ensalada";}
+		if (checkedPizza){adicional = adicional + "," + " Pizza";}
+		if (checkedCommar){adicional = adicional + "," + " Comida de mar";}
+		if (checkedhot){adicional = adicional + "," + " HotDog";}
+		if (checkedTacos){adicional = adicional + "," + " Tacos";}
+		if (checkedTorTL){adicional = adicional + "," + " Torta tres leches";}
+		if (checkedMilhoja){adicional = adicional + "," + " Milhoja";}
+		if (checkedBrazo){adicional = adicional + "," + " Brazo de Reina";}
+		if (checkedCho){adicional = adicional + "," + " Chocolate";}
+		if (checkedChee){adicional = adicional + "," + " Cheesecake";}
+		if (checkedMer){adicional = adicional + "," + " Merengon";}
 		
 		
 		return adicional;

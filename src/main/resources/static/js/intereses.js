@@ -30,15 +30,15 @@ var interes = (function(){
 		var checkedArte = document.getElementById("arte").checked;
 		var checkedFiestas = document.getElementById("fiestas").checked;
 		
-		if (checkedDeportes){adicional = adicional + "," + "deportes";}
-		if (checkedLectura){adicional = adicional + "," + "lectura";}
-		if (checkedBaile){adicional = adicional + "," + "baile";}
-		if (checkedMascotas){adicional = adicional + "," + "mascotas";}
-		if (checkedCine){adicional = adicional + "," + "cine";}
-		if (checkedTeatro){adicional = adicional + "," + "teatro";}
-		if (checkedvideoj){adicional = adicional + "," + "videojuegos";}
-		if (checkedArte){adicional = adicional + "," + "arte";}
-		if (checkedFiestas){adicional = adicional + "," + "fiestas";}
+		if (checkedDeportes){adicional = adicional + "," + " deportes";}
+		if (checkedLectura){adicional = adicional + "," + " lectura";}
+		if (checkedBaile){adicional = adicional + "," + " baile";}
+		if (checkedMascotas){adicional = adicional + "," + " mascotas";}
+		if (checkedCine){adicional = adicional + "," + " cine";}
+		if (checkedTeatro){adicional = adicional + "," + " teatro";}
+		if (checkedvideoj){adicional = adicional + "," + " videojuegos";}
+		if (checkedArte){adicional = adicional + "," + " arte";}
+		if (checkedFiestas){adicional = adicional + "," + " fiestas";}
 		
 		alert("adicional:  " + adicional);
 		

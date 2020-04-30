@@ -53,7 +53,7 @@ h4 {
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irPerfil()'>Inicio</button>
                 <button class="btn btn-outline-danger" type="button" onclick='apiUser.irPerfilUsuario()'>Mi perfil</button>
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irMatch()'>Match</button>
-		<button class="btn btn-outline-danger" type="button">Conversaciones</button>
+		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irChat()'>Conversaciones</button>
 		<button class="btn btn-outline-danger" type="button" onclick='apiUser.irLogin()'>Cerrar sesión</button>
 
 	</nav>
@@ -155,41 +155,41 @@ h4 {
 			<div class="row">
 				<div class="col-sm-6" style="width: 25rem;">
 					<div class="card-deck">
+                                                <div class="card" style="width: 30rem;">
+							<img class="card-img-top" src="img/comida.jpg" width="150"
+								height="150" alt="Card image cap">
+							<div class="card-body">
+								<h5 class="card-title">Intereses</h5>
+								<p class="card-text" id="intereses"></label>
+                                                        </div>
+                                                        <button type="button" class="btn btn-primary" onclick='apiUser.irACFetiches()'>Actualizar</button>
+						</div>
 						<div class="card" style="width: 30rem;">
 							<img class="card-img-top" src="img/peliculas.jpg" width="150"
 								height="150" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Gusto de Pelicula</h5>
-								<p class="card-text" id="peliculas"></p>
-                                                                <button type="button" class="btn btn-primary" onclick='apiUser.irACGPeliculas()'>Actualizar</button>
+								<p class="card-text" id="peliculas"></p>                                                                
 							</div>
+                                                        <button type="button" class="btn btn-primary" onclick='apiUser.irACGPeliculas()'>Actualizar</button>
 						</div>
 						<div class="card" style="width: 30rem;">
 							<img class="card-img-top" src="img/musica.jpeg" width="150"
 								height="150" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Gusto Musicales</h5>
-								<p class="card-text" id="musica"></label>
-                                                                <button type="button" class="btn btn-primary" onclick='apiUser.irACGMusica()'>Actualizar</button>
+								<p class="card-text" id="musica"></label>                                                                
 							</div>
+                                                        <button type="button" class="btn btn-primary" onclick='apiUser.irACGMusica()'>Actualizar</button>
 						</div>
 						<div class="card" style="width: 30rem;">
 							<img class="card-img-top" src="img/comida.jpg" width="150"
 								height="150" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Gusto de Comidas</h5>
-								<p class="card-text" id="comidas"></label>
-                                                                <button type="button" class="btn btn-primary" onclick='apiUser.irACGComida()'>Actualizar</button>
+								<p class="card-text" id="comidas"></label>                                                                
                                                         </div>
-						</div>
-                                                <div class="card" style="width: 30rem;">
-							<img class="card-img-top" src="img/comida.jpg" width="150"
-								height="150" alt="Card image cap">
-							<div class="card-body">
-								<h5 class="card-title">Fetiches</h5>
-								<p class="card-text" id="fetiches"></label>
-                                                                <button type="button" class="btn btn-primary" onclick='apiUser.irACFetiches()'>Actualizar</button>
-                                                        </div>
+                                                        <button type="button" class="btn btn-primary" onclick='apiUser.irACGComida()'>Actualizar</button>
 						</div>
 					</div>
 				</div>
