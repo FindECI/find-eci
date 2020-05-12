@@ -1,4 +1,7 @@
 var chat = (function(){
+	
+	var enviado = [];
+	var recidos = [];
 	var who=0;
 	var cont = 0;
 	var coneccion = function(){
@@ -6,8 +9,14 @@ var chat = (function(){
 		stompClient = Stomp.over(socket);
 		stompClient.connect({}, function(frame) {
 			console.log("connected: " + frame);
-			stompClient.subscribe('/chat/messages', function(response) {
+			stompClient.subscribe('/chat/messagesU', function(response) {
+				
 				var data = JSON.parse(response.body);
+				//alert(JSON.stringify(data));
+				/*for(var i=0; i< data.length; i++){
+					recibido
+				}*/
+				alert("data : "+ data.mensaje);
 				draw("left", data.mensaje);
 			});
 		});
@@ -31,7 +40,10 @@ var chat = (function(){
 	}
 	
 	var enviarMensaje = function sendMessage(){
-		stompClient.send("/app/message", {}, JSON.stringify({'mensaje': document.getElementById("mensaje").value}));
+		var f = new Date();
+		stompClient.send("/app/messages", {}, JSON.stringify({'mensaje': document.getElementById("mensaje").value,'pareja':sessionStorage.getItem('UserChat'),'usuario':sessionStorage.getItem('UserLogin'),'chat':sessionStorage.getItem('IdChat'),'fecha':f}));
+		stompClient.send("/app/messagesP", {}, JSON.stringify({'mensaje': document.getElementById("mensaje").value,'pareja':sessionStorage.getItem('UserChat'),'usuario':sessionStorage.getItem('UserLogin'),'chat':sessionStorage.getItem('IdChat'),'fecha':f}));
+		stompClient.send("/app/messagesU", {}, JSON.stringify({'mensaje': document.getElementById("mensaje").value,'pareja':sessionStorage.getItem('UserChat'),'usuario':sessionStorage.getItem('UserLogin'),'chat':sessionStorage.getItem('IdChat'),'fecha':f}));
 		draw("right", document.getElementById("mensaje").value);
 		who = 1;
 	}

@@ -9,4 +9,8 @@
             <goal>spring-boot:run</goal>
         </goals>
     </action>
+<<<<<<< HEAD
 </actions>
+=======
+</actions>
+>>>>>>> 0653fb687b423b105d5e6a0afd7cbf3977a2629b

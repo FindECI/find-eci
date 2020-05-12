@@ -32,12 +32,10 @@
 <script src="js/apiInteracciones.js"></script>
 <script src="js/apiGustoMusical.js"></script>
 
-<style >
-
+<style>
 h4 {
-	color: #FDFBFB 
+	color: #FDFBFB
 }
-
 </style>
 
 
@@ -57,10 +55,15 @@ h4 {
 
 	</nav>
 
+	<div class="card-body" id="card">
+		<div class="form-group" id="user-name">
+			<center>
+				<h1 id="textBien" color="white">¡Busca tu pareja ideal!</h1>
+			</center>
+		</div>
 
-	<center>
-		<h1 id="textBien" color="white">¡Busca tu pareja ideal!</h1>
-	</center>
+	</div>
+
 	<br></br>
 	<form id="usuariosTotales"
 		action='javascript:home.agregarinteraccion()'>
@@ -124,7 +127,7 @@ h4 {
 			<div class="row">
 				<div class="col-sm-6" style="width: 25rem;">
 					<div class="card-deck">
-						<div class="card" style="width: 30rem;">
+						<div class="card" style="width: 30rem;" id="cardPeliculas">
 							<img class="card-img-top" src="img/peliculas.jpg" width="150"
 								height="150" alt="Card image cap">
 							<div class="card-body">
@@ -132,26 +135,28 @@ h4 {
 								<p class="card-text" id="peliculas"></p>
 							</div>
 						</div>
-						<div class="card" style="width: 30rem;">
+						<div class="card" style="width: 30rem;" id="cardMusica">
 							<img class="card-img-top" src="img/musica.jpeg" width="150"
 								height="150" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Gusto Musicales</h5>
-								<p class="card-text" id="musica"></label>
+								<p class="card-text" id="musica">
+									</label>
 							</div>
 						</div>
-						<div class="card" style="width: 30rem;">
+						<div class="card" style="width: 30rem;" id="cardComidas">
 							<img class="card-img-top" src="img/comida.jpg" width="150"
 								height="150" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Gusto de Comidas</h5>
-								<p class="card-text" id="comidas"></label>
+								<p class="card-text" id="comidas">
+									</label>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-6">
-					<div class="card" style="width: 20rem;">
+					<div class="card" style="width: 20rem;" id="galerias">
 						<h5 class="card-title">GALERIA</h5>
 						<img class="card-img-top" src="img/finduser.png" width="300"
 							height="300" alt="Card image cap">

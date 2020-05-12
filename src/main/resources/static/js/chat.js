@@ -17,7 +17,7 @@ var chat = (function(){
 					column = '<tr><td>'+ datos[i].id + '</td><td>'+ datos[i].pareja +'</td><td> <button type="button" class="btn btn-success" onclick="chat.chatear(\'' + datos[i].pareja +'\''+','+'\''+ datos[i].id +'\')">Ver Chat</button></td></tr>';
 				}
 				else{
-					column = '<tr><td>'+ datos[i].id + '</td><td>'+ datos[i].usuario +'</td><td> <button type="button" class="btn btn-success" onclick="chat.chatear(\'' + datos[i].pareja +'\''+','+'\''+ datos[i].id +'\')">Ver Chat</button></td></tr>';
+					column = '<tr><td>'+ datos[i].id + '</td><td>'+ datos[i].usuario +'</td><td> <button type="button" class="btn btn-success" onclick="chat.chatear(\'' + datos[i].usuario +'\''+','+'\''+ datos[i].id +'\')">Ver Chat</button></td></tr>';
 				}
 				$("table tbody").append(column);
 			}
