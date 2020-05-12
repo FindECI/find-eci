@@ -97,7 +97,6 @@ apiUser = (function(){
 	    irLogin : function () {
 	        location.href = "/index.html";
 	        sessionStorage.setItem('UserLogin',"");
-<<<<<<< HEAD
                 sessionStorage.setItem('Nombre',"");
                 sessionStorage.setItem('Genero',"");
                 sessionStorage.setItem('Altura',"");
@@ -112,17 +111,12 @@ apiUser = (function(){
                 sessionStorage.setItem('GPeliculas',"");
                 sessionStorage.setItem('GMusicales',"");
                 sessionStorage.setItem('GComidas',"");
-                    },
-=======
-	    },
-
->>>>>>> 0653fb687b423b105d5e6a0afd7cbf3977a2629b
-		irChat : function (){
+            },
+            
+            irChat : function (){
 
 	        location.href = "/ListChat.html";
-	    }
-	    
-		
-	}
+            }
+        }
 		
 })();
