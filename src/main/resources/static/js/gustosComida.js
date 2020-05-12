@@ -41,11 +41,18 @@ var comidas = (function(){
 		
 		
 		return adicional;
-	}	
+	}
+        
+        var updateComida = function(){
+		var user = sessionStorage.getItem('UserLogin');			
+		var gusto = {"descripciongusto": check(),"usuario": user,"tipgusto":3};
+		apiComida.updateComidas(gusto);
+	}
 	
 	return {
 		
-		insertarGusComida : insertComida
+		insertarGusComida : insertComida,
+                updateComida: updateComida
 		
 	}
 	

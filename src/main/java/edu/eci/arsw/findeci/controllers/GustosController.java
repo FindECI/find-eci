@@ -37,7 +37,7 @@ public class GustosController {
 	GustosServices gustoservice;
 	
 	
-	@RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<gustos> addUser(@RequestBody gustos gusto) {
        try {
             gustoservice.saveUserGusto(gusto);
@@ -55,6 +55,15 @@ public class GustosController {
             return ResponseEntity.ok(gusto);
         } catch (FindEciException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+    @RequestMapping(method = RequestMethod.PUT)
+    public ResponseEntity<gustos> updateUser(@RequestBody gustos gusto) {
+       try {
+            gustoservice.updateUserGusto(gusto);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        } catch (FindEciException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
     }
 

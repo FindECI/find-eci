@@ -16,6 +16,23 @@ var apiPeliculas = (function(){
                     alert("intente nuevamente"); 
                 }
 			});			
+		},
+                
+                updatePeliculas : function(gusto){
+			
+			jQuery.ajax({
+				url: "/Gustos/",
+				type: "PUT",
+				data: JSON.stringify(gusto),
+				contentType: "application/json",
+				success: function(){
+					alert("se ha actuaizado sus gustos de peliculas correctamente.");
+                                        usuario.recargue();
+                                        location.href = "/perfilUsuario.html"
+				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    alert("intente nuevamente"); 
+                }
+			});			
 		}
 		
 		

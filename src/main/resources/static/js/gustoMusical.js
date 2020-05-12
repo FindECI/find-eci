@@ -54,11 +54,18 @@ var musicales = (function(){
 		if (checkedOtro){adicional = adicional + "," + " Otro";}
 		
 		return adicional;
-	}	
+	}
+        
+        var updateMusica = function(){
+		var user = sessionStorage.getItem('UserLogin');			
+		var gusto = {"descripciongusto": check(),"usuario": user,"tipgusto":2};
+		apiMusical.updateMusica(gusto);
+	}
 	
 	return {
 		
-		insertarGusMusica : insertMusica
+		insertarGusMusica : insertMusica,
+                updateMusica : updateMusica
 		
 	}
 	

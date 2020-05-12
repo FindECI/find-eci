@@ -136,7 +136,8 @@ var usuario = (function () {
         info: infoUser,
         infoC: infoCarrera,
         infoI: infoIntereses,
-        cargue: cargueInfo
+        cargue: cargueInfo,
+        recargue: recargue
 
     };
 })();

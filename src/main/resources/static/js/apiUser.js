@@ -97,7 +97,21 @@ apiUser = (function(){
 	    irLogin : function () {
 	        location.href = "/index.html";
 	        sessionStorage.setItem('UserLogin',"");
-	    },
+                sessionStorage.setItem('Nombre',"");
+                sessionStorage.setItem('Genero',"");
+                sessionStorage.setItem('Altura',"");
+                sessionStorage.setItem('Celular',"");
+                sessionStorage.setItem('Instagram',"");
+                sessionStorage.setItem('Nacimiento',"");
+                sessionStorage.setItem('Carrera',"");
+                sessionStorage.setItem('Semestre',"");
+                sessionStorage.setItem('GeneroInt',"");
+                sessionStorage.setItem('TipRel',"");
+                sessionStorage.setItem('Intereses',"");
+                sessionStorage.setItem('GPeliculas',"");
+                sessionStorage.setItem('GMusicales',"");
+                sessionStorage.setItem('GComidas',"");
+                    },
 		irChat : function (){
 
 	        location.href = "/ListChat.html";

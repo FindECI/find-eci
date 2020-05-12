@@ -43,12 +43,33 @@ var interes = (function(){
 		alert("adicional:  " + adicional);
 		
 		return adicional;
-	}	
+	}
+        var cargueInteres = function(){
+            document.getElementById("genInteres").val(Femenino);
+        }
+        
+        var updateIntereses = function(){
+		var user = sessionStorage.getItem('UserLogin');
+                var nuevoGInteres = document.getElementById("genInteres").value;
+                var nuevoTR = document.getElementById("Tiprelacion").value;
+                if(nuevoGInteres === "Selecciona"){
+                    nuevoGInteres = sessionStorage.getItem('GeneroInt');
+                }
+                if(nuevoTR === "Selecciona"){
+                    nuevoTR = sessionStorage.getItem('TipRel');
+                }
+		var intereses = {"sexoInteres": nuevoGInteres,
+				"apectosImportantes": check(),
+                                "tipoRel": nuevoTR,
+				"usuario": user};
+		apiIntereses.updateIntereses(intereses);
+	}
 	
 	return {
 		
-		insertarInteres : insertInteres
-		
+		insertarInteres : insertInteres,
+		updateIntereses : updateIntereses,
+                cargueInteres : cargueInteres
 	}
 	
 })(); 

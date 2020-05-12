@@ -20,4 +20,6 @@ public interface GustosServices {
    gustos saveUserGusto(gustos gusto) throws FindEciException;
 
    List<gustos> gustosByuser(String correo) throws FindEciException;
+   
+   void updateUserGusto(gustos gusto) throws FindEciException;
 }

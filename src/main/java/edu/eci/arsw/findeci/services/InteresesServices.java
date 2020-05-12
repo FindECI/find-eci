@@ -17,6 +17,8 @@ public interface InteresesServices {
    Intereses findInteresByCorreo(String correo) throws FindEciException;
    
    List<Intereses> findAllIntereses(String correo) throws FindEciException;
+   
+   void updateInteres(Intereses interes) throws FindEciException;
 
 
 }

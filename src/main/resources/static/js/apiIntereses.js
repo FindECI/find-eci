@@ -40,6 +40,23 @@ var apiIntereses = (function(){
                 }			
 				
 			});
+		},
+                
+                updateIntereses : function(interes){
+			
+			jQuery.ajax({
+				url: "/Intereses/",
+				type: "PUT",
+				data: JSON.stringify(interes),
+				contentType: "application/json",
+				success: function(){
+					alert("se ha actuaizado sus intereses correctamente.");
+                                        usuario.recargue();
+                                        location.href = "/perfilUsuario.html"
+				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    alert("intente nuevamente"); 
+                }
+			});			
 		}
 	}
 	

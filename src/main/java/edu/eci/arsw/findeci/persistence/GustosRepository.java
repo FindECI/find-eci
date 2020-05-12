@@ -11,6 +11,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import edu.eci.arsw.findeci.model.gustos;
+import javax.transaction.Transactional;
+import org.springframework.data.jpa.repository.Modifying;
 
 
 /**
@@ -19,7 +21,13 @@ import edu.eci.arsw.findeci.model.gustos;
  */
 public interface GustosRepository extends JpaRepository<gustos, Integer >  {
 	
-	@Query(value="select g.id as id,g.descripciongusto as descripciongusto ,g.tipogusto as tipogusto,g.usuario as usuario from gustos g where g.usuario= :correo",nativeQuery = true)
+	@Query(value="select g.id as id,g.descripciongusto as descripciongusto ,g.tipogusto as tipogusto,g.usuario as usuario from gustos g where g.usuario= :correo order by g.tipogusto asc",nativeQuery = true)
 	List<gustos> gustosbyuser(String correo);
+        
+        @Transactional
+        @Modifying
+        @Query("update gustos g set g.descripciongusto= ?1 where (g.usuario= ?2 and g.tipogusto= ?3)")
+        void setGustos(String descripcion, String correo, int tipo);
+        
     
 }

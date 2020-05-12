@@ -30,6 +30,23 @@ var apiMusical = (function(){
                 }
 				
 			});
+		},
+                
+                updateMusica : function(gusto){
+			
+			jQuery.ajax({
+				url: "/Gustos/",
+				type: "PUT",
+				data: JSON.stringify(gusto),
+				contentType: "application/json",
+				success: function(){
+					alert("se ha actuaizado sus gustos musicales correctamente.");
+                                        usuario.recargue();
+                                        location.href = "/perfilUsuario.html"
+				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    alert("intente nuevamente"); 
+                }
+			});			
 		}
 	}
 	

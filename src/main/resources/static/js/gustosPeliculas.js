@@ -40,11 +40,20 @@ var peliculas = (function(){
 		if (checkedOtro){adicional = adicional + "," + " Otro";}
 		
 		return adicional;
-	}	
+	}
+        
+        var updatePelicula = function(){
+		var user = sessionStorage.getItem('UserLogin');			
+		var gusto = {"descripciongusto": check(),"usuario": user,"tipgusto":1};
+		apiPeliculas.updatePeliculas(gusto);
+	}
+        
+        
 	
 	return {
 		
-		insertarGusPeli : insertPelicula
+		insertarGusPeli : insertPelicula,
+                updatePelicula : updatePelicula
 		
 	}
 	

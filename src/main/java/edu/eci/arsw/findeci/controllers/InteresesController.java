@@ -53,6 +53,16 @@ public class InteresesController {
         }
     }
     
+    @RequestMapping(method = RequestMethod.PUT)
+    public ResponseEntity<Intereses> updateUserInt(@RequestBody Intereses interes) {
+        try {
+            intserv.updateInteres(interes);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        } catch (FindEciException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
+    }
+    
     
     @RequestMapping(method = RequestMethod.GET, path = "/allusers/{correo}")
     public ResponseEntity<List<Intereses>> getAllUsers(@PathVariable(name = "correo") String correo) {

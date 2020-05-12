@@ -47,6 +47,17 @@ public class GustosServicesImp implements GustosServices {
 		}
 	}
 
+        @Override
+        public void updateUserGusto(gustos gusto) throws FindEciException {
+        
+            try {
+                    gustosRepo.setGustos(gusto.getDescripciongusto(), gusto.getUsuario(), gusto.getTipgusto());
+		}
+            catch(java.util.NoSuchElementException ex){
+			throw new FindEciException("Este usuario no existe");
+		}
+    }
+
 	
 
 }
