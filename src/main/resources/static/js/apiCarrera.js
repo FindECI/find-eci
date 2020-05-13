@@ -28,6 +28,22 @@ apiCarrera = (function(){
                 }
 				
 			});
+		},
+                
+                updateCarrera: function (carrera){
+			jQuery.ajax({
+				url: "/Carrera/",
+				type: "PUT",
+				data: JSON.stringify(carrera),
+				contentType: "application/json",
+				success: function(){
+					alert("Se ha actualizado su carrera correctamente.");
+					 usuario.recargue();
+                                        location.href = "/perfilUsuario.html"
+				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    alert("El Usuario ya esta registrado, intente nuevamente"); 
+                }
+			});
 		}
 		
 	}

@@ -60,5 +60,26 @@ public class UsuarioController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    
+    @RequestMapping(method = RequestMethod.PUT)
+    public ResponseEntity<Usuario> updateUser(@RequestBody Usuario usuario) {
+        try {
+
+            userserv.updateUser(usuario);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        } catch (FindEciException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
+    }
+    
+    @RequestMapping(method = RequestMethod.PUT, path = "/{correo}/{contraseña}")
+    public ResponseEntity<Usuario> updateConstraseña(@PathVariable(name = "correo") String correo, @PathVariable(name = "contraseña") String contraseña) {
+        try {
+            userserv.updateContraseña(correo, contraseña);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        } catch (FindEciException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
+    }
 
 }

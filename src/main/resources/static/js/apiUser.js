@@ -18,6 +18,37 @@ apiUser = (function(){
 			});
 			
 		},
+                
+                updateUser: function (usuari){
+			jQuery.ajax({
+				url: "/userForm/",
+				type: "PUT",
+				data: JSON.stringify(usuari),
+				contentType: "application/json",
+				success: function(){
+					alert("Su infromacion personal ha sido actualizada correctamente.");
+					usuario.recargue();
+                                        location.href = "/perfilUsuario.html"
+				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    alert("Intente nuevamente"); 
+                }
+			});
+			
+		},
+                
+                updateContraseña: function (correo, contraseña){
+			jQuery.ajax({
+				url: "/userForm/" + correo +"/"+ contraseña,
+				type: "PUT",
+				success: function(){
+					alert("Su contraseña ha sido actualizada correctamente.");
+                                        location.href = "/perfilUsuario.html"
+				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    alert("Intente nuevamente"); 
+                }
+			});
+			
+		},
 			
 		addImgUser: function(usuario,imagen){
 			alert("entroooooooooooo imagennnnn");
@@ -116,6 +147,11 @@ apiUser = (function(){
             irChat : function (){
 
 	        location.href = "/ListChat.html";
+            },
+            
+            irACContraseña : function (){
+
+	        location.href = "/ACContraseña.html";
             }
         }
 		

@@ -58,7 +58,7 @@ public class UsuarioServicesImpl implements UsuarioServices {
             if (user.getContrasena().equals(password)) {
                 return user;
             } else {
-                return null;
+                throw new FindEciException("Error: Usuario no existe o clave incorrecta");
             }
         } catch (java.util.NoSuchElementException ex) {
 
@@ -66,6 +66,26 @@ public class UsuarioServicesImpl implements UsuarioServices {
 
         }
 
+    }
+
+    @Override
+    public void updateUser(Usuario usuario) throws FindEciException {
+         try {
+                    usuarioRepository.setUsuario(usuario.getNombre(), usuario.getApellido(), usuario.getSexo(), usuario.getAltura(), usuario.getCelular(), usuario.getCuentaig(), usuario.getCorreo());
+		}
+            catch(java.util.NoSuchElementException ex){
+			throw new FindEciException("Este usuario no existe");
+            }
+    }
+
+    @Override
+    public void updateContraseña(String correo, String contraseña) throws FindEciException {
+        try {
+                    usuarioRepository.setContraseña(contraseña, correo);
+		}
+            catch(java.util.NoSuchElementException ex){
+			throw new FindEciException("Este usuario no existe");
+            }
     }
 
 }

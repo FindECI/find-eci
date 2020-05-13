@@ -75,7 +75,7 @@ public class InteresesServicesImpl implements InteresesServices{
         @Override
         public void updateInteres(Intereses interes) throws FindEciException {
             try {
-                    /*interesesRepo.setIntereses(interes.getApectosImportantes(), interes.getSexoInteres(), interes.getTipoRel(), interes.getUsuario());*/
+                    interesesRepo.setIntereses(interes.getApectosImportantes(), interes.getSexoInteres(), interes.getTipoRel(), interes.getUsuario());
 		}
             catch(java.util.NoSuchElementException ex){
 			throw new FindEciException("Este usuario no existe");

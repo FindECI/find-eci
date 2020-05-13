@@ -40,7 +40,6 @@ var interes = (function(){
 		if (checkedArte){adicional = adicional + "," + " arte";}
 		if (checkedFiestas){adicional = adicional + "," + " fiestas";}
 		
-		alert("adicional:  " + adicional);
 		
 		return adicional;
 	}
@@ -53,10 +52,10 @@ var interes = (function(){
                 var nuevoGInteres = document.getElementById("genInteres").value;
                 var nuevoTR = document.getElementById("Tiprelacion").value;
                 if(nuevoGInteres === "Selecciona"){
-                    nuevoGInteres = sessionStorage.getItem('GeneroInt');
+                    var nuevoGInteres = sessionStorage.getItem('GeneroInt');
                 }
                 if(nuevoTR === "Selecciona"){
-                    nuevoTR = sessionStorage.getItem('TipRel');
+                    var nuevoTR = sessionStorage.getItem('TipRel');
                 }
 		var intereses = {"sexoInteres": nuevoGInteres,
 				"apectosImportantes": check(),

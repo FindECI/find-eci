@@ -20,5 +20,9 @@ public interface UsuarioServices {
    Usuario findUserByCorreo(String correo) throws FindEciException;
    
    Usuario findUserByLogin(String correo,String password) throws FindEciException;
+   
+   void updateUser(Usuario usuario) throws FindEciException;
+   
+   void updateContraseña(String correo, String contraseña) throws FindEciException;
     
 }

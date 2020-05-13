@@ -56,6 +56,7 @@ public class InteresesController {
     @RequestMapping(method = RequestMethod.PUT)
     public ResponseEntity<Intereses> updateUserInt(@RequestBody Intereses interes) {
         try {
+            System.out.println("entroController");
             intserv.updateInteres(interes);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (FindEciException e) {

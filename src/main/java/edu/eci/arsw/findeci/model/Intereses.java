@@ -38,26 +38,26 @@ public class Intereses implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;	
     
-	@Column(name="tipoRelacion",nullable = false)
+	@Column(name="tipo_relacion",nullable = false)
 	@Size(min = 1, max = 100)
-    private String tipoRel;
+    private String tipo_relacion;
     
-	@Column(name="aspectosImportantes",nullable = false)
+	@Column(name="aspectos_importantes",nullable = false)
 	@Size(min = 1, max = 100)
-    private String apectosImportantes;
+    private String aspectos_importantes;
 	
-	@Column(name="sexoInteres",nullable = false)
+	@Column(name="sexo_interes",nullable = false)
 	@Size(min = 1, max = 100)
-    private String sexoInteres;
+    private String sexo_interes;
 
     public Intereses() {
     }
 
     public Intereses(String usuario, String sexoInteres, String tipoRel, String apectosImportantes) {
         this.usuario = usuario;
-        this.sexoInteres = sexoInteres;
-        this.tipoRel = tipoRel;
-        this.apectosImportantes = apectosImportantes;
+        this.sexo_interes = sexoInteres;
+        this.tipo_relacion = tipoRel;
+        this.aspectos_importantes = apectosImportantes;
     }
 
     public String getUsuario() {
@@ -69,27 +69,27 @@ public class Intereses implements Serializable {
     }
 
     public String getSexoInteres() {
-        return sexoInteres;
+        return sexo_interes;
     }
 
     public void setSexoInteres(String sexoInteres) {
-        this.sexoInteres = sexoInteres;
+        this.sexo_interes = sexoInteres;
     }
 
     public String getTipoRel() {
-        return tipoRel;
+        return tipo_relacion;
     }
 
     public void setTipoRel(String tipoRel) {
-        this.tipoRel = tipoRel;
+        this.tipo_relacion = tipoRel;
     }
 
     public String getApectosImportantes() {
-        return apectosImportantes;
+        return aspectos_importantes;
     }
 
     public void setApectosImportantes(String apectosImportantes) {
-        this.apectosImportantes = apectosImportantes;
+        this.aspectos_importantes = apectosImportantes;
     }
     
     public int getId() {
@@ -103,7 +103,7 @@ public class Intereses implements Serializable {
 
     @Override
     public String toString() {
-        return "Intereses{" + "id=" + id + "usuario=" + usuario + ", sexoInteres=" + sexoInteres + ", tipoRel=" + tipoRel + ", apectosImportantes=" + apectosImportantes + '}';
+        return "Intereses{" + "id=" + id + "usuario=" + usuario + ", sexoInteres=" + sexo_interes + ", tipoRel=" + tipo_relacion + ", apectosImportantes=" + aspectos_importantes + '}';
     }
     
     

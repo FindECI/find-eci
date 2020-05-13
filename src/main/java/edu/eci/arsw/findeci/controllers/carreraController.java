@@ -43,6 +43,17 @@ public class carreraController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    
+    @RequestMapping(method = RequestMethod.PUT)
+    public ResponseEntity<Carrera> updateCarrera(@RequestBody Carrera carrera) {
+               
+    	try {
+    		carreraserv.updateCarrera(carrera);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        } catch (FindEciException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
+    }
 	
 
 }

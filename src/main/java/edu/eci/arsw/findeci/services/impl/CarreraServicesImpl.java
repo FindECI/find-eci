@@ -35,4 +35,14 @@ public class CarreraServicesImpl implements CarreraServices {
 		}
 	}
 
+    @Override
+    public void updateCarrera(Carrera carrera) throws FindEciException {
+         try {
+                    carrerarepo.setCarrera(carrera.getNombre(), carrera.getSemestre(), carrera.getUsuario());
+		}
+            catch(java.util.NoSuchElementException ex){
+			throw new FindEciException("Este usuario no existe");
+		}
+    }
+
 }

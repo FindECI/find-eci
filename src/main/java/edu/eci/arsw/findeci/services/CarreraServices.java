@@ -8,5 +8,7 @@ public interface CarreraServices {
 	Carrera saveCarrera(Carrera carrera) throws FindEciException;
 
 	Carrera findCarreraByCorreo(String correo) throws FindEciException;
+        
+        void updateCarrera(Carrera carrera) throws FindEciException;
 
 }
