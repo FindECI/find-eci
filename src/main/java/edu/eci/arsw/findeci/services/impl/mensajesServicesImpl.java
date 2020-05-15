@@ -45,4 +45,16 @@ public class mensajesServicesImpl implements mensajesServices {
 		}
 	}
 
+	@Override
+	public List<mensajes> mensajesbyChat(int idchat) throws FindEciException {
+		try {
+
+			List<mensajes> mensajes = mensajesRepo.mensajesbyChat(idchat);
+			return mensajes;
+
+		} catch (java.util.NoSuchElementException ex) {
+			throw new FindEciException("chat no existe");
+		}
+	}
+
 }

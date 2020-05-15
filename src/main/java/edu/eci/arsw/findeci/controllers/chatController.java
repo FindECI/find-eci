@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.stereotype.Controller;
 
 import edu.eci.arsw.findeci.model.mensajes;
@@ -18,41 +20,62 @@ public class chatController {
 
 	@Autowired
 	mensajesServices mensajesServ;
-	
-	@MessageMapping("/messagesP")
-	@SendTo("/chat/messagesP")
-	public List<mensajes> getMessagespareja(mensajes mensaje) {
+
+	///suscripcion "messagesAllmensajes"
+	@MessageMapping("/chat.messangesAll")
+	@SendTo("/chat/messagesAll")
+	public List<mensajes> getAllmessasges(@Payload mensajes mensaje) {
 		try {
-			List<mensajes> menj = mensajesServ.mensajesbypareja(mensaje.getPareja(),mensaje.getChat());
+			List<mensajes> menj = mensajesServ.mensajesbyChat(mensaje.getChat());
 			return menj;
-        } catch (FindEciException e) {
-            return null;
-        }
+		} catch (FindEciException e) {
+			return null;
+		}
 	}
 	
-	@MessageMapping("/messagesU")
-	@SendTo("/chat/messagesU")
+	///suscripcion = "messagesPareja"
+	@MessageMapping("/chat.messagesP")
+	@SendTo("/chat/messagesPareja")
+	public List<mensajes> getMessagespareja(@Payload mensajes mensaje) {
+		System.out.println("entraaaaa:..... "+mensaje.getUsuario()+"///"+mensaje.getPareja());
+		try {
+			List<mensajes> menj = mensajesServ.mensajesbypareja(mensaje.getPareja(), mensaje.getChat());
+			return menj;
+		} catch (FindEciException e) {
+			return null;
+		}
+	}
+
+	@MessageMapping("/chat.messagesU")
+	@SendTo("/chat/messagesUser")
 	public List<mensajes> getMessagesusuario(mensajes mensaje) {
-		
+
 		try {
-			List<mensajes> menj = mensajesServ.mensajesbyuser(mensaje.getUsuario(),mensaje.getChat());
+			List<mensajes> menj = mensajesServ.mensajesbyuser(mensaje.getUsuario(), mensaje.getChat());
 			return menj;
-        } catch (FindEciException e) {
-            return null;
-        }
+		} catch (FindEciException e) {
+			return null;
+		}
 	}
 	
-	@MessageMapping("/messages")
-	public ResponseEntity<mensajes> saveMessagesusuario(mensajes mensaje) {
-		 try {
-			 	mensajesServ.saveMensaje(mensaje);
-	            return new ResponseEntity<>(HttpStatus.CREATED);
-	        } catch (FindEciException e) {
-	            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
-	        }
+	///suscripcion
+	@MessageMapping("/chat.saveUser")
+	@SendTo("/char/messagesUser")
+	public mensajes addUser (@Payload mensajes mensaje, SimpMessageHeaderAccessor headerAccessor){
+		headerAccessor.getSessionAttributes().put("username", mensaje.getUsuario());
+		return mensaje;
 	}
-	
-	
-	
-	
+
+	@MessageMapping("/chat.messages")
+	@SendTo("/chat/messagesUser")
+	public mensajes saveMessagesusuario(@Payload mensajes mensaje) {
+		
+			try {
+				mensajesServ.saveMensaje(mensaje);
+			} catch (FindEciException e) {
+				e.printStackTrace();
+			}
+			return mensaje;
+	}	
+
 }

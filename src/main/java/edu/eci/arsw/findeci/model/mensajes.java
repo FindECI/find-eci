@@ -39,6 +39,10 @@ public class mensajes {
 	
 	@Column(name="fecha",nullable = false)
     private Date fecha;
+	
+	@Column(name="bandera")
+    @NotNull
+	private int bandera;
 
 	public mensajes() {
 
@@ -90,5 +94,14 @@ public class mensajes {
 	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;
 	}
+	
+
+	public int getBandera() {
+		return bandera;
+	}
+
+	public void setBandera(int bandera) {
+		this.bandera = bandera;
+	}	
 
 }

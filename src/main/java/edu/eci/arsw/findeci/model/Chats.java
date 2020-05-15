@@ -27,6 +27,8 @@ public class Chats {
     @Size(min = 1, max = 100)
     private String pareja;
 	
+		
+	
 	public Chats () {
 		
 	}
@@ -59,10 +61,6 @@ public class Chats {
 	public void setPareja(String pareja) {
 		this.pareja = pareja;
 	}
-	
-	
-	
-	
 	
 	
 }

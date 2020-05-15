@@ -9,11 +9,14 @@ import edu.eci.arsw.findeci.model.mensajes;
 
 public interface mensajesRepository extends JpaRepository<mensajes,Integer> {
 	
-	@Query(value="select m.id as id,m.mensaje as mensaje,m.usuario as usuario,m.pareja as pareja,m.chat as chat,m.fecha as fecha from mensajes m where m.pareja= :correo and m.chat= :chat",nativeQuery = true)
+	@Query(value="select m.id as id,m.mensaje as mensaje,m.usuario as usuario,m.pareja as pareja,m.chat as chat,m.fecha as fecha,m.bandera as bandera from mensajes m where m.pareja= :correo and m.chat= :chat",nativeQuery = true)
 	List<mensajes> mensajesbypareja(String correo,int chat);
 	
-	@Query(value="select m.id as id,m.mensaje as mensaje,m.usuario as usuario,m.pareja as pareja,m.chat as chat, m.fecha as fecha from mensajes m where m.usuario= :correo and m.chat= :chat",nativeQuery = true)
+	@Query(value="select m.id as id,m.mensaje as mensaje,m.usuario as usuario,m.pareja as pareja,m.chat as chat, m.fecha as fecha,m.bandera as bandera from mensajes m where m.usuario= :correo and m.chat= :chat",nativeQuery = true)
 	List<mensajes> mensajesbyuser(String correo,int chat);
 	
+	
+	@Query(value="select m.id as id,m.mensaje as mensaje,m.usuario as usuario,m.pareja as pareja,m.chat as chat, m.fecha as fecha,m.bandera as bandera from mensajes m where m.chat= :chat",nativeQuery = true)
+	List<mensajes> mensajesbyChat(int chat);
 
 }

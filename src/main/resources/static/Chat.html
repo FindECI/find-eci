@@ -56,15 +56,14 @@
 			onclick='apiUser.irLogin()'>Cerrar sesión</button>
 
 	</nav>
-	<br></br>
-	<br></br>
-	<br></br>
-	<br></br>
+
 
 	<div class="chat_window"
-		style="position: relative; margin: 100px 0 0 10px;">
+		style="position: relative; margin: 260px 0 0 10px;">
 		<div class="top_menu">
-			<div class="title">Chat</div>
+			<div class="title">
+				<label id="parejaChat" class="col-lg-3 col-form-label form-control-label"></label>
+			</div>
 		</div>
 		<ul class="messages"></ul>
 		<div class="bottom_wrapper clearfix">
@@ -72,10 +71,8 @@
 				<input id="mensaje" class="message_input"
 					placeholder="Escribe tu mensaje..." />
 			</div>
-			<div class="send_message">
-				<button class="btn btn-outline-success" type="button"
-					onclick='chat.mensaje()'>Enviar</button>
-			</div>
+			<button class="btn btn-outline-success" type="button"
+				onclick='chat.mensaje()'>Enviar</button>
 		</div>
 	</div>
 	<div id="message_template" class="message_template">
@@ -84,5 +81,6 @@
 				<div class="text"></div>
 			</div></li>
 	</div>
+
 </body>
 </html>
