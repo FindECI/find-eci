@@ -4,14 +4,13 @@ var chat = (function() {
 	var list = [];
 	var listP = [];
 	var lastP = 0;
-	var who = 0;
+	var status = false;
 	var cont = 0;
 
 	var coneccion = function() {
 		
 		apiUser.getUser(verUser,sessionStorage.getItem('UserChat'));
-		
-		
+				
 		var socket = new SockJS('/chat-messaging');
 		stompClient = Stomp.over(socket);
 
@@ -67,23 +66,29 @@ var chat = (function() {
 		var message = JSON.parse(data.body);
 		
 		if(message.pareja == usuario){
-			draw("left", message.mensaje);
+			if(message.mensaje != ""){
+				draw("left", message.mensaje);
+			}			
 		} 
 	}
 
 	var onMessageAll = function(data) {
 		var message = JSON.parse(data.body);
-		if (message.length > 0) {
-			for (var i = 0; i < message.length; i++) {
-				if(message[i].usuario == usuario){
-					draw("right",message[i].mensaje);
+		if (status == false){
+			if (message.length > 0) {
+				for (var i = 0; i < message.length; i++) {
+					if(message[i].usuario == usuario){
+						draw("right",message[i].mensaje);
+					}
+					else{
+						draw("left",message[i].mensaje);
+					}
 				}
-				else{
-					draw("left",message[i].mensaje);
-				}
-			}
 
+			}
+			status = true;
 		}
+		
 		//mostrarAllMessage();
 	}
 

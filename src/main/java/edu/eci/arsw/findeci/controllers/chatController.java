@@ -60,7 +60,7 @@ public class chatController {
 	
 	///suscripcion
 	@MessageMapping("/chat.saveUser")
-	@SendTo("/char/messagesUser")
+	@SendTo("/chat/messagesUser")
 	public mensajes addUser (@Payload mensajes mensaje, SimpMessageHeaderAccessor headerAccessor){
 		headerAccessor.getSessionAttributes().put("username", mensaje.getUsuario());
 		return mensaje;
