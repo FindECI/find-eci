@@ -32,6 +32,11 @@
 			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-websocket</artifactId>
+			<version>9.0.16</version>
+		</dependency>
+		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>sockjs-client</artifactId>
 			<version>1.0.2</version>
@@ -209,12 +214,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-	 <dependency>
-	  <groupId>com.microsoft.azure</groupId>
-	  <artifactId>azure-storage</artifactId>
-	  <version>8.4.0</version>
-	  <type>jar</type>
-	 </dependency>
+		<dependency>
+			<groupId>com.microsoft.azure</groupId>
+			<artifactId>azure-storage</artifactId>
+			<version>8.4.0</version>
+			<type>jar</type>
+		</dependency>
 	</dependencies>
 
 	<build>
