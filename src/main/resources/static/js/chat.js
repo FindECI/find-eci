@@ -30,7 +30,6 @@ var chat = (function(){
 	}
 	
 	var irChat = function(Userchat,id){
-		alert("datpsssss: "+ Userchat +","+ id );
 		sessionStorage.setItem('UserChat',Userchat);
 		sessionStorage.setItem('IdChat',id);
 		location.href = "/Chat.html";
