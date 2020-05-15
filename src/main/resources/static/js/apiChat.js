@@ -7,11 +7,7 @@ var chat = (function() {
 	var status = false;
 	var cont = 0;
 	
-	const connectionManager = new ConnectionManager();
-	//connectionManager.connect('ws://localhost:9000');
-
-	connectionManager.connect('wss://find-eci.herokuapp.com:${window.location.port}');
-
+	
 	var coneccion = function() {
 		
 		apiUser.getUser(verUser,sessionStorage.getItem('UserChat'));
