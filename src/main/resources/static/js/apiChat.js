@@ -7,7 +7,7 @@ var chat = (function() {
 	var status = false;
 	var cont = 0;
 	
-	
+
 	var coneccion = function() {
 		
 		apiUser.getUser(verUser,sessionStorage.getItem('UserChat'));
@@ -65,7 +65,6 @@ var chat = (function() {
 
 	var onMessageReceived = function(data) {
 		var message = JSON.parse(data.body);
-		
 		if(message.pareja == usuario){
 			if(message.mensaje != ""){
 				draw("left", message.mensaje);
