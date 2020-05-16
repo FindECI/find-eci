@@ -5,6 +5,7 @@ import com.microsoft.azure.storage.StorageException;
 import com.microsoft.azure.storage.blob.CloudBlobClient;
 import com.microsoft.azure.storage.blob.CloudBlobContainer;
 import com.microsoft.azure.storage.blob.CloudBlockBlob;
+import com.microsoft.azure.storage.blob.ListBlobItem;
 import edu.eci.arsw.findeci.Generar;
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,6 +24,7 @@ import edu.eci.arsw.findeci.persistence.ImagenesRepository;
 import edu.eci.arsw.findeci.services.ImagenesServices;
 import edu.eci.arsw.findeci.services.InteresesServices;
 import java.io.DataInputStream;
+import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -48,6 +50,7 @@ public class ImagenesServicesImpl implements ImagenesServices {
         String storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=imagenusuario;AccountKey=qjz2743gHPfAd2EBEfsdV8HkvLHXR7ZhYOnANMCnhOTnk7yI/6zW8YDvpdgF8S+/a3MobKf0Y/pwVmp7ya7b5A==;EndpointSuffix=core.windows.net";
         CloudStorageAccount storageAccount = null;
         CloudBlobContainer container = null;
+        URI uriblob = null;
         Long le = file.getSize();
         try {
             storageAccount = CloudStorageAccount.parse(storageConnectionString);
@@ -64,6 +67,11 @@ public class ImagenesServicesImpl implements ImagenesServices {
         } catch (StorageException ex) {
             Logger.getLogger(ImagenesServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
+        //Listing contents of container
+        for (ListBlobItem blobItem : container.listBlobs()) {
+            uriblob = blobItem.getUri();
+            //System.out.println("URI of blob is: " + blobItem.getUri());
+        }
 
         if (!file.isEmpty()) {
             byte[] bytes;
@@ -77,7 +85,7 @@ public class ImagenesServicesImpl implements ImagenesServices {
                 String tipo = file.getContentType();
                 InputStream is = null;
 
-                if(tipo != null) {
+                if (tipo != null) {
                     is = new DataInputStream(file.getInputStream());
                     long length = file.getSize();
                     CloudBlockBlob blob = container.getBlockBlobReference("" + nombre);
