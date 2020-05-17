@@ -51,7 +51,7 @@ var match = (function(){
 	};
 	
 	var verInfoUsuario = function(){
-		if (indice == 0){
+		if (indice === 0){
 			correoUser = usuarios[indice].usuario;
 			methodosuser(usuarios[indice].usuario);
 			apiIntereses.getUserInteres(intereses,correoUser);
@@ -70,7 +70,7 @@ var match = (function(){
 	};
 	
 	var InfoUsuario = function(){
-		if (indice == 0){
+		if (indice === 0){
 			if (personas.length > 0){
 				correoUser = personas[indice].usuario;
 				methodosuser(personas[indice].usuario);
@@ -96,13 +96,13 @@ var match = (function(){
 	};
 	
 	var mostrar = function(){
-		
-		if (matchs.length == 0 && matchsPar.length == 0){
+                
+		if (matchs.length === 0 && matchsPar.length === 0){
 			verInfoUsuario();
 		}
 		else{
 			//cuando el usuario ha hecho match
-			if(matchs.length > 0 && matchsPar.length == 0){
+			if(matchs.length > 0 && matchsPar.length === 0){
 				var temp = [];
 				for(var i=0; i < matchs.length; i++){
 					temp.push(matchs[i].pareja);
@@ -110,14 +110,14 @@ var match = (function(){
 				
 				for(var i=0; i < usuarios.length; i++){
 					var ind = temp.indexOf(usuarios[i].usuario);
-					if(ind == -1){
+					if(ind === -1){
 						personas.push(usuarios[i]);
 					}
 				}
 				InfoUsuario();
 			}
 			//cuando al usuario le hicieron match
-			else if(matchs.length == 0 && matchsPar.length > 0){
+			else if(matchs.length === 0 && matchsPar.length > 0){
 				var temp = [];
 				for(var i=0; i < matchsPar.length; i++){
 					temp.push(matchsPar[i].usuario);
@@ -125,7 +125,7 @@ var match = (function(){
 				
 				for(var i=0; i < usuarios.length; i++){
 					var ind = temp.indexOf(usuarios[i].usuario);
-					if(ind == -1){
+					if(ind === -1){
 						personas.push(usuarios[i]);
 					}
 				}
@@ -146,7 +146,7 @@ var match = (function(){
 				for(var i=0; i < usuarios.length; i++){
 					var ind = temp.indexOf(usuarios[i].usuario);
 					var indi = tempM.indexOf(usuarios[i].usuario); 
-					if(ind == -1 && indi == -1 ){
+					if(ind === -1 && indi === -1 ){
 						personas.push(usuarios[i]);
 					}
 				}
@@ -179,6 +179,8 @@ var match = (function(){
 		document.getElementById("ed").innerHTML = parseInt(f.getFullYear())
 				- parseInt(fecha[0]);
 		document.getElementById("altu").innerHTML = datos.altura + " " + "cm";
+                document.getElementById('celu').innerHTML = datos.celular;
+                document.getElementById('Igram').innerHTML = datos.cuentaig;
 	};
 	///informacion de la carrera del usuario
 	var infoCarrerausuario = function(datos) {
