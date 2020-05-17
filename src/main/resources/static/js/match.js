@@ -218,7 +218,11 @@ var match = (function(){
 		document.getElementById("sem").style.display  = "none";
 		document.getElementById("tiprela").style.display  = "none";
 		document.getElementById("tprel").style.display  = "none";
-
+		document.getElementById("cel").style.display  = "none";
+		document.getElementById("celu").style.display  = "none";
+		document.getElementById("insta").style.display  = "none";
+		document.getElementById("Igram").style.display  = "none";
+		
 		
 		document.getElementById("gusta").style.display  = "none";
 		document.getElementById("nogusta").style.display  = "none";
