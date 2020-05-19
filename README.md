@@ -31,7 +31,7 @@ Para realizar el modelo inicial de la interfaz gráfica de nuestro proyecto usam
 * https://wireframepro.mockflow.com/view/M5ba6b261fd09d3616ff208cc7ec17c1a1582298444241
 
 ## Link a nuestra aplicación 
-* https://find-eci.herokuapp.com/
+* http://find-eci.herokuapp.com/
 
 ## Diagrama de componentes
 ![Components](https://user-images.githubusercontent.com/47215172/76792730-a981db00-6791-11ea-853a-ade23b1034a3.PNG)
