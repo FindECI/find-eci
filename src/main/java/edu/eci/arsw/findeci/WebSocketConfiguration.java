@@ -25,8 +25,7 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
 	}
 
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
-		registry.addEndpoint("/chat-messaging")
-				.setHandshakeHandler(new DefaultHandshakeHandler(new TomcatRequestUpgradeStrategy())).withSockJS();
+		registry.addEndpoint("/chat-messaging").withSockJS();
 
 	}
 
