@@ -10,7 +10,7 @@ var chat = (function() {
 
 	var coneccion = function() {
 		
-		wss = new WebSocket("wss://localhost:8080/chat-messaging");
+		wss = new WebSocket("wss://find-eci.herokuapp.com/chat-messaging");
 		
 		apiUser.getUser(verUser,sessionStorage.getItem('UserChat'));
 				
