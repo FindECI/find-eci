@@ -10,12 +10,10 @@ var chat = (function() {
 
 	var coneccion = function() {
 		
-		wss = new WebSocket("wss://find-eci.herokuapp.com/chat-messaging");
-		
 		apiUser.getUser(verUser,sessionStorage.getItem('UserChat'));
 				
 		var socket = new SockJS('/chat-messaging');
-		stompClient = Stomp.over(wss);
+		stompClient = Stomp.over(socket);
 
 		stompClient.connect({}, onConected, onError);
 	}
