@@ -27,11 +27,6 @@
     <div class="container-gallery">
        <h2>Tus fotos</h2>
         <div class="gallery">
-            <img src="https://imagenusuario.blob.core.windows.net/prueba/13520200736063031973034147346676img9.jpg">
-            <img src="https://imagenusuario.blob.core.windows.net/prueba/15520200623144869544731751225022descarga.jpg">
-            <!--<figure th:each="blobItem : ${container.listBlobs()}">
-                <h1 th:text="${blobItem.getUri()}"></h1>       
-            </figure>-->
             <figure th:each="img : ${imgs}">
                 <h1 th:text="${img.getTitulo()}"></h1>
                <img th:src="${img.getRuta()}">

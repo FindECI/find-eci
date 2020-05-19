@@ -1,6 +1,7 @@
 package edu.eci.arsw.findeci.model;
 
 import java.io.Serializable;
+import java.net.URI;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -42,7 +43,7 @@ public class Imagenes implements Serializable {
     @Column(name = "fecha", nullable = false)
     @DateTimeFormat
     private Date fecha;
-
+    
     public Imagenes(String titulo, String usuario) {
 
         this.titulo = titulo;
@@ -102,7 +103,7 @@ public class Imagenes implements Serializable {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
-    
-    
 
+ 
+    
 }
