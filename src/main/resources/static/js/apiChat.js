@@ -10,10 +10,12 @@ var chat = (function() {
 
 	var coneccion = function() {
 		
+		wss = new WebSocket("wss://localhost:8080/chat-messaging");
+		
 		apiUser.getUser(verUser,sessionStorage.getItem('UserChat'));
 				
 		var socket = new SockJS('/chat-messaging');
-		stompClient = Stomp.over(socket);
+		stompClient = Stomp.over(wss);
 
 		stompClient.connect({}, onConected, onError);
 	}
@@ -25,7 +27,7 @@ var chat = (function() {
 	var onError = function(error) {
 		
 		connectingElement.textContent = 'Could not connect to WebSocket server. Please refresh this page to try again!';
-		connectingElement.style.color = 'red';
+		connectingElementj.style.color = 'red';
 	}
 
 	var onConected = function() {
