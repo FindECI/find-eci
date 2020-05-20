@@ -38,8 +38,9 @@ apiCarrera = (function(){
 				contentType: "application/json",
 				success: function(){
 					alert("Se ha actualizado su carrera correctamente.");
-					 usuario.recargue();
-                                        location.href = "/perfilUsuario.html"
+					usuario.recargueCarrera();
+                                        setTimeout(function(){  
+                                            location.href = "/perfilUsuario.html"}, 1000);
 				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     alert("El Usuario ya esta registrado, intente nuevamente"); 
                 }

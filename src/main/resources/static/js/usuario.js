@@ -84,13 +84,31 @@ var usuario = (function () {
         var password = document.getElementById("password").value;
         apiUser.loginUser(user, password);
         sessionStorage.setItem('UserLogin',document.getElementById("username").value);
-        recargue(user);
+        recargue();
     };
     
-    var recargue = function(user){
+    var recargue = function(){
+        var user = sessionStorage.getItem('UserLogin');
         apiUser.getUser(infoUser, user);
         apiCarrera.getCarrera(infoCarrera, user);
         apiIntereses.getUserInteres(infoIntereses, user);
+        apiMusical.getgustosUser(infoGustos, user);
+    };
+    
+    var recargueUser = function(){
+        var user = sessionStorage.getItem('UserLogin');
+        apiUser.getUser(infoUser, user);
+    };
+    var recargueCarrera = function(){
+        var user = sessionStorage.getItem('UserLogin');
+        apiCarrera.getCarrera(infoCarrera, user);
+    };
+    var recargueIntereses = function(){
+        var user = sessionStorage.getItem('UserLogin');
+        apiIntereses.getUserInteres(infoIntereses, user);
+    };
+    var recargueGustos = function(){
+        var user = sessionStorage.getItem('UserLogin');
         apiMusical.getgustosUser(infoGustos, user);
     };
     
@@ -190,7 +208,12 @@ var usuario = (function () {
         updateUsuario : updateUsuario,
         cargueActualizacionUsuario : cargueActualizacionUsuario,
         updateCarrera : updateCarrera,
-        updateContraseña : updateContraseña
+        updateContraseña : updateContraseña,
+        recargueGustos : recargueGustos,
+        recargueUser : recargueUser,
+        recargueCarrera : recargueCarrera,
+        recargueIntereses : recargueIntereses
+        
 
     };
 })();
