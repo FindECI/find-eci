@@ -74,12 +74,14 @@ $(function() {
         }).done(function(res){
             var titulo = $("#titulo").val();
             var ruta = res;
+            var user = sessionStorage.getItem('UserLogin');
 
             $.ajax({
                url: "/image/register",
                type: "post",
                data: {
                 "titulo":titulo,
+                "usuario": user,
                 "ruta":ruta
                }
             }).done(function(data){

@@ -278,6 +278,10 @@ var match = (function(){
 		getMatch();
 		indice += 1;
 	};
+        
+        var mostrarFotos = function() {
+            apiUser.irFotosUsuario(correoUser);
+        };
  	
 	
 	
@@ -285,7 +289,8 @@ var match = (function(){
 		
 		agregarMatch : addMatch,
 		noAgregarMatch : addNointeresa,
-		ver : getMatch
+		ver : getMatch,
+                mostrarFotos : mostrarFotos
 	}	
 	
 })();

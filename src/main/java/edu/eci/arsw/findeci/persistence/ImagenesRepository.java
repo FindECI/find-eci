@@ -11,8 +11,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ImagenesRepository extends PagingAndSortingRepository<Imagenes, Serializable>{
     
-    @Query("select i from Imagenes i order by i.fecha desc")
-    public abstract Page<Imagenes> findAll(Pageable page);
+    @Query("select i from Imagenes i where i.usuario= :user order by i.fecha desc")
+    public abstract Page<Imagenes> findAll(Pageable page, String user);
     
 
 }

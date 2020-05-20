@@ -99,16 +99,17 @@ public class ImagenesServicesImpl implements ImagenesServices {
     }
 
     @Override
-    public List<Imagenes> find(Pageable page) {
-        return imagenRepository.findAll(page).getContent();
+    public List<Imagenes> find(Pageable page, String user) {
+        return imagenRepository.findAll(page, user).getContent();
     }
 
     @Override
-    public void guardarImg(String titulo, String ruta) throws FindEciException {
+    public void guardarImg(String titulo, String user, String ruta) throws FindEciException {
         Imagenes img = new Imagenes();
         img.setRuta(ruta);
         img.setTitulo(titulo);
         img.setFecha(new Date());
+        img.setUsuario(user);
         imagenRepository.save(img);
     }
 

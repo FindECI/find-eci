@@ -13,8 +13,8 @@ public interface ImagenesServices {
 
     Imagenes findImageByCorreo(String correo) throws FindEciException;
 
-    List<Imagenes> find(Pageable page) throws FindEciException;
+    List<Imagenes> find(Pageable page, String user) throws FindEciException;
 
-    public void guardarImg(String titulo, String ruta) throws FindEciException;
+    public void guardarImg(String titulo, String user, String ruta) throws FindEciException;
 
 }

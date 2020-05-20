@@ -41,11 +41,11 @@ public class ImagenesController {
     }
     **/
     
-    @GetMapping("/all")
-    public ModelAndView find(Pageable page) throws FindEciException {
+    @GetMapping("/{usuario}")
+    public ModelAndView find(Pageable page, @PathVariable(name = "usuario") String user) throws FindEciException {
 
         ModelAndView md = new ModelAndView("fotos");
-        md.addObject("imgs", imagServices.find(page));
+        md.addObject("imgs", imagServices.find(page, user));
         return md;
 
     }
@@ -58,9 +58,9 @@ public class ImagenesController {
     
     @PostMapping("/register")
     @ResponseBody
-    public String insert (@RequestParam("titulo") String titulo, @RequestParam("ruta") String ruta) throws FindEciException{
-        imagServices.guardarImg(titulo, ruta);
-        return "/image/all";
+    public String insert (@RequestParam("titulo") String titulo, @RequestParam("usuario") String user, @RequestParam("ruta") String ruta) throws FindEciException{
+        imagServices.guardarImg(titulo, user, ruta);
+        return "/image/" + user;
     } 
     
 

@@ -31,11 +31,11 @@ public class Imagenes implements Serializable {
     @Column(name = "titulo", nullable = false)
     @Size(min = 1, max = 1000)
     private String titulo;
-/**
+
     @Column(name = "usuario", nullable = false)
     @Size(min = 1, max = 100)
     private String usuario;
-    **/
+    
     @Column(name = "ruta", nullable = false)
     @Size(min = 1, max = 100)
     private String ruta;
@@ -47,13 +47,13 @@ public class Imagenes implements Serializable {
     public Imagenes(String titulo, String usuario) {
 
         this.titulo = titulo;
-       // this.usuario = usuario;
+        this.usuario = usuario;
     }
 
     public Imagenes(int id, String titulo, String usuario, String ruta, Date fecha) {
         this.id = id;
         this.titulo = titulo;
-       // this.usuario = usuario;
+        this.usuario = usuario;
         this.ruta = ruta;
         this.fecha = fecha;
     }
@@ -71,7 +71,7 @@ public class Imagenes implements Serializable {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-/**
+
     public String getUsuario() {
         return usuario;
     }
@@ -79,7 +79,7 @@ public class Imagenes implements Serializable {
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
-**/
+
     public int getId() {
         return id;
     }

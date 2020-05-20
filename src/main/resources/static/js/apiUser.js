@@ -126,6 +126,13 @@ apiUser = (function(){
             irMatch : function () {
 	        location.href = "/match.html";
 	    },
+            irFotos : function () {
+                var user = sessionStorage.getItem('UserLogin');
+	        location.href = "/image/" + user;
+	    },
+            irFotosUsuario : function (user) {
+	        location.href = "/image/" + user;
+	    },
 	    irLogin : function () {
 	        location.href = "/index.html";
 	        sessionStorage.setItem('UserLogin',"");

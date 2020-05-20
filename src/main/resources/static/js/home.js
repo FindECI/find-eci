@@ -249,7 +249,11 @@ var home = (function() {
 				acomp[i] = 1;
 			}
 		}
-	}
+	};
+        
+        var mostrarFotos = function() {
+            apiUser.irFotosUsuario(correoUser);
+        }
 
 	var notificacion = function(nombre) {
 
@@ -265,7 +269,8 @@ var home = (function() {
 
 		agregarinteraccion : addInteraccion,
 		agregarNointeraccion : addNointeresa,
-		ejecutarNotificaciones : llamarMethodos
+		ejecutarNotificaciones : llamarMethodos,
+                mostrarFotos : mostrarFotos
 
 	}
 
