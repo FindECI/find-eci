@@ -25,7 +25,7 @@
    <div class="shape"></div>
    
     <div class="container-gallery">
-       <h2>Tus fotos</h2>
+       <h2>Fotos</h2>
         <div class="gallery">
             <figure th:each="img : ${imgs}">
                 <h1 th:text="${img.getTitulo()}"></h1>
@@ -33,6 +33,7 @@
             </figure>
             
         </div>
+       <p> <strong> Nota: Si estás en las fotos de otro perfil y subes una foto, esta se subira a tu perfil.</strong> </p>
     </div>
     
     <i class="fas fa-plus btn-show"></i>
