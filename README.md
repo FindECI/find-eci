@@ -10,6 +10,7 @@
 |Jimmy Chirivi  |Team Developer   |
 
 ## Estado del Proyecto
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/20f7f1dd1bf74233bbccb1d4d4d03365)](https://app.codacy.com/gh/FindECI/find-eci?utm_source=github.com&utm_medium=referral&utm_content=FindECI/find-eci&utm_campaign=Badge_Grade_Dashboard)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1d786a743cf54409b03ec51ed51060ac)](https://app.codacy.com/app/JulianBenitez99/CVDS-Plataforma-Historial-Equipos?utm_source=github.com&utm_medium=referral&utm_content=cvds-squad/CVDS-Plataforma-Historial-Equipos&utm_campaign=Badge_Grade_Dashboard)
 [![CircleCI](https://circleci.com/gh/cvds-squad/CVDS-Plataforma-Historial-Equipos.svg?style=svg)](https://circleci.com/gh/cvds-squad/CVDS-Plataforma-Historial-Equipos)
 
