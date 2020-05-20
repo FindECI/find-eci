@@ -9,7 +9,7 @@ var match = (function(){
 	var indice = 0;
 	
 	var getMatch = function (){
-		
+		alert("enttraaaaa");
 		apiInteracciones.getNotification(interacciones,usuario);
 		
 	};
