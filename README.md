@@ -41,7 +41,7 @@ Para realizar el modelo inicial de la interfaz gráfica de nuestro proyecto usam
 ##  Diagrama de Bases de Datos
 ![Entidad_relacion_final](https://user-images.githubusercontent.com/48091585/82500468-0911a500-9ab9-11ea-9612-363c13771113.png)
 ## Diagrama de Despliegue
-![despliegue](https://user-images.githubusercontent.com/48091585/77484985-03ba1600-6dfa-11ea-97a7-550069c2801b.png)
+![Despliegue](https://user-images.githubusercontent.com/48091585/82508049-7f1e0800-9ac9-11ea-91b7-99ef49b22894.png)
 
 ## Casos de uso no funcionales
 
