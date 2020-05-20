@@ -43,6 +43,14 @@ Para realizar el modelo inicial de la interfaz gráfica de nuestro proyecto usam
 ## Diagrama de Despliegue
 ![despliegue](https://user-images.githubusercontent.com/48091585/77484985-03ba1600-6dfa-11ea-97a7-550069c2801b.png)
 
+## Casos de uso no funcionales
+
+1. Se decidio con el equipo de trabajo almacenar las imágenes de los usuarios por medio de Azure blob Storage, esto con el fin de garantizar que sea altamente disponible ya que este mecanismo de la nube permite ciertas carateristicas como que la redundancia garantiza que los datos estén seguros en caso de fallas transitorias de hardware.
+También tomamos este camino debido a que permite replicar datos en centros de datos o regiones geográficas para obtener protección adicional contra catástrofes locales o desastres naturales. Los datos replicados de esta manera permanecen altamente disponibles en caso de una interrupción inesperada.
+A continuación se puede observar cómo las imagenes se suben a un contenedor en el almacenamiento de azure donde previamente se realizó la configuracion de replicación de los datos.
+
+![casos_no_funcionales_1](https://user-images.githubusercontent.com/48091585/82507072-edad9680-9ac6-11ea-81c5-db22d0f1fd04.png)
+
 ## Manual de uso:
 A continuación se mostrara una guia de inicio para navegar y usar la aplicación:
 * La página incial muestra el formulario para realizar inicio de sesion en los campos debera poner su correo electronico e.g "usuario@mail.com" y la contraseña que ha puesto en el registro
