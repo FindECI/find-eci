@@ -27,8 +27,9 @@ apiUser = (function(){
 				contentType: "application/json",
 				success: function(){
 					alert("Su infromacion personal ha sido actualizada correctamente.");
-					usuario.recargue();
-                                        location.href = "/perfilUsuario.html"
+					usuario.recargueUser();
+                                        setTimeout(function(){  
+                                            location.href = "/perfilUsuario.html"}, 1000);
 				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     alert("Intente nuevamente"); 
                 }

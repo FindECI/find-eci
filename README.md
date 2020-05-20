@@ -10,9 +10,8 @@
 |Jimmy Chirivi  |Team Developer   |
 
 ## Estado del Proyecto
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1d786a743cf54409b03ec51ed51060ac)](https://app.codacy.com/app/JulianBenitez99/CVDS-Plataforma-Historial-Equipos?utm_source=github.com&utm_medium=referral&utm_content=cvds-squad/CVDS-Plataforma-Historial-Equipos&utm_campaign=Badge_Grade_Dashboard)
-[![CircleCI](https://circleci.com/gh/cvds-squad/CVDS-Plataforma-Historial-Equipos.svg?style=svg)](https://circleci.com/gh/cvds-squad/CVDS-Plataforma-Historial-Equipos)
-
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4a6a74e870f249488c6e5cf64756b313)](https://www.codacy.com/gh/FindECI/find-eci?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=FindECI/find-eci&amp;utm_campaign=Badge_Grade)
+[![CircleCI](https://circleci.com/gh/FindECI/find-eci.svg?style=svg)](https://circleci.com/gh/FindECI/find-eci)
 ## Descripción del proyecto
 
 Por medio de esta aplicación, la comunidad estudiantil de la Escuela Colombiana de Ingenieria podra establecer citas y conversaciones por medio de sus redes sociales para conocersen y poder llegar a tener una relación del tipo que los usuarios deseen. Adicionalmente permite que las personas que se conozcan tengan gustos similares y congenien más de la cuenta. 

@@ -51,8 +51,9 @@ var apiIntereses = (function(){
 				contentType: "application/json",
 				success: function(){
 					alert("se ha actuaizado sus intereses correctamente.");
-                                        usuario.recargue();
-                                        location.href = "/perfilUsuario.html"
+                                        usuario.recargueIntereses();
+                                        setTimeout(function(){  
+                                            location.href = "/perfilUsuario.html"}, 1000);
 				},error: function(XMLHttpRequest, textStatus, errorThrown) { 
                     alert("intente nuevamente"); 
                 }
