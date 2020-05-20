@@ -35,11 +35,11 @@ Para realizar el modelo inicial de la interfaz gráfica de nuestro proyecto usam
 ## Diagrama de componentes
 ![Components](https://user-images.githubusercontent.com/47215172/76792730-a981db00-6791-11ea-853a-ade23b1034a3.PNG)
 ## Casos de uso
-![casos de uso](https://user-images.githubusercontent.com/48091585/77457227-64315f00-6dca-11ea-86f1-6ad2ed216b86.png)
+![casos_de_uso](https://user-images.githubusercontent.com/48091585/82500436-fb5c1f80-9ab8-11ea-9b07-f42faf213199.png)
 ##  Diagrama de clases
-![Captura2](https://user-images.githubusercontent.com/48091585/76806427-5f0f5700-67af-11ea-927d-52e30347d101.PNG)
+![clases](https://user-images.githubusercontent.com/48091585/82500557-2fcfdb80-9ab9-11ea-93ab-68af914b8c93.png)
 ##  Diagrama de Bases de Datos
-![diagrama er](https://user-images.githubusercontent.com/48091585/81299228-865e0400-903b-11ea-9107-75787b25d884.png)
+![Entidad_relacion_final](https://user-images.githubusercontent.com/48091585/82500468-0911a500-9ab9-11ea-9612-363c13771113.png)
 ## Diagrama de Despliegue
 ![despliegue](https://user-images.githubusercontent.com/48091585/77484985-03ba1600-6dfa-11ea-97a7-550069c2801b.png)
 
