@@ -33,7 +33,7 @@ Para realizar el modelo inicial de la interfaz gráfica de nuestro proyecto usam
 * http://find-eci.herokuapp.com/
 
 ## Diagrama de componentes
-![Components](https://user-images.githubusercontent.com/47215172/76792730-a981db00-6791-11ea-853a-ade23b1034a3.PNG)
+![componentes final](https://user-images.githubusercontent.com/47215172/82507013-c9ea5080-9ac6-11ea-8c1e-a3c1b7183c76.PNG)
 ## Casos de uso
 ![casos_de_uso](https://user-images.githubusercontent.com/48091585/82500436-fb5c1f80-9ab8-11ea-9b07-f42faf213199.png)
 ##  Diagrama de clases
