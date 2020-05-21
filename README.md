@@ -9,6 +9,10 @@
 |Andrés Quintero|Team Developer   |
 |Jimmy Chirivi  |Team Developer   |
 
+## Credenciales
+Usuario:andres@mail.com 
+Contraseña: 1234
+
 ## Estado del Proyecto
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4a6a74e870f249488c6e5cf64756b313)](https://www.codacy.com/gh/FindECI/find-eci?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=FindECI/find-eci&amp;utm_campaign=Badge_Grade)
 [![CircleCI](https://circleci.com/gh/FindECI/find-eci.svg?style=svg)](https://circleci.com/gh/FindECI/find-eci)
