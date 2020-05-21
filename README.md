@@ -51,6 +51,8 @@ A continuación se puede observar cómo las imagenes se suben a un contenedor en
 
 ![casos_no_funcionales_1](https://user-images.githubusercontent.com/48091585/82507072-edad9680-9ac6-11ea-81c5-db22d0f1fd04.png)
 
+2. Decidimos usar el almacenamiento de azure debido a que ofrece un mayor rendimiento en cuanto a manejo de archivos no estructurados, esto permite que incluso las imagenes carguen aún más rápido que las distintas páginas de la aplicacion, además de esto nos permite almacenar datos con tamaño muy grande y aún asi la funcionalidad de la aplicación no se vera afectada por el tamaño de estos archivos. Adicionalmente también permite que la subida de las imágenes se efectuen mas rápido e incluso permite que haya una menor cantidad acoplamiento. 
+
 ## Manual de uso:
 A continuación se mostrara una guia de inicio para navegar y usar la aplicación:
 * La página incial muestra el formulario para realizar inicio de sesion en los campos debera poner su correo electronico e.g "usuario@mail.com" y la contraseña que ha puesto en el registro
